@@ -20,7 +20,7 @@ message("The include path is "  ${ANTLR4_INCLUDE_DIR})
 include_directories( ${ANTLR4_INCLUDE_DIR} )
  
 # add required runtime library
-add_dependencies( officialDemo antlr4_static )
+add_dependencies( officialDemo antlr4_shared )
 
 target_link_libraries( officialDemo PRIVATE 
-                        antlr4_static)
+                        antlr4_shared)
