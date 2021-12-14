@@ -1,5 +1,7 @@
 {
     "cmake.configureArgs": [
-        "--config Debug ",
+        "-DCMAKE_MODULE_PATH=D:/ProgramData/cmake_modules/lib/cmake/antlr4",
+        "-DCMAKE_INSTALL_PREFIX=D:/ProgramData/cmake_modules/lib/cmake/antlr4" ,
+        " -DCMAKE_BUILD_TYPE=Debug"
     ],
 }

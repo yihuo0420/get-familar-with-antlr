@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 
 find_package(antlr4-runtime REQUIRED)
 
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -13,8 +14,13 @@ add_executable(officialDemo
 )
 
 find_library(ANTLR4_RUNTIME ${ANTLR4_LIB_DIR})
+message("The library path is "  ${ANTLR4_LIB_DIR})
+message("The include path is "  ${ANTLR4_INCLUDE_DIR})
 # add runtime include directories on this project.
 include_directories( ${ANTLR4_INCLUDE_DIR} )
-# add runtime to project dependencies
-target_link_libraries( officialDemo
-                       antlr4_static)
+ 
+# add required runtime library
+add_dependencies( officialDemo antlr4_static )
+
+target_link_libraries( officialDemo PRIVATE 
+                        antlr4_static)
