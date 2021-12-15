@@ -10,59 +10,58 @@
 
 namespace cyclone
 {
-namespace parser
-{
-
-enum class ParseMode
-{
-    Parse,
-    ParseLoose,
-};
-
-using Node = nlohmann::json;
-using NodePtr = std::shared_ptr<nlohmann::json>;
-using namespace antlr4;
-template <class Lexser, class Parser>
-class AbstractParser
-{
-public:
-    AbstractParser() {}
-    virtual ~AbstractParser() {}
-    NodePtr parse(const std::string& textstream, ParseMode mode = ParseMode::Parse)
+    namespace parser
     {
-        parseMode_ = mode;
-        root_.reset(new Node());
-        ANTLRInputStream input(textstream);
-        Lexser lexer(&input);
-        CommonTokenStream tokens(&lexer);
-        tokens.fill();
-        Parser parser(&tokens);
-        buildParseTree(parser.program()->toStringTree(true), *root_);
-        return NodePtr(root_.release());
-    }
-    /**
-     * @brief Wrapper fucntion for convenience
-     * @param textstream
-     * @return NodePtr
-     */
-    NodePtr parseLoose(const std::string& textstream) { return parse(textstream, ParseMode::ParseLoose); }
 
-protected:
-    bool ignoreError() const { return ParseMode::ParseLoose == parseMode_; }
-    virtual void buildParseTree(const std::string& textstream, Node& rootNode)
-    {
-        std::cout << "The tree is \n" << textstream << std::endl;
-        rootNode["program"] = textstream;
-    };
+        enum class ParseMode
+        {
+            Parse,
+            ParseLoose,
+        };
 
-private:
-    ParseMode parseMode_ = ParseMode::Parse;
-    std::unique_ptr<Node> root_ = nullptr;
-    std::string serilizedString_;
-};
+        using Json = nlohmann::json;
+        using JsonPtr = std::shared_ptr<nlohmann::json>;
+        using namespace antlr4;
+        template <class Lexser, class Parser>
+        class AbstractParser
+        {
+        public:
+            AbstractParser() {}
+            virtual ~AbstractParser() {}
+            JsonPtr parse(const std::string &textstream, ParseMode mode = ParseMode::Parse)
+            {
+                parseMode_ = mode;
+                root_.reset(new Json());
+                ANTLRInputStream input(textstream);
+                Lexser lexer(&input);
+                CommonTokenStream tokens(&lexer);
+                tokens.fill();
+                Parser parser(&tokens);
+                jsonify(*parser.program(), *root_);
+                return JsonPtr(root_.release());
+            }
+            /**
+             * @brief Wrapper fucntion for convenience
+             * @param textstream
+             * @return JsonPtr
+             */
+            JsonPtr parseLoose(const std::string &textstream) { return parse(textstream, ParseMode::ParseLoose); }
 
-}  // namespace parser
+        protected:
+            bool ignoreError() const { return ParseMode::ParseLoose == parseMode_; }
+            virtual void jsonify(tree::ParseTree &tree, Json &rootNode)
+            {
+                rootNode["program"] = tree.toStringTree();
+            };
 
-}  // namespace cyclone
+        private:
+            ParseMode parseMode_ = ParseMode::Parse;
+            std::unique_ptr<Json> root_ = nullptr;
+            std::string serilizedString_;
+        };
 
-#endif  // __ABSTRACT_PARSER_H__
+    } // namespace parser
+
+} // namespace cyclone
+
+#endif // __ABSTRACT_PARSER_H__

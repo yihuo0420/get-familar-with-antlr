@@ -15,24 +15,32 @@
 #include "antlr4-runtime.h"
 #include "TLexer.h"
 #include "TParser.h"
+#include "TParserBaseListener.h"
 
 using namespace antlrcpptest;
 using namespace antlr4;
 
-int main(int , const char **) {
+int main(int, const char **)
+{
   ANTLRInputStream input(u8"🍴 = 🍐 + \"😎\";(((x * π))) * µ + ∰; a + (x * (y ? 0 : 1) + z);");
   TLexer lexer(&input);
   CommonTokenStream tokens(&lexer);
 
   tokens.fill();
-  for (auto token : tokens.getTokens()) {
+  for (auto token : tokens.getTokens())
+  {
     std::cout << token->toString() << std::endl;
   }
 
   TParser parser(&tokens);
-  tree::ParseTree* tree = parser.main();
+  parser.addParseListener(new TParserBaseListener());
+  parser.addErrorListener(nullptr);
+  tree::ParseTree *tree = parser.main();
 
-  std::cout << tree->toStringTree(&parser) << std::endl << std::endl;
+  tree::ParseTreeWalker walker;
+  walker.walk(new TParserBaseListener(), tree);
+  std::cout << tree->toStringTree(&parser) << std::endl
+            << std::endl;
 
   return 0;
 }
