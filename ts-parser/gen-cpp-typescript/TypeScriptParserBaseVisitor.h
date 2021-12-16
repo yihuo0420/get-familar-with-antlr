@@ -1,5 +1,6 @@
 
 #include "TypeScriptParserBase.h"
+#include "../json.hpp"
 
 
 // Generated from TypeScriptParser.g4 by ANTLR 4.8
@@ -781,6 +782,9 @@ public:
   }
 
   virtual antlrcpp::Any visitMemberDotExpression(TypeScriptParser::MemberDotExpressionContext *ctx) override {
+    std::cout<<"From visitor : " << ctx->object->getText() << " Loc : start :  "<< ctx->object->getStart()->getStartIndex() << " end : " << ctx->object->getStop()->getStopIndex() <<   std::endl;
+      std::cout<<"From visitor : " <<"Property :" << ctx->property->getText() << " Loc : start :  "<< ctx->property->getStart()->getStartIndex() << " end : " << ctx->property->getStop()->getStopIndex() << std::endl;
+
     return visitChildren(ctx);
   }
 

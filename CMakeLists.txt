@@ -29,7 +29,7 @@ target_link_libraries( officialDemo PRIVATE
 file(GLOB_RECURSE TS_PARSER_GEN ts-parser/gen-cpp-typescript/*.cpp)
 add_executable(ts_parser_test
     ${TS_PARSER_GEN}
-    ts-parser/abstract_parser.cpp
+    ts-parser/ast_to_json.cpp
     ts-parser/test/gen-cpp-typescript.test.cpp
 )
 target_link_libraries( ts_parser_test PRIVATE 

@@ -84,6 +84,16 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "any": "cpp"
     },
+    "cSpell.words": [
+        "antlr",
+        "ANTLR",
+        "fucntion",
+        "jsonify",
+        "nlohmann",
+        "serilized",
+        "Vistor"
+    ],
 }
