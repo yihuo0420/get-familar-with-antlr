@@ -2,7 +2,7 @@
 #include "TypeScriptLexerBase.h"
 
 
-// Generated from TypeScriptLexer.g4 by ANTLR 4.9
+// Generated from TypeScriptLexer.g4 by ANTLR 4.8
 
 #pragma once
 
@@ -54,7 +54,7 @@ public:
     TEMPLATE = 1
   };
 
-  explicit TypeScriptLexer(antlr4::CharStream *input);
+  TypeScriptLexer(antlr4::CharStream *input);
   ~TypeScriptLexer();
 
   virtual std::string getGrammarFileName() const override;

@@ -663,8 +663,8 @@ singleExpression
     : functionExpressionDeclaration                                          # FunctionExpression
     | arrowFunctionDeclaration                                               # ArrowFunctionExpression   // ECMAScript 6
     | Class Identifier? classTail                                            # ClassExpression
-    | singleExpression '[' expressionSequence ']'                            # MemberIndexExpression
-    | singleExpression '.' identifierName nestedTypeGeneric?                 # MemberDotExpression
+    | object= singleExpression '[' property= expressionSequence ']'                            # MemberIndexExpression
+    | object = singleExpression '.' property= identifierName nestedTypeGeneric?                 # MemberDotExpression
     // Split to try `new Date()` first, then `new Date`.
     | New singleExpression typeArguments? arguments                          # NewExpression
     | New singleExpression typeArguments?                                    # NewExpression

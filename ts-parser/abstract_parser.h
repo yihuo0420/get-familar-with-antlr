@@ -7,6 +7,7 @@
 
 #include "json.hpp"
 #include "antlr4-runtime.h"
+#include "gen-cpp-typescript/TypeScriptParserBaseListener.h"
 
 namespace cyclone
 {
@@ -51,6 +52,8 @@ namespace cyclone
             bool ignoreError() const { return ParseMode::ParseLoose == parseMode_; }
             virtual void jsonify(tree::ParseTree &tree, Json &rootNode)
             {
+                tree::ParseTreeWalker walker;
+                walker.walk(new TypeScriptParserBaseListener(), &tree);
                 rootNode["program"] = tree.toStringTree();
             };
 

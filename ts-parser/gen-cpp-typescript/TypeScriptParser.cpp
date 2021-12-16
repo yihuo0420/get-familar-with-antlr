@@ -2,10 +2,11 @@
 #include "TypeScriptParserBase.h"
 
 
-// Generated from TypeScriptParser.g4 by ANTLR 4.9
+// Generated from TypeScriptParser.g4 by ANTLR 4.8
 
 
 #include "TypeScriptParserListener.h"
+#include "TypeScriptParserVisitor.h"
 
 #include "TypeScriptParser.h"
 
@@ -66,15 +67,19 @@ void TypeScriptParser::InitializerContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitInitializer(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::InitializerContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitInitializer(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::InitializerContext* TypeScriptParser::initializer() {
   InitializerContext *_localctx = _tracker.createInstance<InitializerContext>(_ctx, getState());
   enterRule(_localctx, 0, TypeScriptParser::RuleInitializer);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -125,15 +130,19 @@ void TypeScriptParser::BindingPatternContext::exitRule(tree::ParseTreeListener *
     parserListener->exitBindingPattern(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::BindingPatternContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBindingPattern(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::BindingPatternContext* TypeScriptParser::bindingPattern() {
   BindingPatternContext *_localctx = _tracker.createInstance<BindingPatternContext>(_ctx, getState());
   enterRule(_localctx, 2, TypeScriptParser::RuleBindingPattern);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -202,16 +211,20 @@ void TypeScriptParser::TypeParametersContext::exitRule(tree::ParseTreeListener *
     parserListener->exitTypeParameters(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeParametersContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeParameters(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeParametersContext* TypeScriptParser::typeParameters() {
   TypeParametersContext *_localctx = _tracker.createInstance<TypeParametersContext>(_ctx, getState());
   enterRule(_localctx, 4, TypeScriptParser::RuleTypeParameters);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -278,16 +291,20 @@ void TypeScriptParser::TypeParameterListContext::exitRule(tree::ParseTreeListene
     parserListener->exitTypeParameterList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeParameterListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeParameterList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeParameterListContext* TypeScriptParser::typeParameterList() {
   TypeParameterListContext *_localctx = _tracker.createInstance<TypeParameterListContext>(_ctx, getState());
   enterRule(_localctx, 6, TypeScriptParser::RuleTypeParameterList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -352,16 +369,20 @@ void TypeScriptParser::TypeParameterContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitTypeParameter(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeParameterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeParameter(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeParameterContext* TypeScriptParser::typeParameter() {
   TypeParameterContext *_localctx = _tracker.createInstance<TypeParameterContext>(_ctx, getState());
   enterRule(_localctx, 8, TypeScriptParser::RuleTypeParameter);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -435,15 +456,19 @@ void TypeScriptParser::ConstraintContext::exitRule(tree::ParseTreeListener *list
     parserListener->exitConstraint(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ConstraintContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitConstraint(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ConstraintContext* TypeScriptParser::constraint() {
   ConstraintContext *_localctx = _tracker.createInstance<ConstraintContext>(_ctx, getState());
   enterRule(_localctx, 10, TypeScriptParser::RuleConstraint);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -498,16 +523,20 @@ void TypeScriptParser::TypeArgumentsContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitTypeArguments(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeArgumentsContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeArguments(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeArgumentsContext* TypeScriptParser::typeArguments() {
   TypeArgumentsContext *_localctx = _tracker.createInstance<TypeArgumentsContext>(_ctx, getState());
   enterRule(_localctx, 12, TypeScriptParser::RuleTypeArguments);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -589,16 +618,20 @@ void TypeScriptParser::TypeArgumentListContext::exitRule(tree::ParseTreeListener
     parserListener->exitTypeArgumentList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeArgumentListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeArgumentList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeArgumentListContext* TypeScriptParser::typeArgumentList() {
   TypeArgumentListContext *_localctx = _tracker.createInstance<TypeArgumentListContext>(_ctx, getState());
   enterRule(_localctx, 14, TypeScriptParser::RuleTypeArgumentList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -655,15 +688,19 @@ void TypeScriptParser::TypeArgumentContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitTypeArgument(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeArgumentContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeArgument(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeArgumentContext* TypeScriptParser::typeArgument() {
   TypeArgumentContext *_localctx = _tracker.createInstance<TypeArgumentContext>(_ctx, getState());
   enterRule(_localctx, 16, TypeScriptParser::RuleTypeArgument);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -724,15 +761,19 @@ void TypeScriptParser::Type_Context::exitRule(tree::ParseTreeListener *listener)
     parserListener->exitType_(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::Type_Context::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitType_(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::Type_Context* TypeScriptParser::type_() {
   Type_Context *_localctx = _tracker.createInstance<Type_Context>(_ctx, getState());
   enterRule(_localctx, 18, TypeScriptParser::RuleType_);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -774,8 +815,6 @@ TypeScriptParser::Type_Context* TypeScriptParser::type_() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -829,6 +868,13 @@ void TypeScriptParser::IntersectionContext::exitRule(tree::ParseTreeListener *li
   if (parserListener != nullptr)
     parserListener->exitIntersection(this);
 }
+
+antlrcpp::Any TypeScriptParser::IntersectionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIntersection(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- PrimaryContext ------------------------------------------------------------------
 
 TypeScriptParser::PrimaryTypeContext* TypeScriptParser::PrimaryContext::primaryType() {
@@ -846,6 +892,13 @@ void TypeScriptParser::PrimaryContext::exitRule(tree::ParseTreeListener *listene
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitPrimary(this);
+}
+
+antlrcpp::Any TypeScriptParser::PrimaryContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPrimary(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- UnionContext ------------------------------------------------------------------
 
@@ -874,6 +927,13 @@ void TypeScriptParser::UnionContext::exitRule(tree::ParseTreeListener *listener)
     parserListener->exitUnion(this);
 }
 
+antlrcpp::Any TypeScriptParser::UnionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitUnion(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::UnionOrIntersectionOrPrimaryTypeContext* TypeScriptParser::unionOrIntersectionOrPrimaryType() {
    return unionOrIntersectionOrPrimaryType(0);
 }
@@ -889,11 +949,7 @@ TypeScriptParser::UnionOrIntersectionOrPrimaryTypeContext* TypeScriptParser::uni
 
     
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -945,8 +1001,6 @@ TypeScriptParser::UnionOrIntersectionOrPrimaryTypeContext* TypeScriptParser::uni
           break;
         }
 
-        default:
-          break;
         } 
       }
       setState(355);
@@ -1003,6 +1057,13 @@ void TypeScriptParser::RedefinitionOfTypeContext::exitRule(tree::ParseTreeListen
   if (parserListener != nullptr)
     parserListener->exitRedefinitionOfType(this);
 }
+
+antlrcpp::Any TypeScriptParser::RedefinitionOfTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitRedefinitionOfType(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- PredefinedPrimTypeContext ------------------------------------------------------------------
 
 TypeScriptParser::PredefinedTypeContext* TypeScriptParser::PredefinedPrimTypeContext::predefinedType() {
@@ -1020,6 +1081,13 @@ void TypeScriptParser::PredefinedPrimTypeContext::exitRule(tree::ParseTreeListen
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitPredefinedPrimType(this);
+}
+
+antlrcpp::Any TypeScriptParser::PredefinedPrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPredefinedPrimType(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- ArrayPrimTypeContext ------------------------------------------------------------------
 
@@ -1047,6 +1115,13 @@ void TypeScriptParser::ArrayPrimTypeContext::exitRule(tree::ParseTreeListener *l
   if (parserListener != nullptr)
     parserListener->exitArrayPrimType(this);
 }
+
+antlrcpp::Any TypeScriptParser::ArrayPrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrayPrimType(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ParenthesizedPrimTypeContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ParenthesizedPrimTypeContext::OpenParen() {
@@ -1073,6 +1148,13 @@ void TypeScriptParser::ParenthesizedPrimTypeContext::exitRule(tree::ParseTreeLis
   if (parserListener != nullptr)
     parserListener->exitParenthesizedPrimType(this);
 }
+
+antlrcpp::Any TypeScriptParser::ParenthesizedPrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitParenthesizedPrimType(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ThisPrimTypeContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ThisPrimTypeContext::This() {
@@ -1090,6 +1172,13 @@ void TypeScriptParser::ThisPrimTypeContext::exitRule(tree::ParseTreeListener *li
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitThisPrimType(this);
+}
+
+antlrcpp::Any TypeScriptParser::ThisPrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitThisPrimType(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- TuplePrimTypeContext ------------------------------------------------------------------
 
@@ -1117,6 +1206,13 @@ void TypeScriptParser::TuplePrimTypeContext::exitRule(tree::ParseTreeListener *l
   if (parserListener != nullptr)
     parserListener->exitTuplePrimType(this);
 }
+
+antlrcpp::Any TypeScriptParser::TuplePrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTuplePrimType(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ObjectPrimTypeContext ------------------------------------------------------------------
 
 TypeScriptParser::ObjectTypeContext* TypeScriptParser::ObjectPrimTypeContext::objectType() {
@@ -1135,6 +1231,13 @@ void TypeScriptParser::ObjectPrimTypeContext::exitRule(tree::ParseTreeListener *
   if (parserListener != nullptr)
     parserListener->exitObjectPrimType(this);
 }
+
+antlrcpp::Any TypeScriptParser::ObjectPrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitObjectPrimType(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ReferencePrimTypeContext ------------------------------------------------------------------
 
 TypeScriptParser::TypeReferenceContext* TypeScriptParser::ReferencePrimTypeContext::typeReference() {
@@ -1152,6 +1255,13 @@ void TypeScriptParser::ReferencePrimTypeContext::exitRule(tree::ParseTreeListene
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitReferencePrimType(this);
+}
+
+antlrcpp::Any TypeScriptParser::ReferencePrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitReferencePrimType(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- QueryPrimTypeContext ------------------------------------------------------------------
 
@@ -1172,6 +1282,13 @@ void TypeScriptParser::QueryPrimTypeContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitQueryPrimType(this);
 }
 
+antlrcpp::Any TypeScriptParser::QueryPrimTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitQueryPrimType(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::PrimaryTypeContext* TypeScriptParser::primaryType() {
    return primaryType(0);
 }
@@ -1187,11 +1304,7 @@ TypeScriptParser::PrimaryTypeContext* TypeScriptParser::primaryType(int preceden
 
     
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -1285,8 +1398,6 @@ TypeScriptParser::PrimaryTypeContext* TypeScriptParser::primaryType(int preceden
       break;
     }
 
-    default:
-      break;
     }
     _ctx->stop = _input->LT(-1);
     setState(382);
@@ -1371,16 +1482,20 @@ void TypeScriptParser::PredefinedTypeContext::exitRule(tree::ParseTreeListener *
     parserListener->exitPredefinedType(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::PredefinedTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPredefinedType(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::PredefinedTypeContext* TypeScriptParser::predefinedType() {
   PredefinedTypeContext *_localctx = _tracker.createInstance<PredefinedTypeContext>(_ctx, getState());
   enterRule(_localctx, 24, TypeScriptParser::RulePredefinedType);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -1442,15 +1557,19 @@ void TypeScriptParser::TypeReferenceContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitTypeReference(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeReferenceContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeReference(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeReferenceContext* TypeScriptParser::typeReference() {
   TypeReferenceContext *_localctx = _tracker.createInstance<TypeReferenceContext>(_ctx, getState());
   enterRule(_localctx, 26, TypeScriptParser::RuleTypeReference);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -1467,8 +1586,6 @@ TypeScriptParser::TypeReferenceContext* TypeScriptParser::typeReference() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -1512,15 +1629,19 @@ void TypeScriptParser::NestedTypeGenericContext::exitRule(tree::ParseTreeListene
     parserListener->exitNestedTypeGeneric(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::NestedTypeGenericContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitNestedTypeGeneric(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::NestedTypeGenericContext* TypeScriptParser::nestedTypeGeneric() {
   NestedTypeGenericContext *_localctx = _tracker.createInstance<NestedTypeGenericContext>(_ctx, getState());
   enterRule(_localctx, 28, TypeScriptParser::RuleNestedTypeGeneric);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -1541,8 +1662,6 @@ TypeScriptParser::NestedTypeGenericContext* TypeScriptParser::nestedTypeGeneric(
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -1590,15 +1709,19 @@ void TypeScriptParser::TypeGenericContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitTypeGeneric(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeGenericContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeGeneric(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeGenericContext* TypeScriptParser::typeGeneric() {
   TypeGenericContext *_localctx = _tracker.createInstance<TypeGenericContext>(_ctx, getState());
   enterRule(_localctx, 30, TypeScriptParser::RuleTypeGeneric);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -1675,15 +1798,19 @@ void TypeScriptParser::TypeIncludeGenericContext::exitRule(tree::ParseTreeListen
     parserListener->exitTypeIncludeGeneric(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeIncludeGenericContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeIncludeGeneric(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeIncludeGenericContext* TypeScriptParser::typeIncludeGeneric() {
   TypeIncludeGenericContext *_localctx = _tracker.createInstance<TypeIncludeGenericContext>(_ctx, getState());
   enterRule(_localctx, 32, TypeScriptParser::RuleTypeIncludeGeneric);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -1760,15 +1887,19 @@ void TypeScriptParser::TypeNameContext::exitRule(tree::ParseTreeListener *listen
     parserListener->exitTypeName(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeNameContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeName(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeNameContext* TypeScriptParser::typeName() {
   TypeNameContext *_localctx = _tracker.createInstance<TypeNameContext>(_ctx, getState());
   enterRule(_localctx, 34, TypeScriptParser::RuleTypeName);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -1789,8 +1920,6 @@ TypeScriptParser::TypeNameContext* TypeScriptParser::typeName() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -1838,16 +1967,20 @@ void TypeScriptParser::ObjectTypeContext::exitRule(tree::ParseTreeListener *list
     parserListener->exitObjectType(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ObjectTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitObjectType(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ObjectTypeContext* TypeScriptParser::objectType() {
   ObjectTypeContext *_localctx = _tracker.createInstance<ObjectTypeContext>(_ctx, getState());
   enterRule(_localctx, 36, TypeScriptParser::RuleObjectType);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -1972,16 +2105,20 @@ void TypeScriptParser::TypeBodyContext::exitRule(tree::ParseTreeListener *listen
     parserListener->exitTypeBody(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeBodyContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeBody(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeBodyContext* TypeScriptParser::typeBody() {
   TypeBodyContext *_localctx = _tracker.createInstance<TypeBodyContext>(_ctx, getState());
   enterRule(_localctx, 38, TypeScriptParser::RuleTypeBody);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2065,16 +2202,20 @@ void TypeScriptParser::TypeMemberListContext::exitRule(tree::ParseTreeListener *
     parserListener->exitTypeMemberList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeMemberListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeMemberList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeMemberListContext* TypeScriptParser::typeMemberList() {
   TypeMemberListContext *_localctx = _tracker.createInstance<TypeMemberListContext>(_ctx, getState());
   enterRule(_localctx, 40, TypeScriptParser::RuleTypeMemberList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2167,16 +2308,20 @@ void TypeScriptParser::TypeMemberContext::exitRule(tree::ParseTreeListener *list
     parserListener->exitTypeMember(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeMemberContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeMember(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeMemberContext* TypeScriptParser::typeMember() {
   TypeMemberContext *_localctx = _tracker.createInstance<TypeMemberContext>(_ctx, getState());
   enterRule(_localctx, 42, TypeScriptParser::RuleTypeMember);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2228,8 +2373,6 @@ TypeScriptParser::TypeMemberContext* TypeScriptParser::typeMember() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -2277,15 +2420,19 @@ void TypeScriptParser::ArrayTypeContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitArrayType(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArrayTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrayType(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArrayTypeContext* TypeScriptParser::arrayType() {
   ArrayTypeContext *_localctx = _tracker.createInstance<ArrayTypeContext>(_ctx, getState());
   enterRule(_localctx, 44, TypeScriptParser::RuleArrayType);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2345,15 +2492,19 @@ void TypeScriptParser::TupleTypeContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitTupleType(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TupleTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTupleType(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TupleTypeContext* TypeScriptParser::tupleType() {
   TupleTypeContext *_localctx = _tracker.createInstance<TupleTypeContext>(_ctx, getState());
   enterRule(_localctx, 46, TypeScriptParser::RuleTupleType);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2414,16 +2565,20 @@ void TypeScriptParser::TupleElementTypesContext::exitRule(tree::ParseTreeListene
     parserListener->exitTupleElementTypes(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TupleElementTypesContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTupleElementTypes(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TupleElementTypesContext* TypeScriptParser::tupleElementTypes() {
   TupleElementTypesContext *_localctx = _tracker.createInstance<TupleElementTypesContext>(_ctx, getState());
   enterRule(_localctx, 48, TypeScriptParser::RuleTupleElementTypes);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2500,16 +2655,20 @@ void TypeScriptParser::FunctionTypeContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitFunctionType(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FunctionTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFunctionType(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FunctionTypeContext* TypeScriptParser::functionType() {
   FunctionTypeContext *_localctx = _tracker.createInstance<FunctionTypeContext>(_ctx, getState());
   enterRule(_localctx, 50, TypeScriptParser::RuleFunctionType);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2657,16 +2816,20 @@ void TypeScriptParser::ConstructorTypeContext::exitRule(tree::ParseTreeListener 
     parserListener->exitConstructorType(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ConstructorTypeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitConstructorType(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ConstructorTypeContext* TypeScriptParser::constructorType() {
   ConstructorTypeContext *_localctx = _tracker.createInstance<ConstructorTypeContext>(_ctx, getState());
   enterRule(_localctx, 52, TypeScriptParser::RuleConstructorType);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2796,15 +2959,19 @@ void TypeScriptParser::TypeQueryContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitTypeQuery(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeQueryContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeQuery(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeQueryContext* TypeScriptParser::typeQuery() {
   TypeQueryContext *_localctx = _tracker.createInstance<TypeQueryContext>(_ctx, getState());
   enterRule(_localctx, 54, TypeScriptParser::RuleTypeQuery);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2867,15 +3034,19 @@ void TypeScriptParser::TypeQueryExpressionContext::exitRule(tree::ParseTreeListe
     parserListener->exitTypeQueryExpression(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeQueryExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeQueryExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeQueryExpressionContext* TypeScriptParser::typeQueryExpression() {
   TypeQueryExpressionContext *_localctx = _tracker.createInstance<TypeQueryExpressionContext>(_ctx, getState());
   enterRule(_localctx, 56, TypeScriptParser::RuleTypeQueryExpression);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -2917,8 +3088,6 @@ TypeScriptParser::TypeQueryExpressionContext* TypeScriptParser::typeQueryExpress
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -2978,16 +3147,20 @@ void TypeScriptParser::PropertySignaturContext::exitRule(tree::ParseTreeListener
     parserListener->exitPropertySignatur(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::PropertySignaturContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertySignatur(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::PropertySignaturContext* TypeScriptParser::propertySignatur() {
   PropertySignaturContext *_localctx = _tracker.createInstance<PropertySignaturContext>(_ctx, getState());
   enterRule(_localctx, 58, TypeScriptParser::RulePropertySignatur);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3002,8 +3175,6 @@ TypeScriptParser::PropertySignaturContext* TypeScriptParser::propertySignatur() 
       break;
     }
 
-    default:
-      break;
     }
     setState(501);
     propertyName();
@@ -3075,15 +3246,19 @@ void TypeScriptParser::TypeAnnotationContext::exitRule(tree::ParseTreeListener *
     parserListener->exitTypeAnnotation(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeAnnotationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeAnnotation(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeAnnotationContext* TypeScriptParser::typeAnnotation() {
   TypeAnnotationContext *_localctx = _tracker.createInstance<TypeAnnotationContext>(_ctx, getState());
   enterRule(_localctx, 60, TypeScriptParser::RuleTypeAnnotation);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3146,16 +3321,20 @@ void TypeScriptParser::CallSignatureContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitCallSignature(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::CallSignatureContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitCallSignature(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::CallSignatureContext* TypeScriptParser::callSignature() {
   CallSignatureContext *_localctx = _tracker.createInstance<CallSignatureContext>(_ctx, getState());
   enterRule(_localctx, 62, TypeScriptParser::RuleCallSignature);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3247,8 +3426,6 @@ TypeScriptParser::CallSignatureContext* TypeScriptParser::callSignature() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -3304,16 +3481,20 @@ void TypeScriptParser::ParameterListContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitParameterList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ParameterListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitParameterList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ParameterListContext* TypeScriptParser::parameterList() {
   ParameterListContext *_localctx = _tracker.createInstance<ParameterListContext>(_ctx, getState());
   enterRule(_localctx, 64, TypeScriptParser::RuleParameterList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3467,16 +3648,20 @@ void TypeScriptParser::RequiredParameterListContext::exitRule(tree::ParseTreeLis
     parserListener->exitRequiredParameterList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::RequiredParameterListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitRequiredParameterList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::RequiredParameterListContext* TypeScriptParser::requiredParameterList() {
   RequiredParameterListContext *_localctx = _tracker.createInstance<RequiredParameterListContext>(_ctx, getState());
   enterRule(_localctx, 66, TypeScriptParser::RuleRequiredParameterList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3537,15 +3722,19 @@ void TypeScriptParser::ParameterContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitParameter(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ParameterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitParameter(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ParameterContext* TypeScriptParser::parameter() {
   ParameterContext *_localctx = _tracker.createInstance<ParameterContext>(_ctx, getState());
   enterRule(_localctx, 68, TypeScriptParser::RuleParameter);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3566,8 +3755,6 @@ TypeScriptParser::ParameterContext* TypeScriptParser::parameter() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -3627,16 +3814,20 @@ void TypeScriptParser::OptionalParameterContext::exitRule(tree::ParseTreeListene
     parserListener->exitOptionalParameter(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::OptionalParameterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitOptionalParameter(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::OptionalParameterContext* TypeScriptParser::optionalParameter() {
   OptionalParameterContext *_localctx = _tracker.createInstance<OptionalParameterContext>(_ctx, getState());
   enterRule(_localctx, 70, TypeScriptParser::RuleOptionalParameter);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3660,8 +3851,6 @@ TypeScriptParser::OptionalParameterContext* TypeScriptParser::optionalParameter(
       break;
     }
 
-    default:
-      break;
     }
     setState(559);
     identifierOrPattern();
@@ -3746,16 +3935,20 @@ void TypeScriptParser::RestParameterContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitRestParameter(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::RestParameterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitRestParameter(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::RestParameterContext* TypeScriptParser::restParameter() {
   RestParameterContext *_localctx = _tracker.createInstance<RestParameterContext>(_ctx, getState());
   enterRule(_localctx, 72, TypeScriptParser::RuleRestParameter);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3822,16 +4015,20 @@ void TypeScriptParser::RequiredParameterContext::exitRule(tree::ParseTreeListene
     parserListener->exitRequiredParameter(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::RequiredParameterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitRequiredParameter(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::RequiredParameterContext* TypeScriptParser::requiredParameter() {
   RequiredParameterContext *_localctx = _tracker.createInstance<RequiredParameterContext>(_ctx, getState());
   enterRule(_localctx, 74, TypeScriptParser::RuleRequiredParameter);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3854,8 +4051,6 @@ TypeScriptParser::RequiredParameterContext* TypeScriptParser::requiredParameter(
       break;
     }
 
-    default:
-      break;
     }
     setState(581);
     identifierOrPattern();
@@ -3913,16 +4108,20 @@ void TypeScriptParser::AccessibilityModifierContext::exitRule(tree::ParseTreeLis
     parserListener->exitAccessibilityModifier(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::AccessibilityModifierContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAccessibilityModifier(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::AccessibilityModifierContext* TypeScriptParser::accessibilityModifier() {
   AccessibilityModifierContext *_localctx = _tracker.createInstance<AccessibilityModifierContext>(_ctx, getState());
   enterRule(_localctx, 76, TypeScriptParser::RuleAccessibilityModifier);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -3981,15 +4180,19 @@ void TypeScriptParser::IdentifierOrPatternContext::exitRule(tree::ParseTreeListe
     parserListener->exitIdentifierOrPattern(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IdentifierOrPatternContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIdentifierOrPattern(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IdentifierOrPatternContext* TypeScriptParser::identifierOrPattern() {
   IdentifierOrPatternContext *_localctx = _tracker.createInstance<IdentifierOrPatternContext>(_ctx, getState());
   enterRule(_localctx, 78, TypeScriptParser::RuleIdentifierOrPattern);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4124,16 +4327,20 @@ void TypeScriptParser::ConstructSignatureContext::exitRule(tree::ParseTreeListen
     parserListener->exitConstructSignature(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ConstructSignatureContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitConstructSignature(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ConstructSignatureContext* TypeScriptParser::constructSignature() {
   ConstructSignatureContext *_localctx = _tracker.createInstance<ConstructSignatureContext>(_ctx, getState());
   enterRule(_localctx, 80, TypeScriptParser::RuleConstructSignature);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4287,16 +4494,20 @@ void TypeScriptParser::IndexSignatureContext::exitRule(tree::ParseTreeListener *
     parserListener->exitIndexSignature(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IndexSignatureContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIndexSignature(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IndexSignatureContext* TypeScriptParser::indexSignature() {
   IndexSignatureContext *_localctx = _tracker.createInstance<IndexSignatureContext>(_ctx, getState());
   enterRule(_localctx, 82, TypeScriptParser::RuleIndexSignature);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4368,16 +4579,20 @@ void TypeScriptParser::MethodSignatureContext::exitRule(tree::ParseTreeListener 
     parserListener->exitMethodSignature(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::MethodSignatureContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitMethodSignature(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::MethodSignatureContext* TypeScriptParser::methodSignature() {
   MethodSignatureContext *_localctx = _tracker.createInstance<MethodSignatureContext>(_ctx, getState());
   enterRule(_localctx, 84, TypeScriptParser::RuleMethodSignature);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4452,16 +4667,20 @@ void TypeScriptParser::TypeAliasDeclarationContext::exitRule(tree::ParseTreeList
     parserListener->exitTypeAliasDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TypeAliasDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeAliasDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TypeAliasDeclarationContext* TypeScriptParser::typeAliasDeclaration() {
   TypeAliasDeclarationContext *_localctx = _tracker.createInstance<TypeAliasDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 86, TypeScriptParser::RuleTypeAliasDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4554,16 +4773,20 @@ void TypeScriptParser::ConstructorDeclarationContext::exitRule(tree::ParseTreeLi
     parserListener->exitConstructorDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ConstructorDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitConstructorDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ConstructorDeclarationContext* TypeScriptParser::constructorDeclaration() {
   ConstructorDeclarationContext *_localctx = _tracker.createInstance<ConstructorDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 88, TypeScriptParser::RuleConstructorDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4623,8 +4846,6 @@ TypeScriptParser::ConstructorDeclarationContext* TypeScriptParser::constructorDe
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -4692,16 +4913,20 @@ void TypeScriptParser::InterfaceDeclarationContext::exitRule(tree::ParseTreeList
     parserListener->exitInterfaceDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::InterfaceDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitInterfaceDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::InterfaceDeclarationContext* TypeScriptParser::interfaceDeclaration() {
   InterfaceDeclarationContext *_localctx = _tracker.createInstance<InterfaceDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 90, TypeScriptParser::RuleInterfaceDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4754,8 +4979,6 @@ TypeScriptParser::InterfaceDeclarationContext* TypeScriptParser::interfaceDeclar
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -4799,15 +5022,19 @@ void TypeScriptParser::InterfaceExtendsClauseContext::exitRule(tree::ParseTreeLi
     parserListener->exitInterfaceExtendsClause(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::InterfaceExtendsClauseContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitInterfaceExtendsClause(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::InterfaceExtendsClauseContext* TypeScriptParser::interfaceExtendsClause() {
   InterfaceExtendsClauseContext *_localctx = _tracker.createInstance<InterfaceExtendsClauseContext>(_ctx, getState());
   enterRule(_localctx, 92, TypeScriptParser::RuleInterfaceExtendsClause);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4866,16 +5093,20 @@ void TypeScriptParser::ClassOrInterfaceTypeListContext::exitRule(tree::ParseTree
     parserListener->exitClassOrInterfaceTypeList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ClassOrInterfaceTypeListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitClassOrInterfaceTypeList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ClassOrInterfaceTypeListContext* TypeScriptParser::classOrInterfaceTypeList() {
   ClassOrInterfaceTypeListContext *_localctx = _tracker.createInstance<ClassOrInterfaceTypeListContext>(_ctx, getState());
   enterRule(_localctx, 94, TypeScriptParser::RuleClassOrInterfaceTypeList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -4952,16 +5183,20 @@ void TypeScriptParser::EnumDeclarationContext::exitRule(tree::ParseTreeListener 
     parserListener->exitEnumDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::EnumDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitEnumDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::EnumDeclarationContext* TypeScriptParser::enumDeclaration() {
   EnumDeclarationContext *_localctx = _tracker.createInstance<EnumDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 96, TypeScriptParser::RuleEnumDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5091,16 +5326,20 @@ void TypeScriptParser::EnumBodyContext::exitRule(tree::ParseTreeListener *listen
     parserListener->exitEnumBody(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::EnumBodyContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitEnumBody(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::EnumBodyContext* TypeScriptParser::enumBody() {
   EnumBodyContext *_localctx = _tracker.createInstance<EnumBodyContext>(_ctx, getState());
   enterRule(_localctx, 98, TypeScriptParser::RuleEnumBody);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5165,15 +5404,19 @@ void TypeScriptParser::EnumMemberListContext::exitRule(tree::ParseTreeListener *
     parserListener->exitEnumMemberList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::EnumMemberListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitEnumMemberList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::EnumMemberListContext* TypeScriptParser::enumMemberList() {
   EnumMemberListContext *_localctx = _tracker.createInstance<EnumMemberListContext>(_ctx, getState());
   enterRule(_localctx, 100, TypeScriptParser::RuleEnumMemberList);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5241,16 +5484,20 @@ void TypeScriptParser::EnumMemberContext::exitRule(tree::ParseTreeListener *list
     parserListener->exitEnumMember(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::EnumMemberContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitEnumMember(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::EnumMemberContext* TypeScriptParser::enumMember() {
   EnumMemberContext *_localctx = _tracker.createInstance<EnumMemberContext>(_ctx, getState());
   enterRule(_localctx, 102, TypeScriptParser::RuleEnumMember);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5321,15 +5568,19 @@ void TypeScriptParser::NamespaceDeclarationContext::exitRule(tree::ParseTreeList
     parserListener->exitNamespaceDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::NamespaceDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitNamespaceDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::NamespaceDeclarationContext* TypeScriptParser::namespaceDeclaration() {
   NamespaceDeclarationContext *_localctx = _tracker.createInstance<NamespaceDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 104, TypeScriptParser::RuleNamespaceDeclaration);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5350,8 +5601,6 @@ TypeScriptParser::NamespaceDeclarationContext* TypeScriptParser::namespaceDeclar
       break;
     }
 
-    default:
-      break;
     }
     setState(704);
     match(TypeScriptParser::CloseBrace);
@@ -5405,16 +5654,20 @@ void TypeScriptParser::NamespaceNameContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitNamespaceName(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::NamespaceNameContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitNamespaceName(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::NamespaceNameContext* TypeScriptParser::namespaceName() {
   NamespaceNameContext *_localctx = _tracker.createInstance<NamespaceNameContext>(_ctx, getState());
   enterRule(_localctx, 106, TypeScriptParser::RuleNamespaceName);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5494,15 +5747,19 @@ void TypeScriptParser::ImportAliasDeclarationContext::exitRule(tree::ParseTreeLi
     parserListener->exitImportAliasDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ImportAliasDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitImportAliasDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ImportAliasDeclarationContext* TypeScriptParser::importAliasDeclaration() {
   ImportAliasDeclarationContext *_localctx = _tracker.createInstance<ImportAliasDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 108, TypeScriptParser::RuleImportAliasDeclaration);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5557,15 +5814,19 @@ void TypeScriptParser::DecoratorListContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitDecoratorList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::DecoratorListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDecoratorList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::DecoratorListContext* TypeScriptParser::decoratorList() {
   DecoratorListContext *_localctx = _tracker.createInstance<DecoratorListContext>(_ctx, getState());
   enterRule(_localctx, 110, TypeScriptParser::RuleDecoratorList);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5635,15 +5896,19 @@ void TypeScriptParser::DecoratorContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitDecorator(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::DecoratorContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDecorator(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::DecoratorContext* TypeScriptParser::decorator() {
   DecoratorContext *_localctx = _tracker.createInstance<DecoratorContext>(_ctx, getState());
   enterRule(_localctx, 112, TypeScriptParser::RuleDecorator);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5665,8 +5930,6 @@ TypeScriptParser::DecoratorContext* TypeScriptParser::decorator() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -5731,6 +5994,14 @@ void TypeScriptParser::DecoratorMemberExpressionContext::exitRule(tree::ParseTre
 }
 
 
+antlrcpp::Any TypeScriptParser::DecoratorMemberExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDecoratorMemberExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+
 TypeScriptParser::DecoratorMemberExpressionContext* TypeScriptParser::decoratorMemberExpression() {
    return decoratorMemberExpression(0);
 }
@@ -5746,11 +6017,7 @@ TypeScriptParser::DecoratorMemberExpressionContext* TypeScriptParser::decoratorM
 
     
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -5841,15 +6108,19 @@ void TypeScriptParser::DecoratorCallExpressionContext::exitRule(tree::ParseTreeL
     parserListener->exitDecoratorCallExpression(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::DecoratorCallExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDecoratorCallExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::DecoratorCallExpressionContext* TypeScriptParser::decoratorCallExpression() {
   DecoratorCallExpressionContext *_localctx = _tracker.createInstance<DecoratorCallExpressionContext>(_ctx, getState());
   enterRule(_localctx, 116, TypeScriptParser::RuleDecoratorCallExpression);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5900,15 +6171,19 @@ void TypeScriptParser::ProgramContext::exitRule(tree::ParseTreeListener *listene
     parserListener->exitProgram(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ProgramContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitProgram(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ProgramContext* TypeScriptParser::program() {
   ProgramContext *_localctx = _tracker.createInstance<ProgramContext>(_ctx, getState());
   enterRule(_localctx, 118, TypeScriptParser::RuleProgram);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5923,8 +6198,6 @@ TypeScriptParser::ProgramContext* TypeScriptParser::program() {
       break;
     }
 
-    default:
-      break;
     }
     setState(755);
     match(TypeScriptParser::EOF);
@@ -5970,15 +6243,19 @@ void TypeScriptParser::SourceElementContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitSourceElement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::SourceElementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitSourceElement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::SourceElementContext* TypeScriptParser::sourceElement() {
   SourceElementContext *_localctx = _tracker.createInstance<SourceElementContext>(_ctx, getState());
   enterRule(_localctx, 120, TypeScriptParser::RuleSourceElement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -5993,8 +6270,6 @@ TypeScriptParser::SourceElementContext* TypeScriptParser::sourceElement() {
       break;
     }
 
-    default:
-      break;
     }
     setState(760);
     statement();
@@ -6152,15 +6427,19 @@ void TypeScriptParser::StatementContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::StatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::StatementContext* TypeScriptParser::statement() {
   StatementContext *_localctx = _tracker.createInstance<StatementContext>(_ctx, getState());
   enterRule(_localctx, 122, TypeScriptParser::RuleStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -6372,8 +6651,6 @@ TypeScriptParser::StatementContext* TypeScriptParser::statement() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -6421,15 +6698,19 @@ void TypeScriptParser::BlockContext::exitRule(tree::ParseTreeListener *listener)
     parserListener->exitBlock(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::BlockContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBlock(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::BlockContext* TypeScriptParser::block() {
   BlockContext *_localctx = _tracker.createInstance<BlockContext>(_ctx, getState());
   enterRule(_localctx, 124, TypeScriptParser::RuleBlock);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -6446,8 +6727,6 @@ TypeScriptParser::BlockContext* TypeScriptParser::block() {
       break;
     }
 
-    default:
-      break;
     }
     setState(798);
     match(TypeScriptParser::CloseBrace);
@@ -6493,15 +6772,19 @@ void TypeScriptParser::StatementListContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitStatementList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::StatementListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitStatementList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::StatementListContext* TypeScriptParser::statementList() {
   StatementListContext *_localctx = _tracker.createInstance<StatementListContext>(_ctx, getState());
   enterRule(_localctx, 126, TypeScriptParser::RuleStatementList);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -6579,15 +6862,19 @@ void TypeScriptParser::AbstractDeclarationContext::exitRule(tree::ParseTreeListe
     parserListener->exitAbstractDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::AbstractDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAbstractDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::AbstractDeclarationContext* TypeScriptParser::abstractDeclaration() {
   AbstractDeclarationContext *_localctx = _tracker.createInstance<AbstractDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 128, TypeScriptParser::RuleAbstractDeclaration);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -6611,8 +6898,6 @@ TypeScriptParser::AbstractDeclarationContext* TypeScriptParser::abstractDeclarat
       break;
     }
 
-    default:
-      break;
     }
     setState(811);
     eos();
@@ -6662,15 +6947,19 @@ void TypeScriptParser::ImportStatementContext::exitRule(tree::ParseTreeListener 
     parserListener->exitImportStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ImportStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitImportStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ImportStatementContext* TypeScriptParser::importStatement() {
   ImportStatementContext *_localctx = _tracker.createInstance<ImportStatementContext>(_ctx, getState());
   enterRule(_localctx, 130, TypeScriptParser::RuleImportStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -6692,8 +6981,6 @@ TypeScriptParser::ImportStatementContext* TypeScriptParser::importStatement() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -6757,16 +7044,20 @@ void TypeScriptParser::FromBlockContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitFromBlock(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FromBlockContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFromBlock(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FromBlockContext* TypeScriptParser::fromBlock() {
   FromBlockContext *_localctx = _tracker.createInstance<FromBlockContext>(_ctx, getState());
   enterRule(_localctx, 132, TypeScriptParser::RuleFromBlock);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -6916,16 +7207,20 @@ void TypeScriptParser::MultipleImportStatementContext::exitRule(tree::ParseTreeL
     parserListener->exitMultipleImportStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::MultipleImportStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitMultipleImportStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::MultipleImportStatementContext* TypeScriptParser::multipleImportStatement() {
   MultipleImportStatementContext *_localctx = _tracker.createInstance<MultipleImportStatementContext>(_ctx, getState());
   enterRule(_localctx, 134, TypeScriptParser::RuleMultipleImportStatement);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7061,15 +7356,19 @@ void TypeScriptParser::ExportStatementContext::exitRule(tree::ParseTreeListener 
     parserListener->exitExportStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ExportStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitExportStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ExportStatementContext* TypeScriptParser::exportStatement() {
   ExportStatementContext *_localctx = _tracker.createInstance<ExportStatementContext>(_ctx, getState());
   enterRule(_localctx, 136, TypeScriptParser::RuleExportStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7086,8 +7385,6 @@ TypeScriptParser::ExportStatementContext* TypeScriptParser::exportStatement() {
       break;
     }
 
-    default:
-      break;
     }
     setState(852);
     _errHandler->sync(this);
@@ -7104,8 +7401,6 @@ TypeScriptParser::ExportStatementContext* TypeScriptParser::exportStatement() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -7177,16 +7472,20 @@ void TypeScriptParser::VariableStatementContext::exitRule(tree::ParseTreeListene
     parserListener->exitVariableStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::VariableStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitVariableStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement() {
   VariableStatementContext *_localctx = _tracker.createInstance<VariableStatementContext>(_ctx, getState());
   enterRule(_localctx, 138, TypeScriptParser::RuleVariableStatement);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7217,8 +7516,6 @@ TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement(
         break;
       }
 
-      default:
-        break;
       }
       break;
     }
@@ -7267,8 +7564,6 @@ TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement(
         break;
       }
 
-      default:
-        break;
       }
       break;
     }
@@ -7300,14 +7595,10 @@ TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement(
         break;
       }
 
-      default:
-        break;
       }
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -7359,15 +7650,19 @@ void TypeScriptParser::VariableDeclarationListContext::exitRule(tree::ParseTreeL
     parserListener->exitVariableDeclarationList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::VariableDeclarationListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitVariableDeclarationList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::VariableDeclarationListContext* TypeScriptParser::variableDeclarationList() {
   VariableDeclarationListContext *_localctx = _tracker.createInstance<VariableDeclarationListContext>(_ctx, getState());
   enterRule(_localctx, 140, TypeScriptParser::RuleVariableDeclarationList);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7455,15 +7750,19 @@ void TypeScriptParser::VariableDeclarationContext::exitRule(tree::ParseTreeListe
     parserListener->exitVariableDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::VariableDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitVariableDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::VariableDeclarationContext* TypeScriptParser::variableDeclaration() {
   VariableDeclarationContext *_localctx = _tracker.createInstance<VariableDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 142, TypeScriptParser::RuleVariableDeclaration);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7504,8 +7803,6 @@ TypeScriptParser::VariableDeclarationContext* TypeScriptParser::variableDeclarat
       break;
     }
 
-    default:
-      break;
     }
     setState(902);
     _errHandler->sync(this);
@@ -7517,8 +7814,6 @@ TypeScriptParser::VariableDeclarationContext* TypeScriptParser::variableDeclarat
       break;
     }
 
-    default:
-      break;
     }
     setState(909);
     _errHandler->sync(this);
@@ -7537,16 +7832,12 @@ TypeScriptParser::VariableDeclarationContext* TypeScriptParser::variableDeclarat
         break;
       }
 
-      default:
-        break;
       }
       setState(908);
       singleExpression(0);
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -7586,15 +7877,19 @@ void TypeScriptParser::EmptyStatementContext::exitRule(tree::ParseTreeListener *
     parserListener->exitEmptyStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::EmptyStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitEmptyStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::EmptyStatementContext* TypeScriptParser::emptyStatement() {
   EmptyStatementContext *_localctx = _tracker.createInstance<EmptyStatementContext>(_ctx, getState());
   enterRule(_localctx, 144, TypeScriptParser::RuleEmptyStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7643,15 +7938,19 @@ void TypeScriptParser::ExpressionStatementContext::exitRule(tree::ParseTreeListe
     parserListener->exitExpressionStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ExpressionStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitExpressionStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ExpressionStatementContext* TypeScriptParser::expressionStatement() {
   ExpressionStatementContext *_localctx = _tracker.createInstance<ExpressionStatementContext>(_ctx, getState());
   enterRule(_localctx, 146, TypeScriptParser::RuleExpressionStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7671,8 +7970,6 @@ TypeScriptParser::ExpressionStatementContext* TypeScriptParser::expressionStatem
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -7736,15 +8033,19 @@ void TypeScriptParser::IfStatementContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitIfStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IfStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIfStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IfStatementContext* TypeScriptParser::ifStatement() {
   IfStatementContext *_localctx = _tracker.createInstance<IfStatementContext>(_ctx, getState());
   enterRule(_localctx, 148, TypeScriptParser::RuleIfStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -7771,8 +8072,6 @@ TypeScriptParser::IfStatementContext* TypeScriptParser::ifStatement() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -7842,6 +8141,13 @@ void TypeScriptParser::DoStatementContext::exitRule(tree::ParseTreeListener *lis
   if (parserListener != nullptr)
     parserListener->exitDoStatement(this);
 }
+
+antlrcpp::Any TypeScriptParser::DoStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDoStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ForVarStatementContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ForVarStatementContext::For() {
@@ -7896,6 +8202,13 @@ void TypeScriptParser::ForVarStatementContext::exitRule(tree::ParseTreeListener 
   if (parserListener != nullptr)
     parserListener->exitForVarStatement(this);
 }
+
+antlrcpp::Any TypeScriptParser::ForVarStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitForVarStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ForVarInStatementContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ForVarInStatementContext::For() {
@@ -7946,6 +8259,13 @@ void TypeScriptParser::ForVarInStatementContext::exitRule(tree::ParseTreeListene
   if (parserListener != nullptr)
     parserListener->exitForVarInStatement(this);
 }
+
+antlrcpp::Any TypeScriptParser::ForVarInStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitForVarInStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- WhileStatementContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::WhileStatementContext::While() {
@@ -7979,6 +8299,13 @@ void TypeScriptParser::WhileStatementContext::exitRule(tree::ParseTreeListener *
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitWhileStatement(this);
+}
+
+antlrcpp::Any TypeScriptParser::WhileStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitWhileStatement(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- ForStatementContext ------------------------------------------------------------------
 
@@ -8026,6 +8353,13 @@ void TypeScriptParser::ForStatementContext::exitRule(tree::ParseTreeListener *li
   if (parserListener != nullptr)
     parserListener->exitForStatement(this);
 }
+
+antlrcpp::Any TypeScriptParser::ForStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitForStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ForInStatementContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ForInStatementContext::For() {
@@ -8072,16 +8406,19 @@ void TypeScriptParser::ForInStatementContext::exitRule(tree::ParseTreeListener *
   if (parserListener != nullptr)
     parserListener->exitForInStatement(this);
 }
+
+antlrcpp::Any TypeScriptParser::ForInStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitForInStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
 TypeScriptParser::IterationStatementContext* TypeScriptParser::iterationStatement() {
   IterationStatementContext *_localctx = _tracker.createInstance<IterationStatementContext>(_ctx, getState());
   enterRule(_localctx, 150, TypeScriptParser::RuleIterationStatement);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -8639,8 +8976,6 @@ TypeScriptParser::IterationStatementContext* TypeScriptParser::iterationStatemen
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -8688,16 +9023,20 @@ void TypeScriptParser::VarModifierContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitVarModifier(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::VarModifierContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitVarModifier(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::VarModifierContext* TypeScriptParser::varModifier() {
   VarModifierContext *_localctx = _tracker.createInstance<VarModifierContext>(_ctx, getState());
   enterRule(_localctx, 152, TypeScriptParser::RuleVarModifier);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -8760,15 +9099,19 @@ void TypeScriptParser::ContinueStatementContext::exitRule(tree::ParseTreeListene
     parserListener->exitContinueStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ContinueStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitContinueStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ContinueStatementContext* TypeScriptParser::continueStatement() {
   ContinueStatementContext *_localctx = _tracker.createInstance<ContinueStatementContext>(_ctx, getState());
   enterRule(_localctx, 154, TypeScriptParser::RuleContinueStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -8788,8 +9131,6 @@ TypeScriptParser::ContinueStatementContext* TypeScriptParser::continueStatement(
       break;
     }
 
-    default:
-      break;
     }
     setState(1005);
     eos();
@@ -8839,15 +9180,19 @@ void TypeScriptParser::BreakStatementContext::exitRule(tree::ParseTreeListener *
     parserListener->exitBreakStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::BreakStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBreakStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::BreakStatementContext* TypeScriptParser::breakStatement() {
   BreakStatementContext *_localctx = _tracker.createInstance<BreakStatementContext>(_ctx, getState());
   enterRule(_localctx, 156, TypeScriptParser::RuleBreakStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -8867,8 +9212,6 @@ TypeScriptParser::BreakStatementContext* TypeScriptParser::breakStatement() {
       break;
     }
 
-    default:
-      break;
     }
     setState(1012);
     eos();
@@ -8918,15 +9261,19 @@ void TypeScriptParser::ReturnStatementContext::exitRule(tree::ParseTreeListener 
     parserListener->exitReturnStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ReturnStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitReturnStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ReturnStatementContext* TypeScriptParser::returnStatement() {
   ReturnStatementContext *_localctx = _tracker.createInstance<ReturnStatementContext>(_ctx, getState());
   enterRule(_localctx, 158, TypeScriptParser::RuleReturnStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -8946,8 +9293,6 @@ TypeScriptParser::ReturnStatementContext* TypeScriptParser::returnStatement() {
       break;
     }
 
-    default:
-      break;
     }
     setState(1019);
     eos();
@@ -8997,15 +9342,19 @@ void TypeScriptParser::YieldStatementContext::exitRule(tree::ParseTreeListener *
     parserListener->exitYieldStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::YieldStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitYieldStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::YieldStatementContext* TypeScriptParser::yieldStatement() {
   YieldStatementContext *_localctx = _tracker.createInstance<YieldStatementContext>(_ctx, getState());
   enterRule(_localctx, 160, TypeScriptParser::RuleYieldStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9025,8 +9374,6 @@ TypeScriptParser::YieldStatementContext* TypeScriptParser::yieldStatement() {
       break;
     }
 
-    default:
-      break;
     }
     setState(1026);
     eos();
@@ -9084,15 +9431,19 @@ void TypeScriptParser::WithStatementContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitWithStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::WithStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitWithStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::WithStatementContext* TypeScriptParser::withStatement() {
   WithStatementContext *_localctx = _tracker.createInstance<WithStatementContext>(_ctx, getState());
   enterRule(_localctx, 162, TypeScriptParser::RuleWithStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9161,15 +9512,19 @@ void TypeScriptParser::SwitchStatementContext::exitRule(tree::ParseTreeListener 
     parserListener->exitSwitchStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::SwitchStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitSwitchStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::SwitchStatementContext* TypeScriptParser::switchStatement() {
   SwitchStatementContext *_localctx = _tracker.createInstance<SwitchStatementContext>(_ctx, getState());
   enterRule(_localctx, 164, TypeScriptParser::RuleSwitchStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9238,16 +9593,20 @@ void TypeScriptParser::CaseBlockContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitCaseBlock(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::CaseBlockContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitCaseBlock(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::CaseBlockContext* TypeScriptParser::caseBlock() {
   CaseBlockContext *_localctx = _tracker.createInstance<CaseBlockContext>(_ctx, getState());
   enterRule(_localctx, 166, TypeScriptParser::RuleCaseBlock);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9322,16 +9681,20 @@ void TypeScriptParser::CaseClausesContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitCaseClauses(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::CaseClausesContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitCaseClauses(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::CaseClausesContext* TypeScriptParser::caseClauses() {
   CaseClausesContext *_localctx = _tracker.createInstance<CaseClausesContext>(_ctx, getState());
   enterRule(_localctx, 168, TypeScriptParser::RuleCaseClauses);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9396,15 +9759,19 @@ void TypeScriptParser::CaseClauseContext::exitRule(tree::ParseTreeListener *list
     parserListener->exitCaseClause(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::CaseClauseContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitCaseClause(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::CaseClauseContext* TypeScriptParser::caseClause() {
   CaseClauseContext *_localctx = _tracker.createInstance<CaseClauseContext>(_ctx, getState());
   enterRule(_localctx, 170, TypeScriptParser::RuleCaseClause);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9425,8 +9792,6 @@ TypeScriptParser::CaseClauseContext* TypeScriptParser::caseClause() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -9474,15 +9839,19 @@ void TypeScriptParser::DefaultClauseContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitDefaultClause(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::DefaultClauseContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDefaultClause(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::DefaultClauseContext* TypeScriptParser::defaultClause() {
   DefaultClauseContext *_localctx = _tracker.createInstance<DefaultClauseContext>(_ctx, getState());
   enterRule(_localctx, 172, TypeScriptParser::RuleDefaultClause);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9501,8 +9870,6 @@ TypeScriptParser::DefaultClauseContext* TypeScriptParser::defaultClause() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -9550,15 +9917,19 @@ void TypeScriptParser::LabelledStatementContext::exitRule(tree::ParseTreeListene
     parserListener->exitLabelledStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::LabelledStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitLabelledStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::LabelledStatementContext* TypeScriptParser::labelledStatement() {
   LabelledStatementContext *_localctx = _tracker.createInstance<LabelledStatementContext>(_ctx, getState());
   enterRule(_localctx, 174, TypeScriptParser::RuleLabelledStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9615,15 +9986,19 @@ void TypeScriptParser::ThrowStatementContext::exitRule(tree::ParseTreeListener *
     parserListener->exitThrowStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ThrowStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitThrowStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ThrowStatementContext* TypeScriptParser::throwStatement() {
   ThrowStatementContext *_localctx = _tracker.createInstance<ThrowStatementContext>(_ctx, getState());
   enterRule(_localctx, 176, TypeScriptParser::RuleThrowStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9687,15 +10062,19 @@ void TypeScriptParser::TryStatementContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitTryStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TryStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTryStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TryStatementContext* TypeScriptParser::tryStatement() {
   TryStatementContext *_localctx = _tracker.createInstance<TryStatementContext>(_ctx, getState());
   enterRule(_localctx, 178, TypeScriptParser::RuleTryStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9720,8 +10099,6 @@ TypeScriptParser::TryStatementContext* TypeScriptParser::tryStatement() {
           break;
         }
 
-        default:
-          break;
         }
         break;
       }
@@ -9789,15 +10166,19 @@ void TypeScriptParser::CatchProductionContext::exitRule(tree::ParseTreeListener 
     parserListener->exitCatchProduction(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::CatchProductionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitCatchProduction(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::CatchProductionContext* TypeScriptParser::catchProduction() {
   CatchProductionContext *_localctx = _tracker.createInstance<CatchProductionContext>(_ctx, getState());
   enterRule(_localctx, 180, TypeScriptParser::RuleCatchProduction);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9854,15 +10235,19 @@ void TypeScriptParser::FinallyProductionContext::exitRule(tree::ParseTreeListene
     parserListener->exitFinallyProduction(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FinallyProductionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFinallyProduction(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FinallyProductionContext* TypeScriptParser::finallyProduction() {
   FinallyProductionContext *_localctx = _tracker.createInstance<FinallyProductionContext>(_ctx, getState());
   enterRule(_localctx, 182, TypeScriptParser::RuleFinallyProduction);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9913,15 +10298,19 @@ void TypeScriptParser::DebuggerStatementContext::exitRule(tree::ParseTreeListene
     parserListener->exitDebuggerStatement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::DebuggerStatementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDebuggerStatement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::DebuggerStatementContext* TypeScriptParser::debuggerStatement() {
   DebuggerStatementContext *_localctx = _tracker.createInstance<DebuggerStatementContext>(_ctx, getState());
   enterRule(_localctx, 184, TypeScriptParser::RuleDebuggerStatement);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -9992,15 +10381,19 @@ void TypeScriptParser::FunctionDeclarationContext::exitRule(tree::ParseTreeListe
     parserListener->exitFunctionDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FunctionDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFunctionDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FunctionDeclarationContext* TypeScriptParser::functionDeclaration() {
   FunctionDeclarationContext *_localctx = _tracker.createInstance<FunctionDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 186, TypeScriptParser::RuleFunctionDeclaration);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10091,16 +10484,20 @@ void TypeScriptParser::ClassDeclarationContext::exitRule(tree::ParseTreeListener
     parserListener->exitClassDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ClassDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitClassDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ClassDeclarationContext* TypeScriptParser::classDeclaration() {
   ClassDeclarationContext *_localctx = _tracker.createInstance<ClassDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 188, TypeScriptParser::RuleClassDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10171,16 +10568,20 @@ void TypeScriptParser::ClassHeritageContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitClassHeritage(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ClassHeritageContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitClassHeritage(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ClassHeritageContext* TypeScriptParser::classHeritage() {
   ClassHeritageContext *_localctx = _tracker.createInstance<ClassHeritageContext>(_ctx, getState());
   enterRule(_localctx, 190, TypeScriptParser::RuleClassHeritage);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10251,15 +10652,19 @@ void TypeScriptParser::ClassTailContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitClassTail(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ClassTailContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitClassTail(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ClassTailContext* TypeScriptParser::classTail() {
   ClassTailContext *_localctx = _tracker.createInstance<ClassTailContext>(_ctx, getState());
   enterRule(_localctx, 192, TypeScriptParser::RuleClassTail);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10323,15 +10728,19 @@ void TypeScriptParser::ClassExtendsClauseContext::exitRule(tree::ParseTreeListen
     parserListener->exitClassExtendsClause(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ClassExtendsClauseContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitClassExtendsClause(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ClassExtendsClauseContext* TypeScriptParser::classExtendsClause() {
   ClassExtendsClauseContext *_localctx = _tracker.createInstance<ClassExtendsClauseContext>(_ctx, getState());
   enterRule(_localctx, 194, TypeScriptParser::RuleClassExtendsClause);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10382,15 +10791,19 @@ void TypeScriptParser::ImplementsClauseContext::exitRule(tree::ParseTreeListener
     parserListener->exitImplementsClause(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ImplementsClauseContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitImplementsClause(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ImplementsClauseContext* TypeScriptParser::implementsClause() {
   ImplementsClauseContext *_localctx = _tracker.createInstance<ImplementsClauseContext>(_ctx, getState());
   enterRule(_localctx, 196, TypeScriptParser::RuleImplementsClause);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10453,16 +10866,20 @@ void TypeScriptParser::ClassElementContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitClassElement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ClassElementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitClassElement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ClassElementContext* TypeScriptParser::classElement() {
   ClassElementContext *_localctx = _tracker.createInstance<ClassElementContext>(_ctx, getState());
   enterRule(_localctx, 198, TypeScriptParser::RuleClassElement);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10505,8 +10922,6 @@ TypeScriptParser::ClassElementContext* TypeScriptParser::classElement() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -10572,6 +10987,13 @@ void TypeScriptParser::PropertyDeclarationExpressionContext::exitRule(tree::Pars
   if (parserListener != nullptr)
     parserListener->exitPropertyDeclarationExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::PropertyDeclarationExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertyDeclarationExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- MethodDeclarationExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::MethodDeclarationExpressionContext::propertyMemberBase() {
@@ -10614,6 +11036,13 @@ void TypeScriptParser::MethodDeclarationExpressionContext::exitRule(tree::ParseT
   if (parserListener != nullptr)
     parserListener->exitMethodDeclarationExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::MethodDeclarationExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitMethodDeclarationExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- GetterSetterDeclarationExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::GetterSetterDeclarationExpressionContext::propertyMemberBase() {
@@ -10640,6 +11069,13 @@ void TypeScriptParser::GetterSetterDeclarationExpressionContext::exitRule(tree::
   if (parserListener != nullptr)
     parserListener->exitGetterSetterDeclarationExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::GetterSetterDeclarationExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGetterSetterDeclarationExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- AbstractMemberDeclarationContext ------------------------------------------------------------------
 
 TypeScriptParser::AbstractDeclarationContext* TypeScriptParser::AbstractMemberDeclarationContext::abstractDeclaration() {
@@ -10658,16 +11094,19 @@ void TypeScriptParser::AbstractMemberDeclarationContext::exitRule(tree::ParseTre
   if (parserListener != nullptr)
     parserListener->exitAbstractMemberDeclaration(this);
 }
+
+antlrcpp::Any TypeScriptParser::AbstractMemberDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAbstractMemberDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
 TypeScriptParser::PropertyMemberDeclarationContext* TypeScriptParser::propertyMemberDeclaration() {
   PropertyMemberDeclarationContext *_localctx = _tracker.createInstance<PropertyMemberDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 200, TypeScriptParser::RulePropertyMemberDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10778,8 +11217,6 @@ TypeScriptParser::PropertyMemberDeclarationContext* TypeScriptParser::propertyMe
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -10831,15 +11268,19 @@ void TypeScriptParser::PropertyMemberBaseContext::exitRule(tree::ParseTreeListen
     parserListener->exitPropertyMemberBase(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::PropertyMemberBaseContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertyMemberBase(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBase() {
   PropertyMemberBaseContext *_localctx = _tracker.createInstance<PropertyMemberBaseContext>(_ctx, getState());
   enterRule(_localctx, 202, TypeScriptParser::RulePropertyMemberBase);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -10854,8 +11295,6 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
-    default:
-      break;
     }
     setState(1184);
     _errHandler->sync(this);
@@ -10867,8 +11306,6 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
-    default:
-      break;
     }
     setState(1187);
     _errHandler->sync(this);
@@ -10880,8 +11317,6 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
-    default:
-      break;
     }
     setState(1190);
     _errHandler->sync(this);
@@ -10893,8 +11328,6 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -10938,15 +11371,19 @@ void TypeScriptParser::IndexMemberDeclarationContext::exitRule(tree::ParseTreeLi
     parserListener->exitIndexMemberDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IndexMemberDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIndexMemberDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IndexMemberDeclarationContext* TypeScriptParser::indexMemberDeclaration() {
   IndexMemberDeclarationContext *_localctx = _tracker.createInstance<IndexMemberDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 204, TypeScriptParser::RuleIndexMemberDeclaration);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11021,16 +11458,20 @@ void TypeScriptParser::GeneratorMethodContext::exitRule(tree::ParseTreeListener 
     parserListener->exitGeneratorMethod(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::GeneratorMethodContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGeneratorMethod(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::GeneratorMethodContext* TypeScriptParser::generatorMethod() {
   GeneratorMethodContext *_localctx = _tracker.createInstance<GeneratorMethodContext>(_ctx, getState());
   enterRule(_localctx, 206, TypeScriptParser::RuleGeneratorMethod);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11143,16 +11584,20 @@ void TypeScriptParser::GeneratorFunctionDeclarationContext::exitRule(tree::Parse
     parserListener->exitGeneratorFunctionDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::GeneratorFunctionDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGeneratorFunctionDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::GeneratorFunctionDeclarationContext* TypeScriptParser::generatorFunctionDeclaration() {
   GeneratorFunctionDeclarationContext *_localctx = _tracker.createInstance<GeneratorFunctionDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 208, TypeScriptParser::RuleGeneratorFunctionDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11255,16 +11700,20 @@ void TypeScriptParser::GeneratorBlockContext::exitRule(tree::ParseTreeListener *
     parserListener->exitGeneratorBlock(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::GeneratorBlockContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGeneratorBlock(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::GeneratorBlockContext* TypeScriptParser::generatorBlock() {
   GeneratorBlockContext *_localctx = _tracker.createInstance<GeneratorBlockContext>(_ctx, getState());
   enterRule(_localctx, 210, TypeScriptParser::RuleGeneratorBlock);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11340,15 +11789,19 @@ void TypeScriptParser::GeneratorDefinitionContext::exitRule(tree::ParseTreeListe
     parserListener->exitGeneratorDefinition(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::GeneratorDefinitionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGeneratorDefinition(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::GeneratorDefinitionContext* TypeScriptParser::generatorDefinition() {
   GeneratorDefinitionContext *_localctx = _tracker.createInstance<GeneratorDefinitionContext>(_ctx, getState());
   enterRule(_localctx, 212, TypeScriptParser::RuleGeneratorDefinition);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11415,16 +11868,20 @@ void TypeScriptParser::IteratorBlockContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitIteratorBlock(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IteratorBlockContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIteratorBlock(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IteratorBlockContext* TypeScriptParser::iteratorBlock() {
   IteratorBlockContext *_localctx = _tracker.createInstance<IteratorBlockContext>(_ctx, getState());
   enterRule(_localctx, 214, TypeScriptParser::RuleIteratorBlock);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11528,16 +11985,20 @@ void TypeScriptParser::IteratorDefinitionContext::exitRule(tree::ParseTreeListen
     parserListener->exitIteratorDefinition(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IteratorDefinitionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIteratorDefinition(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IteratorDefinitionContext* TypeScriptParser::iteratorDefinition() {
   IteratorDefinitionContext *_localctx = _tracker.createInstance<IteratorDefinitionContext>(_ctx, getState());
   enterRule(_localctx, 216, TypeScriptParser::RuleIteratorDefinition);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11646,16 +12107,20 @@ void TypeScriptParser::FormalParameterListContext::exitRule(tree::ParseTreeListe
     parserListener->exitFormalParameterList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FormalParameterListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFormalParameterList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FormalParameterListContext* TypeScriptParser::formalParameterList() {
   FormalParameterListContext *_localctx = _tracker.createInstance<FormalParameterListContext>(_ctx, getState());
   enterRule(_localctx, 218, TypeScriptParser::RuleFormalParameterList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11796,16 +12261,20 @@ void TypeScriptParser::FormalParameterArgContext::exitRule(tree::ParseTreeListen
     parserListener->exitFormalParameterArg(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FormalParameterArgContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFormalParameterArg(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FormalParameterArgContext* TypeScriptParser::formalParameterArg() {
   FormalParameterArgContext *_localctx = _tracker.createInstance<FormalParameterArgContext>(_ctx, getState());
   enterRule(_localctx, 220, TypeScriptParser::RuleFormalParameterArg);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11899,15 +12368,19 @@ void TypeScriptParser::LastFormalParameterArgContext::exitRule(tree::ParseTreeLi
     parserListener->exitLastFormalParameterArg(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::LastFormalParameterArgContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitLastFormalParameterArg(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::LastFormalParameterArgContext* TypeScriptParser::lastFormalParameterArg() {
   LastFormalParameterArgContext *_localctx = _tracker.createInstance<LastFormalParameterArgContext>(_ctx, getState());
   enterRule(_localctx, 222, TypeScriptParser::RuleLastFormalParameterArg);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11954,15 +12427,19 @@ void TypeScriptParser::FunctionBodyContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitFunctionBody(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FunctionBodyContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFunctionBody(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FunctionBodyContext* TypeScriptParser::functionBody() {
   FunctionBodyContext *_localctx = _tracker.createInstance<FunctionBodyContext>(_ctx, getState());
   enterRule(_localctx, 224, TypeScriptParser::RuleFunctionBody);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -11977,8 +12454,6 @@ TypeScriptParser::FunctionBodyContext* TypeScriptParser::functionBody() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -12022,15 +12497,19 @@ void TypeScriptParser::SourceElementsContext::exitRule(tree::ParseTreeListener *
     parserListener->exitSourceElements(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::SourceElementsContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitSourceElements(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::SourceElementsContext* TypeScriptParser::sourceElements() {
   SourceElementsContext *_localctx = _tracker.createInstance<SourceElementsContext>(_ctx, getState());
   enterRule(_localctx, 226, TypeScriptParser::RuleSourceElements);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -12100,16 +12579,20 @@ void TypeScriptParser::ArrayLiteralContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitArrayLiteral(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArrayLiteralContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrayLiteral(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArrayLiteralContext* TypeScriptParser::arrayLiteral() {
   ArrayLiteralContext *_localctx = _tracker.createInstance<ArrayLiteralContext>(_ctx, getState());
   enterRule(_localctx, 228, TypeScriptParser::RuleArrayLiteral);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -12248,16 +12731,20 @@ void TypeScriptParser::ElementListContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitElementList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ElementListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitElementList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ElementListContext* TypeScriptParser::elementList() {
   ElementListContext *_localctx = _tracker.createInstance<ElementListContext>(_ctx, getState());
   enterRule(_localctx, 230, TypeScriptParser::RuleElementList);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -12334,16 +12821,20 @@ void TypeScriptParser::ArrayElementContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitArrayElement(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArrayElementContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrayElement(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArrayElementContext* TypeScriptParser::arrayElement() {
   ArrayElementContext *_localctx = _tracker.createInstance<ArrayElementContext>(_ctx, getState());
   enterRule(_localctx, 232, TypeScriptParser::RuleArrayElement);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -12371,8 +12862,6 @@ TypeScriptParser::ArrayElementContext* TypeScriptParser::arrayElement() {
       break;
     }
 
-    default:
-      break;
     }
     setState(1340);
     _errHandler->sync(this);
@@ -12384,8 +12873,6 @@ TypeScriptParser::ArrayElementContext* TypeScriptParser::arrayElement() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -12445,16 +12932,20 @@ void TypeScriptParser::ObjectLiteralContext::exitRule(tree::ParseTreeListener *l
     parserListener->exitObjectLiteral(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ObjectLiteralContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitObjectLiteral(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ObjectLiteralContext* TypeScriptParser::objectLiteral() {
   ObjectLiteralContext *_localctx = _tracker.createInstance<ObjectLiteralContext>(_ctx, getState());
   enterRule(_localctx, 234, TypeScriptParser::RuleObjectLiteral);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -12612,6 +13103,13 @@ void TypeScriptParser::PropertyExpressionAssignmentContext::exitRule(tree::Parse
   if (parserListener != nullptr)
     parserListener->exitPropertyExpressionAssignment(this);
 }
+
+antlrcpp::Any TypeScriptParser::PropertyExpressionAssignmentContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertyExpressionAssignment(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ComputedPropertyExpressionAssignmentContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ComputedPropertyExpressionAssignmentContext::OpenBracket() {
@@ -12646,6 +13144,13 @@ void TypeScriptParser::ComputedPropertyExpressionAssignmentContext::exitRule(tre
   if (parserListener != nullptr)
     parserListener->exitComputedPropertyExpressionAssignment(this);
 }
+
+antlrcpp::Any TypeScriptParser::ComputedPropertyExpressionAssignmentContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitComputedPropertyExpressionAssignment(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- PropertyShorthandContext ------------------------------------------------------------------
 
 TypeScriptParser::IdentifierOrKeyWordContext* TypeScriptParser::PropertyShorthandContext::identifierOrKeyWord() {
@@ -12663,6 +13168,13 @@ void TypeScriptParser::PropertyShorthandContext::exitRule(tree::ParseTreeListene
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitPropertyShorthand(this);
+}
+
+antlrcpp::Any TypeScriptParser::PropertyShorthandContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertyShorthand(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- PropertySetterContext ------------------------------------------------------------------
 
@@ -12682,6 +13194,13 @@ void TypeScriptParser::PropertySetterContext::exitRule(tree::ParseTreeListener *
   if (parserListener != nullptr)
     parserListener->exitPropertySetter(this);
 }
+
+antlrcpp::Any TypeScriptParser::PropertySetterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertySetter(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- PropertyGetterContext ------------------------------------------------------------------
 
 TypeScriptParser::GetAccessorContext* TypeScriptParser::PropertyGetterContext::getAccessor() {
@@ -12699,6 +13218,13 @@ void TypeScriptParser::PropertyGetterContext::exitRule(tree::ParseTreeListener *
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitPropertyGetter(this);
+}
+
+antlrcpp::Any TypeScriptParser::PropertyGetterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertyGetter(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- RestParameterInObjectContext ------------------------------------------------------------------
 
@@ -12718,6 +13244,13 @@ void TypeScriptParser::RestParameterInObjectContext::exitRule(tree::ParseTreeLis
   if (parserListener != nullptr)
     parserListener->exitRestParameterInObject(this);
 }
+
+antlrcpp::Any TypeScriptParser::RestParameterInObjectContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitRestParameterInObject(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- MethodPropertyContext ------------------------------------------------------------------
 
 TypeScriptParser::GeneratorMethodContext* TypeScriptParser::MethodPropertyContext::generatorMethod() {
@@ -12736,16 +13269,19 @@ void TypeScriptParser::MethodPropertyContext::exitRule(tree::ParseTreeListener *
   if (parserListener != nullptr)
     parserListener->exitMethodProperty(this);
 }
+
+antlrcpp::Any TypeScriptParser::MethodPropertyContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitMethodProperty(this);
+  else
+    return visitor->visitChildren(this);
+}
 TypeScriptParser::PropertyAssignmentContext* TypeScriptParser::propertyAssignment() {
   PropertyAssignmentContext *_localctx = _tracker.createInstance<PropertyAssignmentContext>(_ctx, getState());
   enterRule(_localctx, 236, TypeScriptParser::RulePropertyAssignment);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -12829,8 +13365,6 @@ TypeScriptParser::PropertyAssignmentContext* TypeScriptParser::propertyAssignmen
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -12894,16 +13428,20 @@ void TypeScriptParser::GetAccessorContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitGetAccessor(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::GetAccessorContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGetAccessor(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::GetAccessorContext* TypeScriptParser::getAccessor() {
   GetAccessorContext *_localctx = _tracker.createInstance<GetAccessorContext>(_ctx, getState());
   enterRule(_localctx, 238, TypeScriptParser::RuleGetAccessor);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -12998,16 +13536,20 @@ void TypeScriptParser::SetAccessorContext::exitRule(tree::ParseTreeListener *lis
     parserListener->exitSetAccessor(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::SetAccessorContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitSetAccessor(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::SetAccessorContext* TypeScriptParser::setAccessor() {
   SetAccessorContext *_localctx = _tracker.createInstance<SetAccessorContext>(_ctx, getState());
   enterRule(_localctx, 240, TypeScriptParser::RuleSetAccessor);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -13097,15 +13639,19 @@ void TypeScriptParser::PropertyNameContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitPropertyName(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::PropertyNameContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPropertyName(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::PropertyNameContext* TypeScriptParser::propertyName() {
   PropertyNameContext *_localctx = _tracker.createInstance<PropertyNameContext>(_ctx, getState());
   enterRule(_localctx, 242, TypeScriptParser::RulePropertyName);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -13242,16 +13788,20 @@ void TypeScriptParser::ArgumentsContext::exitRule(tree::ParseTreeListener *liste
     parserListener->exitArguments(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArgumentsContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArguments(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArgumentsContext* TypeScriptParser::arguments() {
   ArgumentsContext *_localctx = _tracker.createInstance<ArgumentsContext>(_ctx, getState());
   enterRule(_localctx, 244, TypeScriptParser::RuleArguments);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -13398,15 +13948,19 @@ void TypeScriptParser::ArgumentListContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitArgumentList(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArgumentListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArgumentList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArgumentListContext* TypeScriptParser::argumentList() {
   ArgumentListContext *_localctx = _tracker.createInstance<ArgumentListContext>(_ctx, getState());
   enterRule(_localctx, 246, TypeScriptParser::RuleArgumentList);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -13474,16 +14028,20 @@ void TypeScriptParser::ArgumentContext::exitRule(tree::ParseTreeListener *listen
     parserListener->exitArgument(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArgumentContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArgument(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArgumentContext* TypeScriptParser::argument() {
   ArgumentContext *_localctx = _tracker.createInstance<ArgumentContext>(_ctx, getState());
   enterRule(_localctx, 248, TypeScriptParser::RuleArgument);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -13511,8 +14069,6 @@ TypeScriptParser::ArgumentContext* TypeScriptParser::argument() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -13564,15 +14120,19 @@ void TypeScriptParser::ExpressionSequenceContext::exitRule(tree::ParseTreeListen
     parserListener->exitExpressionSequence(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ExpressionSequenceContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitExpressionSequence(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ExpressionSequenceContext* TypeScriptParser::expressionSequence() {
   ExpressionSequenceContext *_localctx = _tracker.createInstance<ExpressionSequenceContext>(_ctx, getState());
   enterRule(_localctx, 250, TypeScriptParser::RuleExpressionSequence);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -13664,16 +14224,20 @@ void TypeScriptParser::FunctionExpressionDeclarationContext::exitRule(tree::Pars
     parserListener->exitFunctionExpressionDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::FunctionExpressionDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFunctionExpressionDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::FunctionExpressionDeclarationContext* TypeScriptParser::functionExpressionDeclaration() {
   FunctionExpressionDeclarationContext *_localctx = _tracker.createInstance<FunctionExpressionDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 252, TypeScriptParser::RuleFunctionExpressionDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -13772,6 +14336,13 @@ void TypeScriptParser::TemplateStringExpressionContext::exitRule(tree::ParseTree
   if (parserListener != nullptr)
     parserListener->exitTemplateStringExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::TemplateStringExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTemplateStringExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- TernaryExpressionContext ------------------------------------------------------------------
 
 std::vector<TypeScriptParser::SingleExpressionContext *> TypeScriptParser::TernaryExpressionContext::singleExpression() {
@@ -13802,6 +14373,13 @@ void TypeScriptParser::TernaryExpressionContext::exitRule(tree::ParseTreeListene
   if (parserListener != nullptr)
     parserListener->exitTernaryExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::TernaryExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTernaryExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- LogicalAndExpressionContext ------------------------------------------------------------------
 
 std::vector<TypeScriptParser::SingleExpressionContext *> TypeScriptParser::LogicalAndExpressionContext::singleExpression() {
@@ -13828,6 +14406,13 @@ void TypeScriptParser::LogicalAndExpressionContext::exitRule(tree::ParseTreeList
   if (parserListener != nullptr)
     parserListener->exitLogicalAndExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::LogicalAndExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitLogicalAndExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- GeneratorsExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::GeneratorBlockContext* TypeScriptParser::GeneratorsExpressionContext::generatorBlock() {
@@ -13845,6 +14430,13 @@ void TypeScriptParser::GeneratorsExpressionContext::exitRule(tree::ParseTreeList
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitGeneratorsExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::GeneratorsExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGeneratorsExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- PreIncrementExpressionContext ------------------------------------------------------------------
 
@@ -13868,6 +14460,13 @@ void TypeScriptParser::PreIncrementExpressionContext::exitRule(tree::ParseTreeLi
   if (parserListener != nullptr)
     parserListener->exitPreIncrementExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::PreIncrementExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPreIncrementExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ObjectLiteralExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::ObjectLiteralContext* TypeScriptParser::ObjectLiteralExpressionContext::objectLiteral() {
@@ -13885,6 +14484,13 @@ void TypeScriptParser::ObjectLiteralExpressionContext::exitRule(tree::ParseTreeL
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitObjectLiteralExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::ObjectLiteralExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitObjectLiteralExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- InExpressionContext ------------------------------------------------------------------
 
@@ -13912,6 +14518,13 @@ void TypeScriptParser::InExpressionContext::exitRule(tree::ParseTreeListener *li
   if (parserListener != nullptr)
     parserListener->exitInExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::InExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitInExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- LogicalOrExpressionContext ------------------------------------------------------------------
 
 std::vector<TypeScriptParser::SingleExpressionContext *> TypeScriptParser::LogicalOrExpressionContext::singleExpression() {
@@ -13938,6 +14551,13 @@ void TypeScriptParser::LogicalOrExpressionContext::exitRule(tree::ParseTreeListe
   if (parserListener != nullptr)
     parserListener->exitLogicalOrExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::LogicalOrExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitLogicalOrExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- GenericTypesContext ------------------------------------------------------------------
 
 TypeScriptParser::TypeArgumentsContext* TypeScriptParser::GenericTypesContext::typeArguments() {
@@ -13959,6 +14579,13 @@ void TypeScriptParser::GenericTypesContext::exitRule(tree::ParseTreeListener *li
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitGenericTypes(this);
+}
+
+antlrcpp::Any TypeScriptParser::GenericTypesContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGenericTypes(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- NotExpressionContext ------------------------------------------------------------------
 
@@ -13982,6 +14609,13 @@ void TypeScriptParser::NotExpressionContext::exitRule(tree::ParseTreeListener *l
   if (parserListener != nullptr)
     parserListener->exitNotExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::NotExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitNotExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- PreDecreaseExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::PreDecreaseExpressionContext::MinusMinus() {
@@ -14003,6 +14637,13 @@ void TypeScriptParser::PreDecreaseExpressionContext::exitRule(tree::ParseTreeLis
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitPreDecreaseExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::PreDecreaseExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPreDecreaseExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- ArgumentsExpressionContext ------------------------------------------------------------------
 
@@ -14026,6 +14667,13 @@ void TypeScriptParser::ArgumentsExpressionContext::exitRule(tree::ParseTreeListe
   if (parserListener != nullptr)
     parserListener->exitArgumentsExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::ArgumentsExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArgumentsExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ThisExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ThisExpressionContext::This() {
@@ -14044,6 +14692,13 @@ void TypeScriptParser::ThisExpressionContext::exitRule(tree::ParseTreeListener *
   if (parserListener != nullptr)
     parserListener->exitThisExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::ThisExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitThisExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- FunctionExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::FunctionExpressionDeclarationContext* TypeScriptParser::FunctionExpressionContext::functionExpressionDeclaration() {
@@ -14061,6 +14716,13 @@ void TypeScriptParser::FunctionExpressionContext::exitRule(tree::ParseTreeListen
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitFunctionExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::FunctionExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitFunctionExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- UnaryMinusExpressionContext ------------------------------------------------------------------
 
@@ -14083,6 +14745,13 @@ void TypeScriptParser::UnaryMinusExpressionContext::exitRule(tree::ParseTreeList
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitUnaryMinusExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::UnaryMinusExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitUnaryMinusExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- AssignmentExpressionContext ------------------------------------------------------------------
 
@@ -14110,6 +14779,13 @@ void TypeScriptParser::AssignmentExpressionContext::exitRule(tree::ParseTreeList
   if (parserListener != nullptr)
     parserListener->exitAssignmentExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::AssignmentExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAssignmentExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- PostDecreaseExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::SingleExpressionContext* TypeScriptParser::PostDecreaseExpressionContext::singleExpression() {
@@ -14132,6 +14808,13 @@ void TypeScriptParser::PostDecreaseExpressionContext::exitRule(tree::ParseTreeLi
   if (parserListener != nullptr)
     parserListener->exitPostDecreaseExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::PostDecreaseExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPostDecreaseExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- TypeofExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::TypeofExpressionContext::Typeof() {
@@ -14153,6 +14836,13 @@ void TypeScriptParser::TypeofExpressionContext::exitRule(tree::ParseTreeListener
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitTypeofExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::TypeofExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTypeofExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- InstanceofExpressionContext ------------------------------------------------------------------
 
@@ -14180,6 +14870,13 @@ void TypeScriptParser::InstanceofExpressionContext::exitRule(tree::ParseTreeList
   if (parserListener != nullptr)
     parserListener->exitInstanceofExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::InstanceofExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitInstanceofExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- UnaryPlusExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::UnaryPlusExpressionContext::Plus() {
@@ -14201,6 +14898,13 @@ void TypeScriptParser::UnaryPlusExpressionContext::exitRule(tree::ParseTreeListe
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitUnaryPlusExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::UnaryPlusExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitUnaryPlusExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- DeleteExpressionContext ------------------------------------------------------------------
 
@@ -14224,6 +14928,13 @@ void TypeScriptParser::DeleteExpressionContext::exitRule(tree::ParseTreeListener
   if (parserListener != nullptr)
     parserListener->exitDeleteExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::DeleteExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitDeleteExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- GeneratorsFunctionExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::GeneratorFunctionDeclarationContext* TypeScriptParser::GeneratorsFunctionExpressionContext::generatorFunctionDeclaration() {
@@ -14241,6 +14952,13 @@ void TypeScriptParser::GeneratorsFunctionExpressionContext::exitRule(tree::Parse
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitGeneratorsFunctionExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::GeneratorsFunctionExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGeneratorsFunctionExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- ArrowFunctionExpressionContext ------------------------------------------------------------------
 
@@ -14260,6 +14978,13 @@ void TypeScriptParser::ArrowFunctionExpressionContext::exitRule(tree::ParseTreeL
   if (parserListener != nullptr)
     parserListener->exitArrowFunctionExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::ArrowFunctionExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrowFunctionExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- IteratorsExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::IteratorBlockContext* TypeScriptParser::IteratorsExpressionContext::iteratorBlock() {
@@ -14277,6 +15002,13 @@ void TypeScriptParser::IteratorsExpressionContext::exitRule(tree::ParseTreeListe
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitIteratorsExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::IteratorsExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIteratorsExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- EqualityExpressionContext ------------------------------------------------------------------
 
@@ -14316,6 +15048,13 @@ void TypeScriptParser::EqualityExpressionContext::exitRule(tree::ParseTreeListen
   if (parserListener != nullptr)
     parserListener->exitEqualityExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::EqualityExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitEqualityExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- BitXOrExpressionContext ------------------------------------------------------------------
 
 std::vector<TypeScriptParser::SingleExpressionContext *> TypeScriptParser::BitXOrExpressionContext::singleExpression() {
@@ -14341,6 +15080,13 @@ void TypeScriptParser::BitXOrExpressionContext::exitRule(tree::ParseTreeListener
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitBitXOrExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::BitXOrExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBitXOrExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- CastAsExpressionContext ------------------------------------------------------------------
 
@@ -14368,6 +15114,13 @@ void TypeScriptParser::CastAsExpressionContext::exitRule(tree::ParseTreeListener
   if (parserListener != nullptr)
     parserListener->exitCastAsExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::CastAsExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitCastAsExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- SuperExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::SuperExpressionContext::Super() {
@@ -14385,6 +15138,13 @@ void TypeScriptParser::SuperExpressionContext::exitRule(tree::ParseTreeListener 
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitSuperExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::SuperExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitSuperExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- MultiplicativeExpressionContext ------------------------------------------------------------------
 
@@ -14420,6 +15180,13 @@ void TypeScriptParser::MultiplicativeExpressionContext::exitRule(tree::ParseTree
   if (parserListener != nullptr)
     parserListener->exitMultiplicativeExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::MultiplicativeExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitMultiplicativeExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- BitShiftExpressionContext ------------------------------------------------------------------
 
 std::vector<TypeScriptParser::SingleExpressionContext *> TypeScriptParser::BitShiftExpressionContext::singleExpression() {
@@ -14454,6 +15221,13 @@ void TypeScriptParser::BitShiftExpressionContext::exitRule(tree::ParseTreeListen
   if (parserListener != nullptr)
     parserListener->exitBitShiftExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::BitShiftExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBitShiftExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- ParenthesizedExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::ParenthesizedExpressionContext::OpenParen() {
@@ -14479,6 +15253,13 @@ void TypeScriptParser::ParenthesizedExpressionContext::exitRule(tree::ParseTreeL
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitParenthesizedExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::ParenthesizedExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitParenthesizedExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- AdditiveExpressionContext ------------------------------------------------------------------
 
@@ -14509,6 +15290,13 @@ void TypeScriptParser::AdditiveExpressionContext::exitRule(tree::ParseTreeListen
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitAdditiveExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::AdditiveExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAdditiveExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- RelationalExpressionContext ------------------------------------------------------------------
 
@@ -14548,6 +15336,13 @@ void TypeScriptParser::RelationalExpressionContext::exitRule(tree::ParseTreeList
   if (parserListener != nullptr)
     parserListener->exitRelationalExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::RelationalExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitRelationalExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- PostIncrementExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::SingleExpressionContext* TypeScriptParser::PostIncrementExpressionContext::singleExpression() {
@@ -14570,6 +15365,13 @@ void TypeScriptParser::PostIncrementExpressionContext::exitRule(tree::ParseTreeL
   if (parserListener != nullptr)
     parserListener->exitPostIncrementExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::PostIncrementExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitPostIncrementExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- YieldExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::YieldStatementContext* TypeScriptParser::YieldExpressionContext::yieldStatement() {
@@ -14587,6 +15389,13 @@ void TypeScriptParser::YieldExpressionContext::exitRule(tree::ParseTreeListener 
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitYieldExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::YieldExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitYieldExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- BitNotExpressionContext ------------------------------------------------------------------
 
@@ -14609,6 +15418,13 @@ void TypeScriptParser::BitNotExpressionContext::exitRule(tree::ParseTreeListener
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitBitNotExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::BitNotExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBitNotExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- NewExpressionContext ------------------------------------------------------------------
 
@@ -14640,6 +15456,13 @@ void TypeScriptParser::NewExpressionContext::exitRule(tree::ParseTreeListener *l
   if (parserListener != nullptr)
     parserListener->exitNewExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::NewExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitNewExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- LiteralExpressionContext ------------------------------------------------------------------
 
 TypeScriptParser::LiteralContext* TypeScriptParser::LiteralExpressionContext::literal() {
@@ -14657,6 +15480,13 @@ void TypeScriptParser::LiteralExpressionContext::exitRule(tree::ParseTreeListene
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitLiteralExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::LiteralExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitLiteralExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- ArrayLiteralExpressionContext ------------------------------------------------------------------
 
@@ -14676,14 +15506,21 @@ void TypeScriptParser::ArrayLiteralExpressionContext::exitRule(tree::ParseTreeLi
   if (parserListener != nullptr)
     parserListener->exitArrayLiteralExpression(this);
 }
-//----------------- MemberDotExpressionContext ------------------------------------------------------------------
 
-TypeScriptParser::SingleExpressionContext* TypeScriptParser::MemberDotExpressionContext::singleExpression() {
-  return getRuleContext<TypeScriptParser::SingleExpressionContext>(0);
+antlrcpp::Any TypeScriptParser::ArrayLiteralExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrayLiteralExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
+//----------------- MemberDotExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::MemberDotExpressionContext::Dot() {
   return getToken(TypeScriptParser::Dot, 0);
+}
+
+TypeScriptParser::SingleExpressionContext* TypeScriptParser::MemberDotExpressionContext::singleExpression() {
+  return getRuleContext<TypeScriptParser::SingleExpressionContext>(0);
 }
 
 TypeScriptParser::IdentifierNameContext* TypeScriptParser::MemberDotExpressionContext::identifierName() {
@@ -14705,6 +15542,13 @@ void TypeScriptParser::MemberDotExpressionContext::exitRule(tree::ParseTreeListe
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitMemberDotExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::MemberDotExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitMemberDotExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- ClassExpressionContext ------------------------------------------------------------------
 
@@ -14732,22 +15576,29 @@ void TypeScriptParser::ClassExpressionContext::exitRule(tree::ParseTreeListener 
   if (parserListener != nullptr)
     parserListener->exitClassExpression(this);
 }
-//----------------- MemberIndexExpressionContext ------------------------------------------------------------------
 
-TypeScriptParser::SingleExpressionContext* TypeScriptParser::MemberIndexExpressionContext::singleExpression() {
-  return getRuleContext<TypeScriptParser::SingleExpressionContext>(0);
+antlrcpp::Any TypeScriptParser::ClassExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitClassExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
+//----------------- MemberIndexExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::MemberIndexExpressionContext::OpenBracket() {
   return getToken(TypeScriptParser::OpenBracket, 0);
 }
 
-TypeScriptParser::ExpressionSequenceContext* TypeScriptParser::MemberIndexExpressionContext::expressionSequence() {
-  return getRuleContext<TypeScriptParser::ExpressionSequenceContext>(0);
-}
-
 tree::TerminalNode* TypeScriptParser::MemberIndexExpressionContext::CloseBracket() {
   return getToken(TypeScriptParser::CloseBracket, 0);
+}
+
+TypeScriptParser::SingleExpressionContext* TypeScriptParser::MemberIndexExpressionContext::singleExpression() {
+  return getRuleContext<TypeScriptParser::SingleExpressionContext>(0);
+}
+
+TypeScriptParser::ExpressionSequenceContext* TypeScriptParser::MemberIndexExpressionContext::expressionSequence() {
+  return getRuleContext<TypeScriptParser::ExpressionSequenceContext>(0);
 }
 
 TypeScriptParser::MemberIndexExpressionContext::MemberIndexExpressionContext(SingleExpressionContext *ctx) { copyFrom(ctx); }
@@ -14761,6 +15612,13 @@ void TypeScriptParser::MemberIndexExpressionContext::exitRule(tree::ParseTreeLis
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitMemberIndexExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::MemberIndexExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitMemberIndexExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- IdentifierExpressionContext ------------------------------------------------------------------
 
@@ -14783,6 +15641,13 @@ void TypeScriptParser::IdentifierExpressionContext::exitRule(tree::ParseTreeList
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitIdentifierExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::IdentifierExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIdentifierExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- BitAndExpressionContext ------------------------------------------------------------------
 
@@ -14810,6 +15675,13 @@ void TypeScriptParser::BitAndExpressionContext::exitRule(tree::ParseTreeListener
   if (parserListener != nullptr)
     parserListener->exitBitAndExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::BitAndExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBitAndExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- BitOrExpressionContext ------------------------------------------------------------------
 
 std::vector<TypeScriptParser::SingleExpressionContext *> TypeScriptParser::BitOrExpressionContext::singleExpression() {
@@ -14835,6 +15707,13 @@ void TypeScriptParser::BitOrExpressionContext::exitRule(tree::ParseTreeListener 
   auto parserListener = dynamic_cast<TypeScriptParserListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitBitOrExpression(this);
+}
+
+antlrcpp::Any TypeScriptParser::BitOrExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitBitOrExpression(this);
+  else
+    return visitor->visitChildren(this);
 }
 //----------------- AssignmentOperatorExpressionContext ------------------------------------------------------------------
 
@@ -14862,6 +15741,13 @@ void TypeScriptParser::AssignmentOperatorExpressionContext::exitRule(tree::Parse
   if (parserListener != nullptr)
     parserListener->exitAssignmentOperatorExpression(this);
 }
+
+antlrcpp::Any TypeScriptParser::AssignmentOperatorExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAssignmentOperatorExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
 //----------------- VoidExpressionContext ------------------------------------------------------------------
 
 tree::TerminalNode* TypeScriptParser::VoidExpressionContext::Void() {
@@ -14885,6 +15771,13 @@ void TypeScriptParser::VoidExpressionContext::exitRule(tree::ParseTreeListener *
     parserListener->exitVoidExpression(this);
 }
 
+antlrcpp::Any TypeScriptParser::VoidExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitVoidExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression() {
    return singleExpression(0);
 }
@@ -14900,11 +15793,7 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
 
     size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -14990,8 +15879,6 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
         break;
       }
 
-      default:
-        break;
       }
       break;
     }
@@ -15156,8 +16043,6 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
         break;
       }
 
-      default:
-        break;
       }
       break;
     }
@@ -15227,14 +16112,10 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
         break;
       }
 
-      default:
-        break;
       }
       break;
     }
 
-    default:
-      break;
     }
     _ctx->stop = _input->LT(-1);
     setState(1588);
@@ -15516,6 +16397,7 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
         case 16: {
           auto newContext = _tracker.createInstance<MemberIndexExpressionContext>(_tracker.createInstance<SingleExpressionContext>(parentContext, parentState));
           _localctx = newContext;
+          newContext->object = previousContext;
           pushNewRecursionContext(newContext, startState, RuleSingleExpression);
           setState(1562);
 
@@ -15523,7 +16405,7 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
           setState(1563);
           match(TypeScriptParser::OpenBracket);
           setState(1564);
-          expressionSequence();
+          dynamic_cast<MemberIndexExpressionContext *>(_localctx)->property = expressionSequence();
           setState(1565);
           match(TypeScriptParser::CloseBracket);
           break;
@@ -15532,6 +16414,7 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
         case 17: {
           auto newContext = _tracker.createInstance<MemberDotExpressionContext>(_tracker.createInstance<SingleExpressionContext>(parentContext, parentState));
           _localctx = newContext;
+          newContext->object = previousContext;
           pushNewRecursionContext(newContext, startState, RuleSingleExpression);
           setState(1567);
 
@@ -15539,7 +16422,7 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
           setState(1568);
           match(TypeScriptParser::Dot);
           setState(1569);
-          identifierName();
+          dynamic_cast<MemberDotExpressionContext *>(_localctx)->property = identifierName();
           setState(1571);
           _errHandler->sync(this);
 
@@ -15550,8 +16433,6 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
             break;
           }
 
-          default:
-            break;
           }
           break;
         }
@@ -15624,8 +16505,6 @@ TypeScriptParser::SingleExpressionContext* TypeScriptParser::singleExpression(in
           break;
         }
 
-        default:
-          break;
         } 
       }
       setState(1590);
@@ -15680,15 +16559,19 @@ void TypeScriptParser::AsExpressionContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitAsExpression(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::AsExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAsExpression(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::AsExpressionContext* TypeScriptParser::asExpression() {
   AsExpressionContext *_localctx = _tracker.createInstance<AsExpressionContext>(_ctx, getState());
   enterRule(_localctx, 256, TypeScriptParser::RuleAsExpression);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -15711,8 +16594,6 @@ TypeScriptParser::AsExpressionContext* TypeScriptParser::asExpression() {
         break;
       }
 
-      default:
-        break;
       }
       break;
     }
@@ -15724,8 +16605,6 @@ TypeScriptParser::AsExpressionContext* TypeScriptParser::asExpression() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -15781,16 +16660,20 @@ void TypeScriptParser::ArrowFunctionDeclarationContext::exitRule(tree::ParseTree
     parserListener->exitArrowFunctionDeclaration(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArrowFunctionDeclarationContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrowFunctionDeclaration(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArrowFunctionDeclarationContext* TypeScriptParser::arrowFunctionDeclaration() {
   ArrowFunctionDeclarationContext *_localctx = _tracker.createInstance<ArrowFunctionDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 258, TypeScriptParser::RuleArrowFunctionDeclaration);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -15867,16 +16750,20 @@ void TypeScriptParser::ArrowFunctionParametersContext::exitRule(tree::ParseTreeL
     parserListener->exitArrowFunctionParameters(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArrowFunctionParametersContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrowFunctionParameters(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArrowFunctionParametersContext* TypeScriptParser::arrowFunctionParameters() {
   ArrowFunctionParametersContext *_localctx = _tracker.createInstance<ArrowFunctionParametersContext>(_ctx, getState());
   enterRule(_localctx, 260, TypeScriptParser::RuleArrowFunctionParameters);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -15970,15 +16857,19 @@ void TypeScriptParser::ArrowFunctionBodyContext::exitRule(tree::ParseTreeListene
     parserListener->exitArrowFunctionBody(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ArrowFunctionBodyContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitArrowFunctionBody(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ArrowFunctionBodyContext* TypeScriptParser::arrowFunctionBody() {
   ArrowFunctionBodyContext *_localctx = _tracker.createInstance<ArrowFunctionBodyContext>(_ctx, getState());
   enterRule(_localctx, 262, TypeScriptParser::RuleArrowFunctionBody);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16003,8 +16894,6 @@ TypeScriptParser::ArrowFunctionBodyContext* TypeScriptParser::arrowFunctionBody(
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -16084,16 +16973,20 @@ void TypeScriptParser::AssignmentOperatorContext::exitRule(tree::ParseTreeListen
     parserListener->exitAssignmentOperator(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::AssignmentOperatorContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitAssignmentOperator(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::AssignmentOperatorContext* TypeScriptParser::assignmentOperator() {
   AssignmentOperatorContext *_localctx = _tracker.createInstance<AssignmentOperatorContext>(_ctx, getState());
   enterRule(_localctx, 264, TypeScriptParser::RuleAssignmentOperator);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16176,15 +17069,19 @@ void TypeScriptParser::LiteralContext::exitRule(tree::ParseTreeListener *listene
     parserListener->exitLiteral(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::LiteralContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitLiteral(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::LiteralContext* TypeScriptParser::literal() {
   LiteralContext *_localctx = _tracker.createInstance<LiteralContext>(_ctx, getState());
   enterRule(_localctx, 266, TypeScriptParser::RuleLiteral);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16290,16 +17187,20 @@ void TypeScriptParser::TemplateStringLiteralContext::exitRule(tree::ParseTreeLis
     parserListener->exitTemplateStringLiteral(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TemplateStringLiteralContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTemplateStringLiteral(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TemplateStringLiteralContext* TypeScriptParser::templateStringLiteral() {
   TemplateStringLiteralContext *_localctx = _tracker.createInstance<TemplateStringLiteralContext>(_ctx, getState());
   enterRule(_localctx, 268, TypeScriptParser::RuleTemplateStringLiteral);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16370,15 +17271,19 @@ void TypeScriptParser::TemplateStringAtomContext::exitRule(tree::ParseTreeListen
     parserListener->exitTemplateStringAtom(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::TemplateStringAtomContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitTemplateStringAtom(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::TemplateStringAtomContext* TypeScriptParser::templateStringAtom() {
   TemplateStringAtomContext *_localctx = _tracker.createInstance<TemplateStringAtomContext>(_ctx, getState());
   enterRule(_localctx, 270, TypeScriptParser::RuleTemplateStringAtom);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16460,16 +17365,20 @@ void TypeScriptParser::NumericLiteralContext::exitRule(tree::ParseTreeListener *
     parserListener->exitNumericLiteral(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::NumericLiteralContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitNumericLiteral(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::NumericLiteralContext* TypeScriptParser::numericLiteral() {
   NumericLiteralContext *_localctx = _tracker.createInstance<NumericLiteralContext>(_ctx, getState());
   enterRule(_localctx, 272, TypeScriptParser::RuleNumericLiteral);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16530,15 +17439,19 @@ void TypeScriptParser::IdentifierNameContext::exitRule(tree::ParseTreeListener *
     parserListener->exitIdentifierName(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IdentifierNameContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIdentifierName(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IdentifierNameContext* TypeScriptParser::identifierName() {
   IdentifierNameContext *_localctx = _tracker.createInstance<IdentifierNameContext>(_ctx, getState());
   enterRule(_localctx, 274, TypeScriptParser::RuleIdentifierName);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16659,16 +17572,20 @@ void TypeScriptParser::IdentifierOrKeyWordContext::exitRule(tree::ParseTreeListe
     parserListener->exitIdentifierOrKeyWord(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::IdentifierOrKeyWordContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitIdentifierOrKeyWord(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::IdentifierOrKeyWordContext* TypeScriptParser::identifierOrKeyWord() {
   IdentifierOrKeyWordContext *_localctx = _tracker.createInstance<IdentifierOrKeyWordContext>(_ctx, getState());
   enterRule(_localctx, 276, TypeScriptParser::RuleIdentifierOrKeyWord);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -16731,15 +17648,19 @@ void TypeScriptParser::ReservedWordContext::exitRule(tree::ParseTreeListener *li
     parserListener->exitReservedWord(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::ReservedWordContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitReservedWord(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::ReservedWordContext* TypeScriptParser::reservedWord() {
   ReservedWordContext *_localctx = _tracker.createInstance<ReservedWordContext>(_ctx, getState());
   enterRule(_localctx, 278, TypeScriptParser::RuleReservedWord);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -17053,16 +17974,20 @@ void TypeScriptParser::KeywordContext::exitRule(tree::ParseTreeListener *listene
     parserListener->exitKeyword(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::KeywordContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitKeyword(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::KeywordContext* TypeScriptParser::keyword() {
   KeywordContext *_localctx = _tracker.createInstance<KeywordContext>(_ctx, getState());
   enterRule(_localctx, 280, TypeScriptParser::RuleKeyword);
   size_t _la = 0;
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -17168,15 +18093,19 @@ void TypeScriptParser::GetterContext::exitRule(tree::ParseTreeListener *listener
     parserListener->exitGetter(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::GetterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitGetter(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::GetterContext* TypeScriptParser::getter() {
   GetterContext *_localctx = _tracker.createInstance<GetterContext>(_ctx, getState());
   enterRule(_localctx, 282, TypeScriptParser::RuleGetter);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -17227,15 +18156,19 @@ void TypeScriptParser::SetterContext::exitRule(tree::ParseTreeListener *listener
     parserListener->exitSetter(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::SetterContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitSetter(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::SetterContext* TypeScriptParser::setter() {
   SetterContext *_localctx = _tracker.createInstance<SetterContext>(_ctx, getState());
   enterRule(_localctx, 284, TypeScriptParser::RuleSetter);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -17286,15 +18219,19 @@ void TypeScriptParser::EosContext::exitRule(tree::ParseTreeListener *listener) {
     parserListener->exitEos(this);
 }
 
+
+antlrcpp::Any TypeScriptParser::EosContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<TypeScriptParserVisitor*>(visitor))
+    return parserVisitor->visitEos(this);
+  else
+    return visitor->visitChildren(this);
+}
+
 TypeScriptParser::EosContext* TypeScriptParser::eos() {
   EosContext *_localctx = _tracker.createInstance<EosContext>(_ctx, getState());
   enterRule(_localctx, 286, TypeScriptParser::RuleEos);
 
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
   auto onExit = finally([=] {
-#endif
     exitRule();
   });
   try {
@@ -17331,8 +18268,6 @@ TypeScriptParser::EosContext* TypeScriptParser::eos() {
       break;
     }
 
-    default:
-      break;
     }
    
   }
@@ -17572,22 +18507,21 @@ std::vector<std::string> TypeScriptParser::_ruleNames = {
 
 std::vector<std::string> TypeScriptParser::_literalNames = {
   "", "", "", "", "'['", "']'", "'('", "')'", "'{'", "", "'}'", "';'", "','", 
-  "'='", "'\u003F'", "':'", "'...'", "'.'", "'++'", "'--'", "'+'", "'-'", 
-  "'~'", "'!'", "'*'", "'/'", "'%'", "'>>'", "'<<'", "'>>>'", "'<'", "'>'", 
-  "'<='", "'>='", "'=='", "'!='", "'==='", "'!=='", "'&'", "'^'", "'|'", 
-  "'&&'", "'||'", "'*='", "'/='", "'%='", "'+='", "'-='", "'<<='", "'>>='", 
-  "'>>>='", "'&='", "'^='", "'|='", "'=>'", "'null'", "", "", "", "", "", 
-  "", "'break'", "'do'", "'instanceof'", "'typeof'", "'case'", "'else'", 
-  "'new'", "'var'", "'catch'", "'finally'", "'return'", "'void'", "'continue'", 
-  "'for'", "'switch'", "'while'", "'debugger'", "'function'", "'this'", 
-  "'with'", "'default'", "'if'", "'throw'", "'delete'", "'in'", "'try'", 
-  "'as'", "'from'", "'readonly'", "'async'", "'class'", "'enum'", "'extends'", 
-  "'super'", "'const'", "'export'", "'import'", "'implements'", "'let'", 
-  "'private'", "'public'", "'interface'", "'package'", "'protected'", "'static'", 
-  "'yield'", "'any'", "'number'", "'boolean'", "'string'", "'symbol'", "'type'", 
-  "'get'", "'set'", "'constructor'", "'namespace'", "'require'", "'module'", 
-  "'declare'", "'abstract'", "'is'", "'@'", "", "", "", "", "", "", "", 
-  "", "'${'"
+  "'='", "'?'", "':'", "'...'", "'.'", "'++'", "'--'", "'+'", "'-'", "'~'", 
+  "'!'", "'*'", "'/'", "'%'", "'>>'", "'<<'", "'>>>'", "'<'", "'>'", "'<='", 
+  "'>='", "'=='", "'!='", "'==='", "'!=='", "'&'", "'^'", "'|'", "'&&'", 
+  "'||'", "'*='", "'/='", "'%='", "'+='", "'-='", "'<<='", "'>>='", "'>>>='", 
+  "'&='", "'^='", "'|='", "'=>'", "'null'", "", "", "", "", "", "", "'break'", 
+  "'do'", "'instanceof'", "'typeof'", "'case'", "'else'", "'new'", "'var'", 
+  "'catch'", "'finally'", "'return'", "'void'", "'continue'", "'for'", "'switch'", 
+  "'while'", "'debugger'", "'function'", "'this'", "'with'", "'default'", 
+  "'if'", "'throw'", "'delete'", "'in'", "'try'", "'as'", "'from'", "'readonly'", 
+  "'async'", "'class'", "'enum'", "'extends'", "'super'", "'const'", "'export'", 
+  "'import'", "'implements'", "'let'", "'private'", "'public'", "'interface'", 
+  "'package'", "'protected'", "'static'", "'yield'", "'any'", "'number'", 
+  "'boolean'", "'string'", "'symbol'", "'type'", "'get'", "'set'", "'constructor'", 
+  "'namespace'", "'require'", "'module'", "'declare'", "'abstract'", "'is'", 
+  "'@'", "", "", "", "", "", "", "", "", "'${'"
 };
 
 std::vector<std::string> TypeScriptParser::_symbolicNames = {
