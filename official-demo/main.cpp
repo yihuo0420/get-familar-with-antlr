@@ -35,6 +35,7 @@ int main(int, const char **)
   TParser parser(&tokens);
   parser.addParseListener(new TParserBaseListener());
   parser.addErrorListener(nullptr);
+  parser.getVocabulary();
   tree::ParseTree *tree = parser.main();
 
   tree::ParseTreeWalker walker;

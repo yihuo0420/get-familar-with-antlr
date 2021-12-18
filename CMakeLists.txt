@@ -7,7 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 #Disable unnecessary warning for vc
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-set(CMAKE_CXX_FLAGS "/wo4530 /wo4251")
+set(CMAKE_CXX_FLAGS "/wo4530 /wo4251 /wo4838")
 endif()
 
 #find package through cmake facility
@@ -30,6 +30,7 @@ file(GLOB_RECURSE TS_PARSER_GEN ts-parser/gen-cpp-typescript/*.cpp)
 add_executable(ts_parser_test
     ${TS_PARSER_GEN}
     ts-parser/ast_to_json.cpp
+    ts-parser/common_def.cpp
     ts-parser/test/gen-cpp-typescript.test.cpp
 )
 target_link_libraries( ts_parser_test PRIVATE 

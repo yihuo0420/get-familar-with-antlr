@@ -33,5 +33,5 @@ namespace cyclone
 
 	} // namespace parser
 
-} // namespace cyclone
+} // namespace cyclone::parser
 #endif

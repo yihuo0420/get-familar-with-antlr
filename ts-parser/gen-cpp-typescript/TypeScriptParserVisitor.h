@@ -1,28 +1,26 @@
 
 #include "TypeScriptParserBase.h"
 
-
 // Generated from TypeScriptParser.g4 by ANTLR 4.8
 
 #pragma once
 
-
 #include "antlr4-runtime.h"
 #include "TypeScriptParser.h"
 
-
-namespace cyclone {
-
-/**
- * This class defines an abstract visitor for a parse tree
- * produced by TypeScriptParser.
- */
-class  TypeScriptParserVisitor : public antlr4::tree::AbstractParseTreeVisitor {
-public:
+namespace cyclone
+{
 
   /**
-   * Visit parse trees produced by TypeScriptParser.
+   * This class defines an abstract visitor for a parse tree
+   * produced by TypeScriptParser.
    */
+  class TypeScriptParserVisitor : public antlr4::tree::AbstractParseTreeVisitor
+  {
+  public:
+    /**
+     * Visit parse trees produced by TypeScriptParser.
+     */
     virtual antlrcpp::Any visitInitializer(TypeScriptParser::InitializerContext *context) = 0;
 
     virtual antlrcpp::Any visitBindingPattern(TypeScriptParser::BindingPatternContext *context) = 0;
@@ -450,8 +448,6 @@ public:
     virtual antlrcpp::Any visitSetter(TypeScriptParser::SetterContext *context) = 0;
 
     virtual antlrcpp::Any visitEos(TypeScriptParser::EosContext *context) = 0;
+  };
 
-
-};
-
-}  // namespace cyclone
+} // namespace cyclone::parser
