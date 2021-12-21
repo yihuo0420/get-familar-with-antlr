@@ -36,7 +36,12 @@ options {
 }
 @header {
 #include "TypeScriptParserBase.h"
+#include <unordered_map>
+#include <string>
 }
+@member{ 
+std::unordered_map<std::string , std::string > identifierMap_;
+ }
 
 
 // SupportSyntax
@@ -680,20 +685,20 @@ singleExpression
     | '-' singleExpression                                                   # UnaryMinusExpression
     | '~' singleExpression                                                   # BitNotExpression
     | '!' singleExpression                                                   # NotExpression
-    | singleExpression ('*' | '/' | '%') singleExpression                    # MultiplicativeExpression
-    | singleExpression ('+' | '-') singleExpression                          # AdditiveExpression
-    | singleExpression ('<<' | '>>' | '>>>') singleExpression                # BitShiftExpression
-    | singleExpression ('<' | '>' | '<=' | '>=') singleExpression            # RelationalExpression
-    | singleExpression Instanceof singleExpression                           # InstanceofExpression
-    | singleExpression In singleExpression                                   # InExpression
-    | singleExpression ('==' | '!=' | '===' | '!==') singleExpression        # EqualityExpression
-    | singleExpression '&' singleExpression                                  # BitAndExpression
-    | singleExpression '^' singleExpression                                  # BitXOrExpression
-    | singleExpression '|' singleExpression                                  # BitOrExpression
-    | singleExpression '&&' singleExpression                                 # LogicalAndExpression
-    | singleExpression '||' singleExpression                                 # LogicalOrExpression
-    | singleExpression '?' singleExpression ':' singleExpression             # TernaryExpression
-    | singleExpression '=' singleExpression                                  # AssignmentExpression
+    |lhs = singleExpression ('*' | '/' | '%') rhs= singleExpression                    # MultiplicativeExpression
+    |lhs = singleExpression ('+' | '-') rhs= singleExpression                          # AdditiveExpression
+    |lhs = singleExpression ('<<' | '>>' | '>>>')rhs=  singleExpression                # BitShiftExpression
+    |lhs = singleExpression ('<' | '>' | '<=' | '>=') rhs= singleExpression            # RelationalExpression
+    |lhs = singleExpression Instanceof rhs= singleExpression                           # InstanceofExpression
+    | lhs =singleExpression In rhs=  singleExpression                                   # InExpression
+    |lhs = singleExpression ('==' | '!=' | '===' | '!==') rhs= singleExpression        # EqualityExpression
+    |lhs = singleExpression '&'rhs=  singleExpression                                  # BitAndExpression
+    |lhs = singleExpression '^' rhs= singleExpression                                  # BitXOrExpression
+    |lhs = singleExpression '|' rhs= singleExpression                                  # BitOrExpression
+    |lhs = singleExpression '&&'rhs=  singleExpression                                 # LogicalAndExpression
+    |lhs = singleExpression '||' rhs= singleExpression                                 # LogicalOrExpression
+    |condition = singleExpression '?' lhs = singleExpression ':'  rhs= singleExpression             # TernaryExpression
+    |lhs = singleExpression '=' rhs= singleExpression                                  # AssignmentExpression
     | singleExpression assignmentOperator singleExpression                   # AssignmentOperatorExpression
     | singleExpression templateStringLiteral                                 # TemplateStringExpression  // ECMAScript 6
     | iteratorBlock                                                          # IteratorsExpression // ECMAScript 6
@@ -703,12 +708,12 @@ singleExpression
     | This                                                                   # ThisExpression
     | identifierName singleExpression?                                       # IdentifierExpression
     | Super                                                                  # SuperExpression
-    | literal                                                                # LiteralExpression
+    | value = literal                                                                # LiteralExpression
     | arrayLiteral                                                           # ArrayLiteralExpression
     | objectLiteral                                                          # ObjectLiteralExpression
     | '(' expressionSequence ')'                                             # ParenthesizedExpression
     | typeArguments expressionSequence?                                      # GenericTypes
-    | singleExpression As asExpression                                       # CastAsExpression
+    | originalType=  singleExpression As aliasType= asExpression                                       # CastAsExpression
     ;
 
 asExpression

@@ -204,7 +204,7 @@ TemplateStringStartExpression:  '${' -> pushMode(DEFAULT_MODE);
 TemplateStringAtom:             ~[`];
 
 // Fragment rules
-
+//Fragment  rules can only be used by other normal rules ,and will not geneate  tokens
 fragment DoubleStringCharacter
     : ~["\\\r\n]
     | '\\' EscapeSequence
