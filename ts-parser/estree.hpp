@@ -6,7 +6,6 @@
 #include <string>
 #include <vector>
 #include <variant>
-
 namespace cyclone::parser
 {
 
@@ -74,6 +73,16 @@ namespace cyclone::parser
 	struct Directive : BaseNode
 	{
 		LiteralType expression;
+		string directive;
+	};
+
+	template <typename T, auto N>
+	struct Directive : BaseNode
+	{
+		Directive(T visitee)
+		{
+		}
+		decltype(N.visitor()) expression;
 		string directive;
 	};
 

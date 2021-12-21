@@ -2,36 +2,29 @@
 #define AST_VISITOR_H
 #pragma once
 
-namespace antlr4
+namespace antlr4::tree
 {
-	namespace tree
-	{
-		class ParseTree;
-		class TerminalNode;
-		class ErrorNode;
-	}
+	class ParseTree;
+	class TerminalNode;
+	class ErrorNode;
 }
 
 using antlr4::tree::ErrorNode;
 using antlr4::tree::ParseTree;
 using antlr4::tree::TerminalNode;
 
-namespace cyclone
+namespace cyclone::parser
 {
-	namespace parser
+	template <typename T>
+	class AstVisitor
 	{
-		template <typename T>
-		class AstVisitor
-		{
-		public:
-			virtual ~AstVisitor() = default;
-			virtual T visit(ParseTree *tree) = 0;
-			virtual T visitChildren(ParseTree *tree) = 0;
-			virtual T visitTerminal(TerminalNode *node) = 0;
-			virtual T visitErrorNode(ErrorNode *node) = 0;
-		};
-
-	} // namespace parser
+	public:
+		virtual ~AstVisitor() = default;
+		virtual T visit(ParseTree *tree) = 0;
+		virtual T visitChildren(ParseTree *tree) = 0;
+		virtual T visitTerminal(TerminalNode *node) = 0;
+		virtual T visitErrorNode(ErrorNode *node) = 0;
+	};
 
 } // namespace cyclone::parser
 #endif
