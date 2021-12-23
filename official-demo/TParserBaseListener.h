@@ -1,6 +1,8 @@
 /* parser/listener/visitor header section */
+#include <any>
 
-// Generated from TParser.g4 by ANTLR 4.9
+
+// Generated from TParser.g4 by ANTLR 4.8
 
 #pragma once
 
@@ -11,88 +13,91 @@
 
 /* base listener postinclude section */
 
-namespace antlrcpptest
-{
+namespace antlrcpptest {
 
-  /**
-   * This class provides an empty implementation of TParserListener,
-   * which can be extended to create a listener which only needs to handle a subset
-   * of the available methods.
-   */
+/**
+ * This class provides an empty implementation of TParserListener,
+ * which can be extended to create a listener which only needs to handle a subset
+ * of the available methods.
+ */
+class  TParserBaseListener : public TParserListener {
+public:
+/* base listener public declarations/members section */
 
-  static const auto AstPrinter = [=](antlr4::ParserRuleContext &ctx)
-  {
-    std::cout << " start : " << ctx.start->getStartIndex() << std::endl;
-    if (ctx.stop)
-      std::cout << " end : " << ctx.stop->getStopIndex() << std::endl;
-  };
+  virtual void enterMain(TParser::MainContext * /*ctx*/) override { }
+  virtual void exitMain(TParser::MainContext * /*ctx*/) override { }
 
-  class TParserBaseListener : public TParserListener
-  {
-  public:
-    /* base listener public declarations/members section */
+  virtual void enterDivide(TParser::DivideContext * /*ctx*/) override { }
+  virtual void exitDivide(TParser::DivideContext * /*ctx*/) override { }
 
-    virtual void enterMain(TParser::MainContext *ctx) override
-    {
-      AstPrinter(*ctx);
-    }
-    virtual void exitMain(TParser::MainContext *ctx) override
-    {
-      AstPrinter(*ctx);
-    }
+  virtual void enterAnd_(TParser::And_Context * /*ctx*/) override { }
+  virtual void exitAnd_(TParser::And_Context * /*ctx*/) override { }
 
-    virtual void enterDivide(TParser::DivideContext *ctx) override
-    {
-      AstPrinter(*ctx);
-    }
-    virtual void exitDivide(TParser::DivideContext *ctx) override
-    {
-      AstPrinter(*ctx);
-    }
+  virtual void enterConquer(TParser::ConquerContext * /*ctx*/) override { }
+  virtual void exitConquer(TParser::ConquerContext * /*ctx*/) override { }
 
-    virtual void enterAnd_(TParser::And_Context *ctx) override { AstPrinter(*ctx); }
-    virtual void exitAnd_(TParser::And_Context *ctx) override { AstPrinter(*ctx); }
+  virtual void enterUnused(TParser::UnusedContext * /*ctx*/) override { }
+  virtual void exitUnused(TParser::UnusedContext * /*ctx*/) override { }
 
-    virtual void enterConquer(TParser::ConquerContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitConquer(TParser::ConquerContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterUnused2(TParser::Unused2Context * /*ctx*/) override { }
+  virtual void exitUnused2(TParser::Unused2Context * /*ctx*/) override { }
 
-    virtual void enterUnused(TParser::UnusedContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitUnused(TParser::UnusedContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterStat(TParser::StatContext * /*ctx*/) override { }
+  virtual void exitStat(TParser::StatContext * /*ctx*/) override { }
 
-    virtual void enterUnused2(TParser::Unused2Context *ctx) override { AstPrinter(*ctx); }
-    virtual void exitUnused2(TParser::Unused2Context *ctx) override { AstPrinter(*ctx); }
+  virtual void enterQuestionExpression(TParser::QuestionExpressionContext * /*ctx*/) override { }
+  virtual void exitQuestionExpression(TParser::QuestionExpressionContext * /*ctx*/) override { }
 
-    virtual void enterStat(TParser::StatContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitStat(TParser::StatContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterStringLiteralExpression(TParser::StringLiteralExpressionContext * /*ctx*/) override { }
+  virtual void exitStringLiteralExpression(TParser::StringLiteralExpressionContext * /*ctx*/) override { }
 
-    virtual void enterExpr(TParser::ExprContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitExpr(TParser::ExprContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterStarExpression(TParser::StarExpressionContext * /*ctx*/) override { }
+  virtual void exitStarExpression(TParser::StarExpressionContext * /*ctx*/) override { }
 
-    virtual void enterReturn(TParser::ReturnContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitReturn(TParser::ReturnContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterEquealExpressoin(TParser::EquealExpressoinContext * /*ctx*/) override { }
+  virtual void exitEquealExpressoin(TParser::EquealExpressoinContext * /*ctx*/) override { }
 
-    virtual void enterContinue(TParser::ContinueContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitContinue(TParser::ContinueContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterFlowControlExpression(TParser::FlowControlExpressionContext * /*ctx*/) override { }
+  virtual void exitFlowControlExpression(TParser::FlowControlExpressionContext * /*ctx*/) override { }
 
-    virtual void enterId(TParser::IdContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitId(TParser::IdContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterIntLteralExpressoin(TParser::IntLteralExpressoinContext * /*ctx*/) override { }
+  virtual void exitIntLteralExpressoin(TParser::IntLteralExpressoinContext * /*ctx*/) override { }
 
-    virtual void enterArray(TParser::ArrayContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitArray(TParser::ArrayContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterPLusExpression(TParser::PLusExpressionContext * /*ctx*/) override { }
+  virtual void exitPLusExpression(TParser::PLusExpressionContext * /*ctx*/) override { }
 
-    virtual void enterIdarray(TParser::IdarrayContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitIdarray(TParser::IdarrayContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterParExpression(TParser::ParExpressionContext * /*ctx*/) override { }
+  virtual void exitParExpression(TParser::ParExpressionContext * /*ctx*/) override { }
 
-    virtual void enterAny(TParser::AnyContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitAny(TParser::AnyContext *ctx) override { AstPrinter(*ctx); }
+  virtual void enterIdentifierExpression(TParser::IdentifierExpressionContext * /*ctx*/) override { }
+  virtual void exitIdentifierExpression(TParser::IdentifierExpressionContext * /*ctx*/) override { }
 
-    virtual void enterEveryRule(antlr4::ParserRuleContext *ctx) override { AstPrinter(*ctx); }
-    virtual void exitEveryRule(antlr4::ParserRuleContext *ctx) override { AstPrinter(*ctx); }
-    virtual void visitTerminal(antlr4::tree::TerminalNode *node) override {}
-    virtual void visitErrorNode(antlr4::tree::ErrorNode *node) override {}
+  virtual void enterReturn(TParser::ReturnContext * /*ctx*/) override { }
+  virtual void exitReturn(TParser::ReturnContext * /*ctx*/) override { }
 
-  private:
-    /* base listener private declarations/members section */
-  };
+  virtual void enterContinue(TParser::ContinueContext * /*ctx*/) override { }
+  virtual void exitContinue(TParser::ContinueContext * /*ctx*/) override { }
 
-} // namespace antlrcpptest
+  virtual void enterId(TParser::IdContext * /*ctx*/) override { }
+  virtual void exitId(TParser::IdContext * /*ctx*/) override { }
+
+  virtual void enterArray(TParser::ArrayContext * /*ctx*/) override { }
+  virtual void exitArray(TParser::ArrayContext * /*ctx*/) override { }
+
+  virtual void enterIdarray(TParser::IdarrayContext * /*ctx*/) override { }
+  virtual void exitIdarray(TParser::IdarrayContext * /*ctx*/) override { }
+
+  virtual void enterAny(TParser::AnyContext * /*ctx*/) override { }
+  virtual void exitAny(TParser::AnyContext * /*ctx*/) override { }
+
+
+  virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
+  virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
+  virtual void visitTerminal(antlr4::tree::TerminalNode * /*node*/) override { }
+  virtual void visitErrorNode(antlr4::tree::ErrorNode * /*node*/) override { }
+
+private:  
+/* base listener private declarations/members section */
+};
+
+}  // namespace antlrcpptest

@@ -34,71 +34,21 @@ options {
 	tokenVocab = TypeScriptLexer;
 	superClass = TypeScriptParserBase;
 }
-@header {
-#include "TypeScriptParserBase.h"
+
+@parser::preinclude  {
 #include <unordered_map>
 #include <string>
+#include "TypeScriptParserBase.h"
+#include "../common_def.hpp"
+using std::string;
+using namespace cyclone::parser;
 }
 @member{ 
 std::unordered_map<std::string , std::string > identifierMap_;
  }
 
-
-// /** Derived from rule "file : hdr row+ ;" */
-// file
-// locals [int i=0]
-//      : hdr ( rows+=row[$hdr.text.split(",")] {$i++;} )+
-//        {
-//        System.out.println($i+" rows");
-//        for (RowContext r : $rows) {
-//            System.out.println("row token interval: "+r.getSourceInterval());
-//        }
-//        }
-//      ;
-
-// hdr : row[null] {System.out.println("header: '"+$text.trim()+"'");} ;
-
-// /** Derived from rule "row : field (',' field)* '\r'? '\n' ;" */
-// row[String[] columns] returns [Map<String,String> values]
-// locals [int col=0]
-// @init {
-//     $values = new HashMap<String,String>();
-// }
-// @after {
-//     if ($values!=null && $values.size()>0) {
-//         System.out.println("values = "+$values);
-//     }
-// }
-// // rule row cont'd...
-//     :   field
-//         {
-//         if ($columns!=null) {
-//             $values.put($columns[$col++].trim(), $field.text.trim());
-//         }
-//         }
-//         (   ',' field
-//             {
-//             if ($columns!=null) {
-//                 $values.put($columns[$col++].trim(), $field.text.trim());
-//             }
-//             }
-//         )* '\r'? '\n'
-//     ;
-
-// field
-//     :   TEXT
-//     |   STRING
-//     |
-//     ;
-
-// TEXT : ~[,\n\r"]+ ;
-// STRING : '"' ('""'|~'"')* '"' ; // quote-quote is an escaped quote
-
-
-// SupportSyntax
-
 initializer
-    : '=' singleExpression
+    : '=' expression
     ;
 
 bindingPattern
@@ -163,13 +113,13 @@ primaryType
     | typeReference Is primaryType                  #RedefinitionOfType
     ;
 
-predefinedType
-    : Any
-    | Number
-    | Boolean
-    | String
-    | Symbol
-    | Void
+predefinedType locals [std::string typeId]
+    : Any    {$typeId = "Any"; }
+    | Number {$typeId = "Number"; }
+    | Boolean {$typeId = "Boolean"; }
+    | String {$typeId = "String"; }
+    | Symbol {$typeId = "Symbol"; }
+    | Void {$typeId = "Void"; }
     ;
 
 typeReference
@@ -281,7 +231,7 @@ optionalParameter
     ;
 
 restParameter
-    : '...' singleExpression typeAnnotation?
+    : '...' expression typeAnnotation?
     ;
 
 requiredParameter
@@ -348,7 +298,7 @@ enumMemberList
     ;
 
 enumMember
-    : propertyName ('=' singleExpression)?
+    : propertyName ('=' expression)?
     ;
 
 // A.8 Namespaces
@@ -377,15 +327,15 @@ decorator
 decoratorMemberExpression
     : Identifier
     | decoratorMemberExpression '.' identifierName
-    | '(' singleExpression ')'
+    | '(' expression ')'
     ;
 
 decoratorCallExpression
     : decoratorMemberExpression arguments;
 
 // ECMAPart
-program
-    : sourceElements? EOF
+program locals [std::string type , SourceType sourceType ]
+    : body = sourceElements? EOF { $type = "Program"; $sourceType = 0;  } //TODO distinguish sourecetype
     ;
 
 sourceElement
@@ -452,18 +402,37 @@ exportStatement
     : Export Default? (fromBlock | statement)
     ;
 
+
+//NOTE @Add variableDeclaration for compatibility with estree
+variableDeclaration :
+    kind = varModifier declarations = variableDeclarationList;
+
+
 variableStatement
-    : bindingPattern typeAnnotation? initializer SemiColon?
+    :variableDeclaration
+    | bindingPattern typeAnnotation? initializer SemiColon?
     | accessibilityModifier? varModifier? ReadOnly? variableDeclarationList SemiColon?
     | Declare varModifier? variableDeclarationList SemiColon?
     ;
 
 variableDeclarationList
-    : variableDeclaration (',' variableDeclaration)*
+    : variableDeclarator (',' variableDeclarator)*
     ;
+//NOTE  @Add variableDeclaratePattern for compatibility with estree
+variableDeclaratePattern :
+    identifierOrKeyWord 
+    | arrayLiteral
+    | objectLiteral;
 
-variableDeclaration
-    : ( identifierOrKeyWord | arrayLiteral | objectLiteral) typeAnnotation? singleExpression? ('=' typeParameters? singleExpression)? // ECMAScript 6: Array & Object Matching
+//NOTE  @Add variableAnnotation for compatibility with estree
+variableAnnotation :  typeAnnotation? expression? ;
+
+//NOTE @Rename variableDeclaration to variableDeclarator for compatibility with estree
+variableDeclarator locals[string type  ]  
+    : id = variableDeclaratePattern  annotation =  variableAnnotation ('='   init=  typeParameters? expression)? // ECMAScript 6: Array & Object Matching
+    {
+        $type = "VariableDeclarator";
+    }
     ;
 
 emptyStatement
@@ -485,8 +454,8 @@ iterationStatement
     | For '(' expressionSequence? SemiColon expressionSequence? SemiColon expressionSequence? ')' statement     # ForStatement
     | For '(' varModifier variableDeclarationList SemiColon expressionSequence? SemiColon expressionSequence? ')'
           statement                                                                                             # ForVarStatement
-    | For '(' singleExpression (In | Identifier{this->p("of")}?) expressionSequence ')' statement                # ForInStatement
-    | For '(' varModifier variableDeclaration (In | Identifier{this->p("of")}?) expressionSequence ')' statement # ForVarInStatement
+    | For '(' expression (In | Identifier{this->p("of")}?) expressionSequence ')' statement                # ForInStatement
+    | For '(' varModifier variableDeclarator (In | Identifier{this->p("of")}?) expressionSequence ')' statement # ForVarInStatement
     ;
 
 varModifier
@@ -559,8 +528,8 @@ debuggerStatement
     : Debugger eos
     ;
 
-functionDeclaration
-    : Function_ Identifier callSignature ( ('{' functionBody '}') | SemiColon)
+functionDeclaration locals[string type]
+    : Function_  id= Identifier  body= callSignature ( ('{' functionBody '}') | SemiColon) {$type = "FunctionDeclaration";  }
     ;
 
 //Ovveride ECMA
@@ -628,7 +597,7 @@ iteratorBlock
     ;
 
 iteratorDefinition
-    : '[' singleExpression ']' '(' formalParameterList? ')' '{' functionBody '}'
+    : '[' expression ']' '(' formalParameterList? ')' '{' functionBody '}'
     ;
 
 formalParameterList
@@ -639,7 +608,7 @@ formalParameterList
     ;
 
 formalParameterArg
-    : decorator? accessibilityModifier? identifierOrKeyWord '?'? typeAnnotation? ('=' singleExpression)?      // ECMAScript 6: Initialization
+    : decorator? accessibilityModifier? identifierOrKeyWord '?'? typeAnnotation? ('=' expression)?      // ECMAScript 6: Initialization
     ;
 
 lastFormalParameterArg                        // ECMAScript 6: Rest Parameter
@@ -663,7 +632,7 @@ elementList
     ;
 
 arrayElement                      // ECMAScript 6: Spread Operator
-    : Ellipsis? (singleExpression | Identifier) ','?
+    : Ellipsis? (expression | Identifier) ','?
     ;
 
 objectLiteral
@@ -672,8 +641,8 @@ objectLiteral
 
 // MODIFIED
 propertyAssignment
-    : propertyName (':' |'=') singleExpression                # PropertyExpressionAssignment
-    | '[' singleExpression ']' ':' singleExpression           # ComputedPropertyExpressionAssignment
+    : propertyName (':' |'=') expression                # PropertyExpressionAssignment
+    | '[' expression ']' ':' expression           # ComputedPropertyExpressionAssignment
     | getAccessor                                             # PropertyGetter
     | setAccessor                                             # PropertySetter
     | generatorMethod                                         # MethodProperty
@@ -704,72 +673,75 @@ argumentList
     ;
 
 argument                      // ECMAScript 6: Spread Operator
-    : Ellipsis? (singleExpression | Identifier)
+    : Ellipsis? (expression | Identifier)
     ;
 
 expressionSequence
-    : singleExpression (',' singleExpression)*
+    : expression (',' expression)*
+    ;
+/**
+*NOTE It is null when a function declaration is a part of the `export default function` statement
+*So the id is optional
+*/
+functionExpressionDeclaration locals[string type]    //FunctionDeclaration
+    :  Function_  id= Identifier? '(' formalParameterList? ')' typeAnnotation? '{' functionBody '}' { $type = "FunctionDeclaration"; }
     ;
 
-functionExpressionDeclaration
-    : Function_ Identifier? '(' formalParameterList? ')' typeAnnotation? '{' functionBody '}'
-    ;
-
-singleExpression
+expression
     : functionExpressionDeclaration                                          # FunctionExpression
     | arrowFunctionDeclaration                                               # ArrowFunctionExpression   // ECMAScript 6
     | Class Identifier? classTail                                            # ClassExpression
-    | object= singleExpression '[' property= expressionSequence ']'                            # MemberIndexExpression
-    | object = singleExpression '.' property= identifierName nestedTypeGeneric?                 # MemberDotExpression
+    | object= expression '[' property= expressionSequence ']'                            # MemberIndexExpression
+    | object = expression '.' property= identifierName nestedTypeGeneric?                 # MemberDotExpression
     // Split to try `new Date()` first, then `new Date`.
-    | New singleExpression typeArguments? arguments                          # NewExpression
-    | New singleExpression typeArguments?                                    # NewExpression
-    | singleExpression arguments                                             # ArgumentsExpression
-    | singleExpression {this->notLineTerminator()}? '++'                      # PostIncrementExpression
-    | singleExpression {this->notLineTerminator()}? '--'                      # PostDecreaseExpression
-    | Delete singleExpression                                                # DeleteExpression
-    | Void singleExpression                                                  # VoidExpression
-    | Typeof singleExpression                                                # TypeofExpression
-    | '++' singleExpression                                                  # PreIncrementExpression
-    | '--' singleExpression                                                  # PreDecreaseExpression
-    | '+' singleExpression                                                   # UnaryPlusExpression
-    | '-' singleExpression                                                   # UnaryMinusExpression
-    | '~' singleExpression                                                   # BitNotExpression
-    | '!' singleExpression                                                   # NotExpression
-    |lhs = singleExpression ('*' | '/' | '%') rhs= singleExpression                    # MultiplicativeExpression
-    |lhs = singleExpression ('+' | '-') rhs= singleExpression                          # AdditiveExpression
-    |lhs = singleExpression ('<<' | '>>' | '>>>')rhs=  singleExpression                # BitShiftExpression
-    |lhs = singleExpression ('<' | '>' | '<=' | '>=') rhs= singleExpression            # RelationalExpression
-    |lhs = singleExpression Instanceof rhs= singleExpression                           # InstanceofExpression
-    | lhs =singleExpression In rhs=  singleExpression                                   # InExpression
-    |lhs = singleExpression ('==' | '!=' | '===' | '!==') rhs= singleExpression        # EqualityExpression
-    |lhs = singleExpression '&'rhs=  singleExpression                                  # BitAndExpression
-    |lhs = singleExpression '^' rhs= singleExpression                                  # BitXOrExpression
-    |lhs = singleExpression '|' rhs= singleExpression                                  # BitOrExpression
-    |lhs = singleExpression '&&'rhs=  singleExpression                                 # LogicalAndExpression
-    |lhs = singleExpression '||' rhs= singleExpression                                 # LogicalOrExpression
-    |condition = singleExpression '?' lhs = singleExpression ':'  rhs= singleExpression             # TernaryExpression
-    |lhs = singleExpression '=' rhs= singleExpression                                  # AssignmentExpression
-    | singleExpression assignmentOperator singleExpression                   # AssignmentOperatorExpression
-    | singleExpression templateStringLiteral                                 # TemplateStringExpression  // ECMAScript 6
+    | New expression typeArguments? arguments                          # NewExpression
+    | New expression typeArguments?                                    # NewExpression
+    | expression arguments                                             # ArgumentsExpression
+    | expression {this->notLineTerminator()}? '++'                      # PostIncrementExpression
+    | expression {this->notLineTerminator()}? '--'                      # PostDecreaseExpression
+    | Delete expression                                                # DeleteExpression
+    | Void expression                                                  # VoidExpression
+    | Typeof expression                                                # TypeofExpression
+    | '++' expression                                                  # PreIncrementExpression
+    | '--' expression                                                  # PreDecreaseExpression
+    | '+' expression                                                   # UnaryPlusExpression
+    | '-' expression                                                   # UnaryMinusExpression
+    | '~' expression                                                   # BitNotExpression
+    | '!' expression                                                   # NotExpression
+    |lhs = expression ('*' | '/' | '%') rhs= expression                    # MultiplicativeExpression
+    |lhs = expression ('+' | '-') rhs= expression                          # AdditiveExpression
+    |lhs = expression ('<<' | '>>' | '>>>')rhs=  expression                # BitShiftExpression
+    |lhs = expression ('<' | '>' | '<=' | '>=') rhs= expression            # RelationalExpression
+    |lhs = expression Instanceof rhs= expression                           # InstanceofExpression
+    | lhs =expression In rhs=  expression                                   # InExpression
+    |lhs = expression ('==' | '!=' | '===' | '!==') rhs= expression        # EqualityExpression
+    |lhs = expression '&'rhs=  expression                                  # BitAndExpression
+    |lhs = expression '^' rhs= expression                                  # BitXOrExpression
+    |lhs = expression '|' rhs= expression                                  # BitOrExpression
+    |lhs = expression '&&'rhs=  expression                                 # LogicalAndExpression
+    |lhs = expression '||' rhs= expression                                 # LogicalOrExpression
+    |condition = expression '?' lhs = expression ':'  rhs= expression             # TernaryExpression
+    |lhs = expression '=' rhs= expression                                  # AssignmentExpression
+    | expression assignmentOperator expression                   # AssignmentOperatorExpression
+    | expression templateStringLiteral                                 # TemplateStringExpression  // ECMAScript 6
     | iteratorBlock                                                          # IteratorsExpression // ECMAScript 6
     | generatorBlock                                                         # GeneratorsExpression // ECMAScript 6
     | generatorFunctionDeclaration                                           # GeneratorsFunctionExpression // ECMAScript 6
     | yieldStatement                                                         # YieldExpression // ECMAScript 6
     | This                                                                   # ThisExpression
-    | identifierName singleExpression?                                       # IdentifierExpression
+    | identifierName expression?                                       # IdentifierExpression
     | Super                                                                  # SuperExpression
     | value = literal { std::cout<< $value.text }                                                               # LiteralExpression
     | arrayLiteral                                                           # ArrayLiteralExpression
     | objectLiteral                                                          # ObjectLiteralExpression
     | '(' expressionSequence ')'                                             # ParenthesizedExpression
     | typeArguments expressionSequence?                                      # GenericTypes
-    | originalType=  singleExpression As aliasType= asExpression                                       # CastAsExpression
+    | originalType=  expression As aliasType= asExpression                                       # CastAsExpression
     ;
 
 asExpression
     : predefinedType ('[' ']')?
-    | singleExpression
+    | expression
     ;
 
 arrowFunctionDeclaration
@@ -782,7 +754,7 @@ arrowFunctionParameters
     ;
 
 arrowFunctionBody
-    : singleExpression
+    : expression
     | '{' functionBody '}'
     ;
 
@@ -815,7 +787,7 @@ templateStringLiteral
 
 templateStringAtom
     : TemplateStringAtom
-    | TemplateStringStartExpression singleExpression TemplateCloseBrace
+    | TemplateStringStartExpression expression TemplateCloseBrace
     ;
 
 numericLiteral

@@ -1,6 +1,6 @@
 /* lexer header section */
 
-// Generated from TLexer.g4 by ANTLR 4.9
+// Generated from TLexer.g4 by ANTLR 4.8
 
 /* lexer precinclude section */
 
@@ -130,32 +130,34 @@ atn::ATN TLexer::_atn;
 std::vector<uint16_t> TLexer::_serializedATN;
 
 std::vector<std::string> TLexer::_ruleNames = {
-  "Return", "Continue", "INT", "Digit", "ID", "LETTER", "LessThan", "GreaterThan", 
-  "Equal", "And", "Colon", "Semicolon", "Plus", "Minus", "Star", "OpenPar", 
-  "ClosePar", "OpenCurly", "CloseCurly", "QuestionMark", "Comma", "Dollar", 
-  "Ampersand", "String", "Foo", "Bar", "Any", "Comment", "WS", "Baz", "Dot", 
-  "DotDot"
+  u8"Return", u8"Continue", u8"INT", u8"Digit", u8"ID", u8"LETTER", u8"LessThan", 
+  u8"GreaterThan", u8"Equal", u8"And", u8"Colon", u8"Semicolon", u8"Plus", 
+  u8"Minus", u8"Star", u8"OpenPar", u8"ClosePar", u8"OpenCurly", u8"CloseCurly", 
+  u8"QuestionMark", u8"Comma", u8"Dollar", u8"Ampersand", u8"String", u8"Foo", 
+  u8"Bar", u8"Any", u8"Comment", u8"WS", u8"Baz", u8"Dot", u8"DotDot"
 };
 
 std::vector<std::string> TLexer::_channelNames = {
-  "DEFAULT_TOKEN_CHANNEL", "HIDDEN", "CommentsChannel", "DirectiveChannel"
+  "DEFAULT_TOKEN_CHANNEL", "HIDDEN", u8"CommentsChannel", u8"DirectiveChannel"
 };
 
 std::vector<std::string> TLexer::_modeNames = {
-  "DEFAULT_MODE", "Mode1", "Mode2"
+  u8"DEFAULT_MODE", u8"Mode1", u8"Mode2"
 };
 
 std::vector<std::string> TLexer::_literalNames = {
-  "", "", "'return'", "'continue'", "", "", "", "'<'", "'>'", "'='", "'and'", 
-  "':'", "';'", "'+'", "'-'", "'*'", "'('", "')'", "'{'", "'}'", "'\u003F'", 
-  "','", "", "", "", "", "", "", "'.'", "'..'", "'$'", "'&'"
+  "", "", u8"'return'", u8"'continue'", "", "", "", u8"'<'", u8"'>'", u8"'='", 
+  u8"'and'", u8"':'", u8"';'", u8"'+'", u8"'-'", u8"'*'", u8"'('", u8"')'", 
+  u8"'{'", u8"'}'", u8"'?'", u8"','", "", "", "", "", "", "", u8"'.'", u8"'..'", 
+  u8"'$'", u8"'&'"
 };
 
 std::vector<std::string> TLexer::_symbolicNames = {
-  "", "DUMMY", "Return", "Continue", "INT", "Digit", "ID", "LessThan", "GreaterThan", 
-  "Equal", "And", "Colon", "Semicolon", "Plus", "Minus", "Star", "OpenPar", 
-  "ClosePar", "OpenCurly", "CloseCurly", "QuestionMark", "Comma", "String", 
-  "Foo", "Bar", "Any", "Comment", "WS", "Dot", "DotDot", "Dollar", "Ampersand"
+  "", u8"DUMMY", u8"Return", u8"Continue", u8"INT", u8"Digit", u8"ID", u8"LessThan", 
+  u8"GreaterThan", u8"Equal", u8"And", u8"Colon", u8"Semicolon", u8"Plus", 
+  u8"Minus", u8"Star", u8"OpenPar", u8"ClosePar", u8"OpenCurly", u8"CloseCurly", 
+  u8"QuestionMark", u8"Comma", u8"String", u8"Foo", u8"Bar", u8"Any", u8"Comment", 
+  u8"WS", u8"Dot", u8"DotDot", u8"Dollar", u8"Ampersand"
 };
 
 dfa::Vocabulary TLexer::_vocabulary(_literalNames, _symbolicNames);

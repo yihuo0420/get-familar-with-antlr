@@ -1,6 +1,8 @@
 /* parser/listener/visitor header section */
+#include <any>
 
-// Generated from TParser.g4 by ANTLR 4.9
+
+// Generated from TParser.g4 by ANTLR 4.8
 
 #pragma once
 
@@ -41,8 +43,32 @@ public:
   virtual void enterStat(TParser::StatContext *ctx) = 0;
   virtual void exitStat(TParser::StatContext *ctx) = 0;
 
-  virtual void enterExpr(TParser::ExprContext *ctx) = 0;
-  virtual void exitExpr(TParser::ExprContext *ctx) = 0;
+  virtual void enterQuestionExpression(TParser::QuestionExpressionContext *ctx) = 0;
+  virtual void exitQuestionExpression(TParser::QuestionExpressionContext *ctx) = 0;
+
+  virtual void enterStringLiteralExpression(TParser::StringLiteralExpressionContext *ctx) = 0;
+  virtual void exitStringLiteralExpression(TParser::StringLiteralExpressionContext *ctx) = 0;
+
+  virtual void enterStarExpression(TParser::StarExpressionContext *ctx) = 0;
+  virtual void exitStarExpression(TParser::StarExpressionContext *ctx) = 0;
+
+  virtual void enterEquealExpressoin(TParser::EquealExpressoinContext *ctx) = 0;
+  virtual void exitEquealExpressoin(TParser::EquealExpressoinContext *ctx) = 0;
+
+  virtual void enterFlowControlExpression(TParser::FlowControlExpressionContext *ctx) = 0;
+  virtual void exitFlowControlExpression(TParser::FlowControlExpressionContext *ctx) = 0;
+
+  virtual void enterIntLteralExpressoin(TParser::IntLteralExpressoinContext *ctx) = 0;
+  virtual void exitIntLteralExpressoin(TParser::IntLteralExpressoinContext *ctx) = 0;
+
+  virtual void enterPLusExpression(TParser::PLusExpressionContext *ctx) = 0;
+  virtual void exitPLusExpression(TParser::PLusExpressionContext *ctx) = 0;
+
+  virtual void enterParExpression(TParser::ParExpressionContext *ctx) = 0;
+  virtual void exitParExpression(TParser::ParExpressionContext *ctx) = 0;
+
+  virtual void enterIdentifierExpression(TParser::IdentifierExpressionContext *ctx) = 0;
+  virtual void exitIdentifierExpression(TParser::IdentifierExpressionContext *ctx) = 0;
 
   virtual void enterReturn(TParser::ReturnContext *ctx) = 0;
   virtual void exitReturn(TParser::ReturnContext *ctx) = 0;

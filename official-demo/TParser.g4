@@ -7,7 +7,9 @@ options {
 // These are all supported parser sections:
 
 // Parser file header. Appears at the top in all parser related files. Use e.g. for copyrights.
-@parser::header {/* parser/listener/visitor header section */}
+@parser::header {/* parser/listener/visitor header section */
+#include <any>
+}
 
 // Appears before any #include in h + cpp files.
 @parser::preinclude {/* parser precinclude section */}
@@ -21,7 +23,17 @@ options {
 }
 
 // Directly preceeds the parser class declaration in the h file (e.g. for additional types etc.).
-@parser::context {/* parser context section */}
+@parser::context {   
+  /* parser context section */ 
+  struct Posistion{
+    int line;
+    int pos;
+  };
+  struct Node {
+    std::string type;
+    Posistion pos;
+   }; 
+ }
 
 // Appears in the private part of the parser in the h file.
 // The function bodies could also appear in the definitions section, but I want to maximize
@@ -33,7 +45,10 @@ bool myAction() { return true; }
 bool doesItBlend() { return true; }
 void cleanUp() {}
 void doInit() {}
-void doAfter() {}
+void doAfter(   Node& node ) {
+  
+
+}
 }
 
 // Appears in the public part of the parser in the h file.
@@ -70,7 +85,10 @@ void doAfter() {}
 // Actual grammar start.
 main: stat+ EOF;
 divide : ID (and_ GreaterThan)? {doesItBlend()}?;
-and_ @init{ doInit(); } @after { doAfter(); } : And ;
+and_ locals [ Node nodeCompatible   ]   @init{ doInit(); } @after { doAfter(); 
+    nodeCompatible.
+    
+    } : And ;
 
 conquer:
 	divide+
@@ -79,7 +97,7 @@ conquer:
 ;
 
 // Unused rule to demonstrate some of the special features.
-unused[double input = 111] returns [double calculated] locals [int _a, double _b, int _c] @init{ doInit(); } @after { doAfter(); } :
+unused[double input = 111] returns [double calculated = this->input + 1] locals[std::string type =  "unused"  ]   @init{ doInit(); } @after { doAfter(); }  :
 	stat
 ;
 catch [...] {
@@ -97,15 +115,26 @@ stat: expr Equal expr Semicolon
     | expr Semicolon
 ;
 
-expr: expr Star expr
-    | expr Plus expr
-    | OpenPar expr ClosePar
-    | <assoc = right> expr QuestionMark expr Colon expr
-    | <assoc = right> expr Equal expr
-    | identifier = id
-    | flowControl
-    | INT
-    | String
+expr locals[std::any type = "undefined"  ,int rnIndex]     
+    @init{
+          std::string stringTableName;
+          std::string stringTableSignature;
+          int nLineNumber;
+          int nColumnNumber;
+          bool bIsReferenceVariable = false;
+          bool bReferenceHaveInitializer = false;
+          ++$rnIndex;
+      } :
+        expr Star expr  { $type = "StarExpression"; }   #StarExpression   
+    | 
+      lhs = expr op = Plus rhs = expr  #PLusExpression 
+    |    OpenPar expr ClosePar #ParExpression
+    | <assoc = right> expr QuestionMark expr Colon expr #QuestionExpression
+    | <assoc = right> expr Equal expr #EquealExpressoin
+    | identifier = id #IdentifierExpression
+    | flowControl #FlowControlExpression
+    | lteral =  INT  #IntLteralExpressoin
+    | {std::cout<<"Entering string;\n"; }  lteral  = String #StringLiteralExpression
 ;
 
 flowControl:

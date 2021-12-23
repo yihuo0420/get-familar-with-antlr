@@ -1,6 +1,6 @@
 /* lexer header section */
 
-// Generated from TLexer.g4 by ANTLR 4.9
+// Generated from TLexer.g4 by ANTLR 4.8
 
 #pragma once
 
@@ -38,7 +38,7 @@ public:
     Mode1 = 1, Mode2 = 2
   };
 
-  explicit TLexer(antlr4::CharStream *input);
+  TLexer(antlr4::CharStream *input);
   ~TLexer();
 
   /* public lexer declarations section */

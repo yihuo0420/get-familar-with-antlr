@@ -3,9 +3,17 @@
 
 #include <string>
 #include <vector>
+#include "enum.h"
+#include "common_macro .h"
 
 namespace cyclone::parser
 {
+    Enum(SourceType,script,module);
+    /**
+     * NOTE shall be const which conflict with c++ keyword
+     * 
+     */
+    Enum(VariableDeclarationKind,var,let,const_);
 
     using StringList = std::vector<std::string>;
     class CommonDef

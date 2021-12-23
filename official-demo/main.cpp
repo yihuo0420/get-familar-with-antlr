@@ -33,14 +33,11 @@ int main(int, const char **)
   }
 
   TParser parser(&tokens);
-  parser.addParseListener(new TParserBaseListener());
-  parser.addErrorListener(nullptr);
-  parser.getVocabulary();
+  // parser.addParseListener(new TParserBaseListener());
+  // parser.addErrorListener(nullptr);
+  // parser.getVocabulary();
   tree::ParseTree *tree = parser.main();
-
-  tree::ParseTreeWalker walker;
-  walker.walk(new TParserBaseListener(), tree);
-  std::cout << tree->toStringTree(&parser) << std::endl
+  std::cout << tree->toStringTree() << std::endl
             << std::endl;
 
   return 0;

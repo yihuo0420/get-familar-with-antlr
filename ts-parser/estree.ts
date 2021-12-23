@@ -59,6 +59,7 @@ export interface Position {
   column: number;
 }
 
+//REVIEW program comments
 export interface Program extends BaseNode {
   type: "Program";
   sourceType: "script" | "module";
@@ -66,6 +67,37 @@ export interface Program extends BaseNode {
   comments?: Array<Comment> | undefined;
 }
 
+/**
+ * e.g.  "use strict";
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "Literal",
+        "raw": "\"use strict\"",
+        "value": "use strict",
+        "range": [
+          1,
+          13
+        ]
+      },
+      "range": [
+        1,
+        14
+      ],
+      "directive": "use strict"
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    1,
+    14
+  ]
+} 
+ */
+//TODO  Directive node not so necessary currently
 export interface Directive extends BaseNode {
   type: "ExpressionStatement";
   expression: Literal;
@@ -207,12 +239,14 @@ export interface FunctionDeclaration extends BaseFunction, BaseDeclaration {
   body: BlockStatement;
 }
 
+//REVIEW VariableDeclaration
 export interface VariableDeclaration extends BaseDeclaration {
   type: "VariableDeclaration";
   declarations: Array<VariableDeclarator>;
   kind: "var" | "let" | "const";
 }
 
+//REVIEW VariableDeclarator
 export interface VariableDeclarator extends BaseNode {
   type: "VariableDeclarator";
   id: Pattern;
