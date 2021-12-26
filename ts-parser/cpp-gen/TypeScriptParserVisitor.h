@@ -1,26 +1,25 @@
 
-#include "TypeScriptParserBase.h"
-
 // Generated from TypeScriptParser.g4 by ANTLR 4.8
 
 #pragma once
 
+
 #include "antlr4-runtime.h"
 #include "TypeScriptParser.h"
 
-namespace cyclone
-{
+
+namespace cyclone {
+
+/**
+ * This class defines an abstract visitor for a parse tree
+ * produced by TypeScriptParser.
+ */
+class  TypeScriptParserVisitor : public antlr4::tree::AbstractParseTreeVisitor {
+public:
 
   /**
-   * This class defines an abstract visitor for a parse tree
-   * produced by TypeScriptParser.
+   * Visit parse trees produced by TypeScriptParser.
    */
-  class TypeScriptParserVisitor : public antlr4::tree::AbstractParseTreeVisitor
-  {
-  public:
-    /**
-     * Visit parse trees produced by TypeScriptParser.
-     */
     virtual antlrcpp::Any visitInitializer(TypeScriptParser::InitializerContext *context) = 0;
 
     virtual antlrcpp::Any visitBindingPattern(TypeScriptParser::BindingPatternContext *context) = 0;
@@ -179,11 +178,17 @@ namespace cyclone
 
     virtual antlrcpp::Any visitExportStatement(TypeScriptParser::ExportStatementContext *context) = 0;
 
+    virtual antlrcpp::Any visitVariableDeclaration(TypeScriptParser::VariableDeclarationContext *context) = 0;
+
     virtual antlrcpp::Any visitVariableStatement(TypeScriptParser::VariableStatementContext *context) = 0;
 
     virtual antlrcpp::Any visitVariableDeclarationList(TypeScriptParser::VariableDeclarationListContext *context) = 0;
 
-    virtual antlrcpp::Any visitVariableDeclaration(TypeScriptParser::VariableDeclarationContext *context) = 0;
+    virtual antlrcpp::Any visitVariableDeclaratePattern(TypeScriptParser::VariableDeclaratePatternContext *context) = 0;
+
+    virtual antlrcpp::Any visitVariableAnnotation(TypeScriptParser::VariableAnnotationContext *context) = 0;
+
+    virtual antlrcpp::Any visitVariableDeclarator(TypeScriptParser::VariableDeclaratorContext *context) = 0;
 
     virtual antlrcpp::Any visitEmptyStatement(TypeScriptParser::EmptyStatementContext *context) = 0;
 
@@ -448,6 +453,8 @@ namespace cyclone
     virtual antlrcpp::Any visitSetter(TypeScriptParser::SetterContext *context) = 0;
 
     virtual antlrcpp::Any visitEos(TypeScriptParser::EosContext *context) = 0;
-  };
 
-} // namespace cyclone::parser
+
+};
+
+}  // namespace cyclone

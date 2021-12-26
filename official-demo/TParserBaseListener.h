@@ -1,6 +1,4 @@
 /* parser/listener/visitor header section */
-#include <any>
-
 
 // Generated from TParser.g4 by ANTLR 4.8
 
@@ -45,32 +43,8 @@ public:
   virtual void enterStat(TParser::StatContext * /*ctx*/) override { }
   virtual void exitStat(TParser::StatContext * /*ctx*/) override { }
 
-  virtual void enterQuestionExpression(TParser::QuestionExpressionContext * /*ctx*/) override { }
-  virtual void exitQuestionExpression(TParser::QuestionExpressionContext * /*ctx*/) override { }
-
-  virtual void enterStringLiteralExpression(TParser::StringLiteralExpressionContext * /*ctx*/) override { }
-  virtual void exitStringLiteralExpression(TParser::StringLiteralExpressionContext * /*ctx*/) override { }
-
-  virtual void enterStarExpression(TParser::StarExpressionContext * /*ctx*/) override { }
-  virtual void exitStarExpression(TParser::StarExpressionContext * /*ctx*/) override { }
-
-  virtual void enterEquealExpressoin(TParser::EquealExpressoinContext * /*ctx*/) override { }
-  virtual void exitEquealExpressoin(TParser::EquealExpressoinContext * /*ctx*/) override { }
-
-  virtual void enterFlowControlExpression(TParser::FlowControlExpressionContext * /*ctx*/) override { }
-  virtual void exitFlowControlExpression(TParser::FlowControlExpressionContext * /*ctx*/) override { }
-
-  virtual void enterIntLteralExpressoin(TParser::IntLteralExpressoinContext * /*ctx*/) override { }
-  virtual void exitIntLteralExpressoin(TParser::IntLteralExpressoinContext * /*ctx*/) override { }
-
-  virtual void enterPLusExpression(TParser::PLusExpressionContext * /*ctx*/) override { }
-  virtual void exitPLusExpression(TParser::PLusExpressionContext * /*ctx*/) override { }
-
-  virtual void enterParExpression(TParser::ParExpressionContext * /*ctx*/) override { }
-  virtual void exitParExpression(TParser::ParExpressionContext * /*ctx*/) override { }
-
-  virtual void enterIdentifierExpression(TParser::IdentifierExpressionContext * /*ctx*/) override { }
-  virtual void exitIdentifierExpression(TParser::IdentifierExpressionContext * /*ctx*/) override { }
+  virtual void enterExpr(TParser::ExprContext * /*ctx*/) override { }
+  virtual void exitExpr(TParser::ExprContext * /*ctx*/) override { }
 
   virtual void enterReturn(TParser::ReturnContext * /*ctx*/) override { }
   virtual void exitReturn(TParser::ReturnContext * /*ctx*/) override { }

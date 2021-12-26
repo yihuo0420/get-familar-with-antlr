@@ -26,7 +26,7 @@ target_link_libraries( officialDemo PRIVATE
                         antlr4_shared)
 
 #ts parser test configuration
-file(GLOB_RECURSE TS_PARSER_GEN ts-parser/gen-cpp-typescript/*.cpp)
+file(GLOB_RECURSE TS_PARSER_GEN ts-parser/cpp-gen/*.cpp)
 add_executable(ts_parser_test
     ${TS_PARSER_GEN}
     ts-parser/ast_to_json.cpp

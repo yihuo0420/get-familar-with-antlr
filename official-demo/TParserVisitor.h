@@ -1,6 +1,4 @@
 /* parser/listener/visitor header section */
-#include <any>
-
 
 // Generated from TParser.g4 by ANTLR 4.8
 
@@ -40,23 +38,7 @@ public:
 
     virtual antlrcpp::Any visitStat(TParser::StatContext *context) = 0;
 
-    virtual antlrcpp::Any visitQuestionExpression(TParser::QuestionExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitStringLiteralExpression(TParser::StringLiteralExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitStarExpression(TParser::StarExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitEquealExpressoin(TParser::EquealExpressoinContext *context) = 0;
-
-    virtual antlrcpp::Any visitFlowControlExpression(TParser::FlowControlExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitIntLteralExpressoin(TParser::IntLteralExpressoinContext *context) = 0;
-
-    virtual antlrcpp::Any visitPLusExpression(TParser::PLusExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitParExpression(TParser::ParExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitIdentifierExpression(TParser::IdentifierExpressionContext *context) = 0;
+    virtual antlrcpp::Any visitExpr(TParser::ExprContext *context) = 0;
 
     virtual antlrcpp::Any visitReturn(TParser::ReturnContext *context) = 0;
 

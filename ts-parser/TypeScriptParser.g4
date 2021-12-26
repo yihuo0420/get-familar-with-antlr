@@ -39,9 +39,7 @@ options {
 #include <unordered_map>
 #include <string>
 #include "TypeScriptParserBase.h"
-#include "../common_def.hpp"
 using std::string;
-using namespace cyclone::parser;
 }
 @member{ 
 std::unordered_map<std::string , std::string > identifierMap_;
@@ -334,8 +332,8 @@ decoratorCallExpression
     : decoratorMemberExpression arguments;
 
 // ECMAPart
-program locals [std::string type , SourceType sourceType ]
-    : body = sourceElements? EOF { $type = "Program"; $sourceType = 0;  } //TODO distinguish sourecetype
+program locals [std::string type , int sourceType ]
+    : body = sourceElements? EOF { $type = "Program"; $sourceType = 0;   std::cout<< $type;   } //TODO distinguish sourecetype
     ;
 
 sourceElement
@@ -691,8 +689,8 @@ expression
     : functionExpressionDeclaration                                          # FunctionExpression
     | arrowFunctionDeclaration                                               # ArrowFunctionExpression   // ECMAScript 6
     | Class Identifier? classTail                                            # ClassExpression
-    | object= expression '[' property= expressionSequence ']'                            # MemberIndexExpression
-    | object = expression '.' property= identifierName nestedTypeGeneric?                 # MemberDotExpression
+    | object= expression '[' property= expressionSequence ']'                     { std::cout<< "Calling MemberIndexExpression\n" << $object.text <<std::endl; }        # MemberIndexExpression
+    | object = expression '.' property= identifierName nestedTypeGeneric?   { std::cout<< "Calling MemberDotExpression\n" << $object.text <<std::endl; }                # MemberDotExpression 
     // Split to try `new Date()` first, then `new Date`.
     | New expression typeArguments? arguments                          # NewExpression
     | New expression typeArguments?                                    # NewExpression
@@ -731,7 +729,7 @@ expression
     | This                                                                   # ThisExpression
     | identifierName expression?                                       # IdentifierExpression
     | Super                                                                  # SuperExpression
-    | value = literal { std::cout<< $value.text }                                                               # LiteralExpression
+    | value = literal { std::cout<< $value.text; }                                                               # LiteralExpression
     | arrayLiteral                                                           # ArrayLiteralExpression
     | objectLiteral                                                          # ObjectLiteralExpression
     | '(' expressionSequence ')'                                             # ParenthesizedExpression

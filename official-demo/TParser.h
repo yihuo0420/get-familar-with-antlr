@@ -1,6 +1,4 @@
 /* parser/listener/visitor header section */
-#include <any>
-
 
 // Generated from TParser.g4 by ANTLR 4.8
 
@@ -11,25 +9,20 @@
 #include "antlr4-runtime.h"
 
 
+
 /* parser postinclude section */
+
 #ifndef _WIN32
+
 #pragma GCC diagnostic ignored "-Wunused-parameter"
+
 #endif
+
 
 
 namespace antlrcpptest {
 
-   
-  /* parser context section */ 
-  struct Posistion{
-    int line;
-    int pos;
-  };
-  struct Node {
-    std::string type;
-    Posistion pos;
-   }; 
- 
+/* parser context section */
 
 class  TParser : public antlr4::Parser {
 public:
@@ -58,15 +51,19 @@ public:
   virtual antlr4::dfa::Vocabulary& getVocabulary() const override;
 
 
-  /* public parser declarations/members section */
-  bool myAction() { return true; }
-  bool doesItBlend() { return true; }
-  void cleanUp() {}
-  void doInit() {}
-  void doAfter(   Node& node ) {
-    
 
-  }
+  /* public parser declarations/members section */
+
+  bool myAction() { return true; }
+
+  bool doesItBlend() { return true; }
+
+  void cleanUp() {}
+
+  void doInit() {}
+
+  void doAfter() {}
+
 
 
   class MainContext;
@@ -119,7 +116,6 @@ public:
 
   class  And_Context : public antlr4::ParserRuleContext {
   public:
-    Node nodeCompatible;
     And_Context(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *And();
@@ -157,8 +153,10 @@ public:
   class  UnusedContext : public antlr4::ParserRuleContext {
   public:
     double input = 111;
-    double calculated = this->input + 1;
-    std::string type = "unused";
+    double calculated;
+    int _a;
+    double _b;
+    int _c;
     UnusedContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     UnusedContext(antlr4::ParserRuleContext *parent, size_t invokingState, double input = 111);
     virtual size_t getRuleIndex() const override;
@@ -213,133 +211,28 @@ public:
 
   class  ExprContext : public antlr4::ParserRuleContext {
   public:
-    std::any type = "undefined";
-    int rnIndex;
+    TParser::IdContext *identifier = nullptr;;
     ExprContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-   
-    ExprContext() = default;
-    void copyFrom(ExprContext *context);
-    using antlr4::ParserRuleContext::copyFrom;
-
     virtual size_t getRuleIndex() const override;
-
-   
-  };
-
-  class  QuestionExpressionContext : public ExprContext {
-  public:
-    QuestionExpressionContext(ExprContext *ctx);
-
+    antlr4::tree::TerminalNode *OpenPar();
     std::vector<ExprContext *> expr();
     ExprContext* expr(size_t i);
+    antlr4::tree::TerminalNode *ClosePar();
+    IdContext *id();
+    FlowControlContext *flowControl();
+    antlr4::tree::TerminalNode *INT();
+    antlr4::tree::TerminalNode *String();
+    antlr4::tree::TerminalNode *Star();
+    antlr4::tree::TerminalNode *Plus();
     antlr4::tree::TerminalNode *QuestionMark();
     antlr4::tree::TerminalNode *Colon();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  StringLiteralExpressionContext : public ExprContext {
-  public:
-    StringLiteralExpressionContext(ExprContext *ctx);
-
-    antlr4::Token *lteral = nullptr;
-    antlr4::tree::TerminalNode *String();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  StarExpressionContext : public ExprContext {
-  public:
-    StarExpressionContext(ExprContext *ctx);
-
-    std::vector<ExprContext *> expr();
-    ExprContext* expr(size_t i);
-    antlr4::tree::TerminalNode *Star();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  EquealExpressoinContext : public ExprContext {
-  public:
-    EquealExpressoinContext(ExprContext *ctx);
-
-    std::vector<ExprContext *> expr();
-    ExprContext* expr(size_t i);
     antlr4::tree::TerminalNode *Equal();
+
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
 
     virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  FlowControlExpressionContext : public ExprContext {
-  public:
-    FlowControlExpressionContext(ExprContext *ctx);
-
-    FlowControlContext *flowControl();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  IntLteralExpressoinContext : public ExprContext {
-  public:
-    IntLteralExpressoinContext(ExprContext *ctx);
-
-    antlr4::Token *lteral = nullptr;
-    antlr4::tree::TerminalNode *INT();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  PLusExpressionContext : public ExprContext {
-  public:
-    PLusExpressionContext(ExprContext *ctx);
-
-    TParser::ExprContext *lhs = nullptr;
-    antlr4::Token *op = nullptr;
-    TParser::ExprContext *rhs = nullptr;
-    std::vector<ExprContext *> expr();
-    ExprContext* expr(size_t i);
-    antlr4::tree::TerminalNode *Plus();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  ParExpressionContext : public ExprContext {
-  public:
-    ParExpressionContext(ExprContext *ctx);
-
-    antlr4::tree::TerminalNode *OpenPar();
-    ExprContext *expr();
-    antlr4::tree::TerminalNode *ClosePar();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-  };
-
-  class  IdentifierExpressionContext : public ExprContext {
-  public:
-    IdentifierExpressionContext(ExprContext *ctx);
-
-    TParser::IdContext *identifier = nullptr;
-    IdContext *id();
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
   };
 
   ExprContext* expr();

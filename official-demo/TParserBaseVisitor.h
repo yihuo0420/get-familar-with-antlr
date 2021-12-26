@@ -1,6 +1,4 @@
 /* parser/listener/visitor header section */
-#include <any>
-
 
 // Generated from TParser.g4 by ANTLR 4.8
 
@@ -51,39 +49,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitQuestionExpression(TParser::QuestionExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitStringLiteralExpression(TParser::StringLiteralExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitStarExpression(TParser::StarExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitEquealExpressoin(TParser::EquealExpressoinContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitFlowControlExpression(TParser::FlowControlExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitIntLteralExpressoin(TParser::IntLteralExpressoinContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitPLusExpression(TParser::PLusExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitParExpression(TParser::ParExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitIdentifierExpression(TParser::IdentifierExpressionContext *ctx) override {
+  virtual antlrcpp::Any visitExpr(TParser::ExprContext *ctx) override {
     return visitChildren(ctx);
   }
 
