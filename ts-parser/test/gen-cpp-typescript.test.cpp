@@ -14,5 +14,6 @@ int main(int, const char **)
 {
     AbstractParser<TypeScriptLexer, TypeScriptParser> parser;
     parser.parse("a['name']");
+    
     return 0;
 }
