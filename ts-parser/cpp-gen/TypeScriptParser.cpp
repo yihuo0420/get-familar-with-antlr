@@ -1,5 +1,5 @@
 
-// Generated from TypeScriptParser.g4 by ANTLR 4.8
+// Generated from TypeScriptParser.g4 by ANTLR 4.9
 
 
 #include <unordered_map>
@@ -82,7 +82,11 @@ TypeScriptParser::InitializerContext* TypeScriptParser::initializer() {
   InitializerContext *_localctx = _tracker.createInstance<InitializerContext>(_ctx, getState());
   enterRule(_localctx, 0, TypeScriptParser::RuleInitializer);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -145,7 +149,11 @@ TypeScriptParser::BindingPatternContext* TypeScriptParser::bindingPattern() {
   BindingPatternContext *_localctx = _tracker.createInstance<BindingPatternContext>(_ctx, getState());
   enterRule(_localctx, 2, TypeScriptParser::RuleBindingPattern);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -227,7 +235,11 @@ TypeScriptParser::TypeParametersContext* TypeScriptParser::typeParameters() {
   enterRule(_localctx, 4, TypeScriptParser::RuleTypeParameters);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -307,7 +319,11 @@ TypeScriptParser::TypeParameterListContext* TypeScriptParser::typeParameterList(
   enterRule(_localctx, 6, TypeScriptParser::RuleTypeParameterList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -385,7 +401,11 @@ TypeScriptParser::TypeParameterContext* TypeScriptParser::typeParameter() {
   enterRule(_localctx, 8, TypeScriptParser::RuleTypeParameter);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -471,7 +491,11 @@ TypeScriptParser::ConstraintContext* TypeScriptParser::constraint() {
   ConstraintContext *_localctx = _tracker.createInstance<ConstraintContext>(_ctx, getState());
   enterRule(_localctx, 10, TypeScriptParser::RuleConstraint);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -539,7 +563,11 @@ TypeScriptParser::TypeArgumentsContext* TypeScriptParser::typeArguments() {
   enterRule(_localctx, 12, TypeScriptParser::RuleTypeArguments);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -634,7 +662,11 @@ TypeScriptParser::TypeArgumentListContext* TypeScriptParser::typeArgumentList() 
   enterRule(_localctx, 14, TypeScriptParser::RuleTypeArgumentList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -703,7 +735,11 @@ TypeScriptParser::TypeArgumentContext* TypeScriptParser::typeArgument() {
   TypeArgumentContext *_localctx = _tracker.createInstance<TypeArgumentContext>(_ctx, getState());
   enterRule(_localctx, 16, TypeScriptParser::RuleTypeArgument);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -776,7 +812,11 @@ TypeScriptParser::Type_Context* TypeScriptParser::type_() {
   Type_Context *_localctx = _tracker.createInstance<Type_Context>(_ctx, getState());
   enterRule(_localctx, 18, TypeScriptParser::RuleType_);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -818,6 +858,8 @@ TypeScriptParser::Type_Context* TypeScriptParser::type_() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -952,7 +994,11 @@ TypeScriptParser::UnionOrIntersectionOrPrimaryTypeContext* TypeScriptParser::uni
 
     
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -1004,6 +1050,8 @@ TypeScriptParser::UnionOrIntersectionOrPrimaryTypeContext* TypeScriptParser::uni
           break;
         }
 
+        default:
+          break;
         } 
       }
       setState(361);
@@ -1307,7 +1355,11 @@ TypeScriptParser::PrimaryTypeContext* TypeScriptParser::primaryType(int preceden
 
     
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -1401,6 +1453,8 @@ TypeScriptParser::PrimaryTypeContext* TypeScriptParser::primaryType(int preceden
       break;
     }
 
+    default:
+      break;
     }
     _ctx->stop = _input->LT(-1);
     setState(388);
@@ -1497,7 +1551,11 @@ TypeScriptParser::PredefinedTypeContext* TypeScriptParser::predefinedType() {
   PredefinedTypeContext *_localctx = _tracker.createInstance<PredefinedTypeContext>(_ctx, getState());
   enterRule(_localctx, 24, TypeScriptParser::RulePredefinedType);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -1609,7 +1667,11 @@ TypeScriptParser::TypeReferenceContext* TypeScriptParser::typeReference() {
   TypeReferenceContext *_localctx = _tracker.createInstance<TypeReferenceContext>(_ctx, getState());
   enterRule(_localctx, 26, TypeScriptParser::RuleTypeReference);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -1626,6 +1688,8 @@ TypeScriptParser::TypeReferenceContext* TypeScriptParser::typeReference() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -1681,7 +1745,11 @@ TypeScriptParser::NestedTypeGenericContext* TypeScriptParser::nestedTypeGeneric(
   NestedTypeGenericContext *_localctx = _tracker.createInstance<NestedTypeGenericContext>(_ctx, getState());
   enterRule(_localctx, 28, TypeScriptParser::RuleNestedTypeGeneric);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -1702,6 +1770,8 @@ TypeScriptParser::NestedTypeGenericContext* TypeScriptParser::nestedTypeGeneric(
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -1761,7 +1831,11 @@ TypeScriptParser::TypeGenericContext* TypeScriptParser::typeGeneric() {
   TypeGenericContext *_localctx = _tracker.createInstance<TypeGenericContext>(_ctx, getState());
   enterRule(_localctx, 30, TypeScriptParser::RuleTypeGeneric);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -1850,7 +1924,11 @@ TypeScriptParser::TypeIncludeGenericContext* TypeScriptParser::typeIncludeGeneri
   TypeIncludeGenericContext *_localctx = _tracker.createInstance<TypeIncludeGenericContext>(_ctx, getState());
   enterRule(_localctx, 32, TypeScriptParser::RuleTypeIncludeGeneric);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -1939,7 +2017,11 @@ TypeScriptParser::TypeNameContext* TypeScriptParser::typeName() {
   TypeNameContext *_localctx = _tracker.createInstance<TypeNameContext>(_ctx, getState());
   enterRule(_localctx, 34, TypeScriptParser::RuleTypeName);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -1960,6 +2042,8 @@ TypeScriptParser::TypeNameContext* TypeScriptParser::typeName() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -2020,7 +2104,11 @@ TypeScriptParser::ObjectTypeContext* TypeScriptParser::objectType() {
   enterRule(_localctx, 36, TypeScriptParser::RuleObjectType);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2158,7 +2246,11 @@ TypeScriptParser::TypeBodyContext* TypeScriptParser::typeBody() {
   enterRule(_localctx, 38, TypeScriptParser::RuleTypeBody);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2255,7 +2347,11 @@ TypeScriptParser::TypeMemberListContext* TypeScriptParser::typeMemberList() {
   enterRule(_localctx, 40, TypeScriptParser::RuleTypeMemberList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2361,7 +2457,11 @@ TypeScriptParser::TypeMemberContext* TypeScriptParser::typeMember() {
   enterRule(_localctx, 42, TypeScriptParser::RuleTypeMember);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2413,6 +2513,8 @@ TypeScriptParser::TypeMemberContext* TypeScriptParser::typeMember() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -2472,7 +2574,11 @@ TypeScriptParser::ArrayTypeContext* TypeScriptParser::arrayType() {
   ArrayTypeContext *_localctx = _tracker.createInstance<ArrayTypeContext>(_ctx, getState());
   enterRule(_localctx, 44, TypeScriptParser::RuleArrayType);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2544,7 +2650,11 @@ TypeScriptParser::TupleTypeContext* TypeScriptParser::tupleType() {
   TupleTypeContext *_localctx = _tracker.createInstance<TupleTypeContext>(_ctx, getState());
   enterRule(_localctx, 46, TypeScriptParser::RuleTupleType);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2618,7 +2728,11 @@ TypeScriptParser::TupleElementTypesContext* TypeScriptParser::tupleElementTypes(
   enterRule(_localctx, 48, TypeScriptParser::RuleTupleElementTypes);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2708,7 +2822,11 @@ TypeScriptParser::FunctionTypeContext* TypeScriptParser::functionType() {
   enterRule(_localctx, 50, TypeScriptParser::RuleFunctionType);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -2869,7 +2987,11 @@ TypeScriptParser::ConstructorTypeContext* TypeScriptParser::constructorType() {
   enterRule(_localctx, 52, TypeScriptParser::RuleConstructorType);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3011,7 +3133,11 @@ TypeScriptParser::TypeQueryContext* TypeScriptParser::typeQuery() {
   TypeQueryContext *_localctx = _tracker.createInstance<TypeQueryContext>(_ctx, getState());
   enterRule(_localctx, 54, TypeScriptParser::RuleTypeQuery);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3086,7 +3212,11 @@ TypeScriptParser::TypeQueryExpressionContext* TypeScriptParser::typeQueryExpress
   TypeQueryExpressionContext *_localctx = _tracker.createInstance<TypeQueryExpressionContext>(_ctx, getState());
   enterRule(_localctx, 56, TypeScriptParser::RuleTypeQueryExpression);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3128,6 +3258,8 @@ TypeScriptParser::TypeQueryExpressionContext* TypeScriptParser::typeQueryExpress
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -3200,7 +3332,11 @@ TypeScriptParser::PropertySignaturContext* TypeScriptParser::propertySignatur() 
   enterRule(_localctx, 58, TypeScriptParser::RulePropertySignatur);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3215,6 +3351,8 @@ TypeScriptParser::PropertySignaturContext* TypeScriptParser::propertySignatur() 
       break;
     }
 
+    default:
+      break;
     }
     setState(519);
     propertyName();
@@ -3298,7 +3436,11 @@ TypeScriptParser::TypeAnnotationContext* TypeScriptParser::typeAnnotation() {
   TypeAnnotationContext *_localctx = _tracker.createInstance<TypeAnnotationContext>(_ctx, getState());
   enterRule(_localctx, 60, TypeScriptParser::RuleTypeAnnotation);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3374,7 +3516,11 @@ TypeScriptParser::CallSignatureContext* TypeScriptParser::callSignature() {
   enterRule(_localctx, 62, TypeScriptParser::RuleCallSignature);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3466,6 +3612,8 @@ TypeScriptParser::CallSignatureContext* TypeScriptParser::callSignature() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -3534,7 +3682,11 @@ TypeScriptParser::ParameterListContext* TypeScriptParser::parameterList() {
   enterRule(_localctx, 64, TypeScriptParser::RuleParameterList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3701,7 +3853,11 @@ TypeScriptParser::RequiredParameterListContext* TypeScriptParser::requiredParame
   enterRule(_localctx, 66, TypeScriptParser::RuleRequiredParameterList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3774,7 +3930,11 @@ TypeScriptParser::ParameterContext* TypeScriptParser::parameter() {
   ParameterContext *_localctx = _tracker.createInstance<ParameterContext>(_ctx, getState());
   enterRule(_localctx, 68, TypeScriptParser::RuleParameter);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3795,6 +3955,8 @@ TypeScriptParser::ParameterContext* TypeScriptParser::parameter() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -3867,7 +4029,11 @@ TypeScriptParser::OptionalParameterContext* TypeScriptParser::optionalParameter(
   enterRule(_localctx, 70, TypeScriptParser::RuleOptionalParameter);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -3891,6 +4057,8 @@ TypeScriptParser::OptionalParameterContext* TypeScriptParser::optionalParameter(
       break;
     }
 
+    default:
+      break;
     }
     setState(577);
     identifierOrPattern();
@@ -3988,7 +4156,11 @@ TypeScriptParser::RestParameterContext* TypeScriptParser::restParameter() {
   enterRule(_localctx, 72, TypeScriptParser::RuleRestParameter);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4068,7 +4240,11 @@ TypeScriptParser::RequiredParameterContext* TypeScriptParser::requiredParameter(
   enterRule(_localctx, 74, TypeScriptParser::RuleRequiredParameter);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4091,6 +4267,8 @@ TypeScriptParser::RequiredParameterContext* TypeScriptParser::requiredParameter(
       break;
     }
 
+    default:
+      break;
     }
     setState(599);
     identifierOrPattern();
@@ -4161,7 +4339,11 @@ TypeScriptParser::AccessibilityModifierContext* TypeScriptParser::accessibilityM
   enterRule(_localctx, 76, TypeScriptParser::RuleAccessibilityModifier);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4232,7 +4414,11 @@ TypeScriptParser::IdentifierOrPatternContext* TypeScriptParser::identifierOrPatt
   IdentifierOrPatternContext *_localctx = _tracker.createInstance<IdentifierOrPatternContext>(_ctx, getState());
   enterRule(_localctx, 78, TypeScriptParser::RuleIdentifierOrPattern);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4380,7 +4566,11 @@ TypeScriptParser::ConstructSignatureContext* TypeScriptParser::constructSignatur
   enterRule(_localctx, 80, TypeScriptParser::RuleConstructSignature);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4547,7 +4737,11 @@ TypeScriptParser::IndexSignatureContext* TypeScriptParser::indexSignature() {
   enterRule(_localctx, 82, TypeScriptParser::RuleIndexSignature);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4632,7 +4826,11 @@ TypeScriptParser::MethodSignatureContext* TypeScriptParser::methodSignature() {
   enterRule(_localctx, 84, TypeScriptParser::RuleMethodSignature);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4720,7 +4918,11 @@ TypeScriptParser::TypeAliasDeclarationContext* TypeScriptParser::typeAliasDeclar
   enterRule(_localctx, 86, TypeScriptParser::RuleTypeAliasDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4826,7 +5028,11 @@ TypeScriptParser::ConstructorDeclarationContext* TypeScriptParser::constructorDe
   enterRule(_localctx, 88, TypeScriptParser::RuleConstructorDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -4886,6 +5092,8 @@ TypeScriptParser::ConstructorDeclarationContext* TypeScriptParser::constructorDe
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -4966,7 +5174,11 @@ TypeScriptParser::InterfaceDeclarationContext* TypeScriptParser::interfaceDeclar
   enterRule(_localctx, 90, TypeScriptParser::RuleInterfaceDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5019,6 +5231,8 @@ TypeScriptParser::InterfaceDeclarationContext* TypeScriptParser::interfaceDeclar
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -5074,7 +5288,11 @@ TypeScriptParser::InterfaceExtendsClauseContext* TypeScriptParser::interfaceExte
   InterfaceExtendsClauseContext *_localctx = _tracker.createInstance<InterfaceExtendsClauseContext>(_ctx, getState());
   enterRule(_localctx, 92, TypeScriptParser::RuleInterfaceExtendsClause);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5146,7 +5364,11 @@ TypeScriptParser::ClassOrInterfaceTypeListContext* TypeScriptParser::classOrInte
   enterRule(_localctx, 94, TypeScriptParser::RuleClassOrInterfaceTypeList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5236,7 +5458,11 @@ TypeScriptParser::EnumDeclarationContext* TypeScriptParser::enumDeclaration() {
   enterRule(_localctx, 96, TypeScriptParser::RuleEnumDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5379,7 +5605,11 @@ TypeScriptParser::EnumBodyContext* TypeScriptParser::enumBody() {
   enterRule(_localctx, 98, TypeScriptParser::RuleEnumBody);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5456,7 +5686,11 @@ TypeScriptParser::EnumMemberListContext* TypeScriptParser::enumMemberList() {
   EnumMemberListContext *_localctx = _tracker.createInstance<EnumMemberListContext>(_ctx, getState());
   enterRule(_localctx, 100, TypeScriptParser::RuleEnumMemberList);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5537,7 +5771,11 @@ TypeScriptParser::EnumMemberContext* TypeScriptParser::enumMember() {
   enterRule(_localctx, 102, TypeScriptParser::RuleEnumMember);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5620,7 +5858,11 @@ TypeScriptParser::NamespaceDeclarationContext* TypeScriptParser::namespaceDeclar
   NamespaceDeclarationContext *_localctx = _tracker.createInstance<NamespaceDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 104, TypeScriptParser::RuleNamespaceDeclaration);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5641,6 +5883,8 @@ TypeScriptParser::NamespaceDeclarationContext* TypeScriptParser::namespaceDeclar
       break;
     }
 
+    default:
+      break;
     }
     setState(722);
     match(TypeScriptParser::CloseBrace);
@@ -5707,7 +5951,11 @@ TypeScriptParser::NamespaceNameContext* TypeScriptParser::namespaceName() {
   enterRule(_localctx, 106, TypeScriptParser::RuleNamespaceName);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5799,7 +6047,11 @@ TypeScriptParser::ImportAliasDeclarationContext* TypeScriptParser::importAliasDe
   ImportAliasDeclarationContext *_localctx = _tracker.createInstance<ImportAliasDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 108, TypeScriptParser::RuleImportAliasDeclaration);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5866,7 +6118,11 @@ TypeScriptParser::DecoratorListContext* TypeScriptParser::decoratorList() {
   DecoratorListContext *_localctx = _tracker.createInstance<DecoratorListContext>(_ctx, getState());
   enterRule(_localctx, 110, TypeScriptParser::RuleDecoratorList);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5948,7 +6204,11 @@ TypeScriptParser::DecoratorContext* TypeScriptParser::decorator() {
   DecoratorContext *_localctx = _tracker.createInstance<DecoratorContext>(_ctx, getState());
   enterRule(_localctx, 112, TypeScriptParser::RuleDecorator);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -5970,6 +6230,8 @@ TypeScriptParser::DecoratorContext* TypeScriptParser::decorator() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -6057,7 +6319,11 @@ TypeScriptParser::DecoratorMemberExpressionContext* TypeScriptParser::decoratorM
 
     
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -6160,7 +6426,11 @@ TypeScriptParser::DecoratorCallExpressionContext* TypeScriptParser::decoratorCal
   DecoratorCallExpressionContext *_localctx = _tracker.createInstance<DecoratorCallExpressionContext>(_ctx, getState());
   enterRule(_localctx, 116, TypeScriptParser::RuleDecoratorCallExpression);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -6223,7 +6493,11 @@ TypeScriptParser::ProgramContext* TypeScriptParser::program() {
   ProgramContext *_localctx = _tracker.createInstance<ProgramContext>(_ctx, getState());
   enterRule(_localctx, 118, TypeScriptParser::RuleProgram);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -6238,6 +6512,8 @@ TypeScriptParser::ProgramContext* TypeScriptParser::program() {
       break;
     }
 
+    default:
+      break;
     }
     setState(773);
     match(TypeScriptParser::EOF);
@@ -6296,7 +6572,11 @@ TypeScriptParser::SourceElementContext* TypeScriptParser::sourceElement() {
   SourceElementContext *_localctx = _tracker.createInstance<SourceElementContext>(_ctx, getState());
   enterRule(_localctx, 120, TypeScriptParser::RuleSourceElement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -6311,6 +6591,8 @@ TypeScriptParser::SourceElementContext* TypeScriptParser::sourceElement() {
       break;
     }
 
+    default:
+      break;
     }
     setState(779);
     statement();
@@ -6480,7 +6762,11 @@ TypeScriptParser::StatementContext* TypeScriptParser::statement() {
   StatementContext *_localctx = _tracker.createInstance<StatementContext>(_ctx, getState());
   enterRule(_localctx, 122, TypeScriptParser::RuleStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -6692,6 +6978,8 @@ TypeScriptParser::StatementContext* TypeScriptParser::statement() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -6751,7 +7039,11 @@ TypeScriptParser::BlockContext* TypeScriptParser::block() {
   BlockContext *_localctx = _tracker.createInstance<BlockContext>(_ctx, getState());
   enterRule(_localctx, 124, TypeScriptParser::RuleBlock);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -6768,6 +7060,8 @@ TypeScriptParser::BlockContext* TypeScriptParser::block() {
       break;
     }
 
+    default:
+      break;
     }
     setState(817);
     match(TypeScriptParser::CloseBrace);
@@ -6825,7 +7119,11 @@ TypeScriptParser::StatementListContext* TypeScriptParser::statementList() {
   StatementListContext *_localctx = _tracker.createInstance<StatementListContext>(_ctx, getState());
   enterRule(_localctx, 126, TypeScriptParser::RuleStatementList);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -6915,7 +7213,11 @@ TypeScriptParser::AbstractDeclarationContext* TypeScriptParser::abstractDeclarat
   AbstractDeclarationContext *_localctx = _tracker.createInstance<AbstractDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 128, TypeScriptParser::RuleAbstractDeclaration);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -6939,6 +7241,8 @@ TypeScriptParser::AbstractDeclarationContext* TypeScriptParser::abstractDeclarat
       break;
     }
 
+    default:
+      break;
     }
     setState(830);
     eos();
@@ -7000,7 +7304,11 @@ TypeScriptParser::ImportStatementContext* TypeScriptParser::importStatement() {
   ImportStatementContext *_localctx = _tracker.createInstance<ImportStatementContext>(_ctx, getState());
   enterRule(_localctx, 130, TypeScriptParser::RuleImportStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7022,6 +7330,8 @@ TypeScriptParser::ImportStatementContext* TypeScriptParser::importStatement() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -7098,7 +7408,11 @@ TypeScriptParser::FromBlockContext* TypeScriptParser::fromBlock() {
   enterRule(_localctx, 132, TypeScriptParser::RuleFromBlock);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7261,7 +7575,11 @@ TypeScriptParser::MultipleImportStatementContext* TypeScriptParser::multipleImpo
   enterRule(_localctx, 134, TypeScriptParser::RuleMultipleImportStatement);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7409,7 +7727,11 @@ TypeScriptParser::ExportStatementContext* TypeScriptParser::exportStatement() {
   ExportStatementContext *_localctx = _tracker.createInstance<ExportStatementContext>(_ctx, getState());
   enterRule(_localctx, 136, TypeScriptParser::RuleExportStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7426,6 +7748,8 @@ TypeScriptParser::ExportStatementContext* TypeScriptParser::exportStatement() {
       break;
     }
 
+    default:
+      break;
     }
     setState(871);
     _errHandler->sync(this);
@@ -7442,6 +7766,8 @@ TypeScriptParser::ExportStatementContext* TypeScriptParser::exportStatement() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -7497,7 +7823,11 @@ TypeScriptParser::VariableDeclarationContext* TypeScriptParser::variableDeclarat
   VariableDeclarationContext *_localctx = _tracker.createInstance<VariableDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 138, TypeScriptParser::RuleVariableDeclaration);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7593,7 +7923,11 @@ TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement(
   enterRule(_localctx, 140, TypeScriptParser::RuleVariableStatement);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7631,6 +7965,8 @@ TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement(
         break;
       }
 
+      default:
+        break;
       }
       break;
     }
@@ -7679,6 +8015,8 @@ TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement(
         break;
       }
 
+      default:
+        break;
       }
       break;
     }
@@ -7710,10 +8048,14 @@ TypeScriptParser::VariableStatementContext* TypeScriptParser::variableStatement(
         break;
       }
 
+      default:
+        break;
       }
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -7777,7 +8119,11 @@ TypeScriptParser::VariableDeclarationListContext* TypeScriptParser::variableDecl
   VariableDeclarationListContext *_localctx = _tracker.createInstance<VariableDeclarationListContext>(_ctx, getState());
   enterRule(_localctx, 142, TypeScriptParser::RuleVariableDeclarationList);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7857,7 +8203,11 @@ TypeScriptParser::VariableDeclaratePatternContext* TypeScriptParser::variableDec
   VariableDeclaratePatternContext *_localctx = _tracker.createInstance<VariableDeclaratePatternContext>(_ctx, getState());
   enterRule(_localctx, 144, TypeScriptParser::RuleVariableDeclaratePattern);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7944,7 +8294,11 @@ TypeScriptParser::VariableAnnotationContext* TypeScriptParser::variableAnnotatio
   VariableAnnotationContext *_localctx = _tracker.createInstance<VariableAnnotationContext>(_ctx, getState());
   enterRule(_localctx, 146, TypeScriptParser::RuleVariableAnnotation);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -7959,6 +8313,8 @@ TypeScriptParser::VariableAnnotationContext* TypeScriptParser::variableAnnotatio
       break;
     }
 
+    default:
+      break;
     }
     setState(925);
     _errHandler->sync(this);
@@ -7970,6 +8326,8 @@ TypeScriptParser::VariableAnnotationContext* TypeScriptParser::variableAnnotatio
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -8037,7 +8395,11 @@ TypeScriptParser::VariableDeclaratorContext* TypeScriptParser::variableDeclarato
   VariableDeclaratorContext *_localctx = _tracker.createInstance<VariableDeclaratorContext>(_ctx, getState());
   enterRule(_localctx, 148, TypeScriptParser::RuleVariableDeclarator);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -8063,12 +8425,16 @@ TypeScriptParser::VariableDeclaratorContext* TypeScriptParser::variableDeclarato
         break;
       }
 
+      default:
+        break;
       }
       setState(933);
       expression(0);
       break;
     }
 
+    default:
+      break;
     }
 
             dynamic_cast<VariableDeclaratorContext *>(_localctx)->type =  "VariableDeclarator";
@@ -8123,7 +8489,11 @@ TypeScriptParser::EmptyStatementContext* TypeScriptParser::emptyStatement() {
   EmptyStatementContext *_localctx = _tracker.createInstance<EmptyStatementContext>(_ctx, getState());
   enterRule(_localctx, 150, TypeScriptParser::RuleEmptyStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -8184,7 +8554,11 @@ TypeScriptParser::ExpressionStatementContext* TypeScriptParser::expressionStatem
   ExpressionStatementContext *_localctx = _tracker.createInstance<ExpressionStatementContext>(_ctx, getState());
   enterRule(_localctx, 152, TypeScriptParser::RuleExpressionStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -8204,6 +8578,8 @@ TypeScriptParser::ExpressionStatementContext* TypeScriptParser::expressionStatem
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -8279,7 +8655,11 @@ TypeScriptParser::IfStatementContext* TypeScriptParser::ifStatement() {
   IfStatementContext *_localctx = _tracker.createInstance<IfStatementContext>(_ctx, getState());
   enterRule(_localctx, 154, TypeScriptParser::RuleIfStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -8306,6 +8686,8 @@ TypeScriptParser::IfStatementContext* TypeScriptParser::ifStatement() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -8652,7 +9034,11 @@ TypeScriptParser::IterationStatementContext* TypeScriptParser::iterationStatemen
   enterRule(_localctx, 156, TypeScriptParser::RuleIterationStatement);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9210,6 +9596,8 @@ TypeScriptParser::IterationStatementContext* TypeScriptParser::iterationStatemen
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -9270,7 +9658,11 @@ TypeScriptParser::VarModifierContext* TypeScriptParser::varModifier() {
   enterRule(_localctx, 158, TypeScriptParser::RuleVarModifier);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9345,7 +9737,11 @@ TypeScriptParser::ContinueStatementContext* TypeScriptParser::continueStatement(
   ContinueStatementContext *_localctx = _tracker.createInstance<ContinueStatementContext>(_ctx, getState());
   enterRule(_localctx, 160, TypeScriptParser::RuleContinueStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9365,6 +9761,8 @@ TypeScriptParser::ContinueStatementContext* TypeScriptParser::continueStatement(
       break;
     }
 
+    default:
+      break;
     }
     setState(1032);
     eos();
@@ -9426,7 +9824,11 @@ TypeScriptParser::BreakStatementContext* TypeScriptParser::breakStatement() {
   BreakStatementContext *_localctx = _tracker.createInstance<BreakStatementContext>(_ctx, getState());
   enterRule(_localctx, 162, TypeScriptParser::RuleBreakStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9446,6 +9848,8 @@ TypeScriptParser::BreakStatementContext* TypeScriptParser::breakStatement() {
       break;
     }
 
+    default:
+      break;
     }
     setState(1039);
     eos();
@@ -9507,7 +9911,11 @@ TypeScriptParser::ReturnStatementContext* TypeScriptParser::returnStatement() {
   ReturnStatementContext *_localctx = _tracker.createInstance<ReturnStatementContext>(_ctx, getState());
   enterRule(_localctx, 164, TypeScriptParser::RuleReturnStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9527,6 +9935,8 @@ TypeScriptParser::ReturnStatementContext* TypeScriptParser::returnStatement() {
       break;
     }
 
+    default:
+      break;
     }
     setState(1046);
     eos();
@@ -9588,7 +9998,11 @@ TypeScriptParser::YieldStatementContext* TypeScriptParser::yieldStatement() {
   YieldStatementContext *_localctx = _tracker.createInstance<YieldStatementContext>(_ctx, getState());
   enterRule(_localctx, 166, TypeScriptParser::RuleYieldStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9608,6 +10022,8 @@ TypeScriptParser::YieldStatementContext* TypeScriptParser::yieldStatement() {
       break;
     }
 
+    default:
+      break;
     }
     setState(1053);
     eos();
@@ -9677,7 +10093,11 @@ TypeScriptParser::WithStatementContext* TypeScriptParser::withStatement() {
   WithStatementContext *_localctx = _tracker.createInstance<WithStatementContext>(_ctx, getState());
   enterRule(_localctx, 168, TypeScriptParser::RuleWithStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9758,7 +10178,11 @@ TypeScriptParser::SwitchStatementContext* TypeScriptParser::switchStatement() {
   SwitchStatementContext *_localctx = _tracker.createInstance<SwitchStatementContext>(_ctx, getState());
   enterRule(_localctx, 170, TypeScriptParser::RuleSwitchStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9840,7 +10264,11 @@ TypeScriptParser::CaseBlockContext* TypeScriptParser::caseBlock() {
   enterRule(_localctx, 172, TypeScriptParser::RuleCaseBlock);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -9928,7 +10356,11 @@ TypeScriptParser::CaseClausesContext* TypeScriptParser::caseClauses() {
   enterRule(_localctx, 174, TypeScriptParser::RuleCaseClauses);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10005,7 +10437,11 @@ TypeScriptParser::CaseClauseContext* TypeScriptParser::caseClause() {
   CaseClauseContext *_localctx = _tracker.createInstance<CaseClauseContext>(_ctx, getState());
   enterRule(_localctx, 176, TypeScriptParser::RuleCaseClause);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10026,6 +10462,8 @@ TypeScriptParser::CaseClauseContext* TypeScriptParser::caseClause() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -10085,7 +10523,11 @@ TypeScriptParser::DefaultClauseContext* TypeScriptParser::defaultClause() {
   DefaultClauseContext *_localctx = _tracker.createInstance<DefaultClauseContext>(_ctx, getState());
   enterRule(_localctx, 178, TypeScriptParser::RuleDefaultClause);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10104,6 +10546,8 @@ TypeScriptParser::DefaultClauseContext* TypeScriptParser::defaultClause() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -10163,7 +10607,11 @@ TypeScriptParser::LabelledStatementContext* TypeScriptParser::labelledStatement(
   LabelledStatementContext *_localctx = _tracker.createInstance<LabelledStatementContext>(_ctx, getState());
   enterRule(_localctx, 180, TypeScriptParser::RuleLabelledStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10232,7 +10680,11 @@ TypeScriptParser::ThrowStatementContext* TypeScriptParser::throwStatement() {
   ThrowStatementContext *_localctx = _tracker.createInstance<ThrowStatementContext>(_ctx, getState());
   enterRule(_localctx, 182, TypeScriptParser::RuleThrowStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10308,7 +10760,11 @@ TypeScriptParser::TryStatementContext* TypeScriptParser::tryStatement() {
   TryStatementContext *_localctx = _tracker.createInstance<TryStatementContext>(_ctx, getState());
   enterRule(_localctx, 184, TypeScriptParser::RuleTryStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10333,6 +10789,8 @@ TypeScriptParser::TryStatementContext* TypeScriptParser::tryStatement() {
           break;
         }
 
+        default:
+          break;
         }
         break;
       }
@@ -10412,7 +10870,11 @@ TypeScriptParser::CatchProductionContext* TypeScriptParser::catchProduction() {
   CatchProductionContext *_localctx = _tracker.createInstance<CatchProductionContext>(_ctx, getState());
   enterRule(_localctx, 186, TypeScriptParser::RuleCatchProduction);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10481,7 +10943,11 @@ TypeScriptParser::FinallyProductionContext* TypeScriptParser::finallyProduction(
   FinallyProductionContext *_localctx = _tracker.createInstance<FinallyProductionContext>(_ctx, getState());
   enterRule(_localctx, 188, TypeScriptParser::RuleFinallyProduction);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10544,7 +11010,11 @@ TypeScriptParser::DebuggerStatementContext* TypeScriptParser::debuggerStatement(
   DebuggerStatementContext *_localctx = _tracker.createInstance<DebuggerStatementContext>(_ctx, getState());
   enterRule(_localctx, 190, TypeScriptParser::RuleDebuggerStatement);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10627,7 +11097,11 @@ TypeScriptParser::FunctionDeclarationContext* TypeScriptParser::functionDeclarat
   FunctionDeclarationContext *_localctx = _tracker.createInstance<FunctionDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 192, TypeScriptParser::RuleFunctionDeclaration);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10732,7 +11206,11 @@ TypeScriptParser::ClassDeclarationContext* TypeScriptParser::classDeclaration() 
   enterRule(_localctx, 194, TypeScriptParser::RuleClassDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10816,7 +11294,11 @@ TypeScriptParser::ClassHeritageContext* TypeScriptParser::classHeritage() {
   enterRule(_localctx, 196, TypeScriptParser::RuleClassHeritage);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10899,7 +11381,11 @@ TypeScriptParser::ClassTailContext* TypeScriptParser::classTail() {
   ClassTailContext *_localctx = _tracker.createInstance<ClassTailContext>(_ctx, getState());
   enterRule(_localctx, 198, TypeScriptParser::RuleClassTail);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -10975,7 +11461,11 @@ TypeScriptParser::ClassExtendsClauseContext* TypeScriptParser::classExtendsClaus
   ClassExtendsClauseContext *_localctx = _tracker.createInstance<ClassExtendsClauseContext>(_ctx, getState());
   enterRule(_localctx, 200, TypeScriptParser::RuleClassExtendsClause);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11038,7 +11528,11 @@ TypeScriptParser::ImplementsClauseContext* TypeScriptParser::implementsClause() 
   ImplementsClauseContext *_localctx = _tracker.createInstance<ImplementsClauseContext>(_ctx, getState());
   enterRule(_localctx, 202, TypeScriptParser::RuleImplementsClause);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11114,7 +11608,11 @@ TypeScriptParser::ClassElementContext* TypeScriptParser::classElement() {
   enterRule(_localctx, 204, TypeScriptParser::RuleClassElement);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11157,6 +11655,8 @@ TypeScriptParser::ClassElementContext* TypeScriptParser::classElement() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -11341,7 +11841,11 @@ TypeScriptParser::PropertyMemberDeclarationContext* TypeScriptParser::propertyMe
   enterRule(_localctx, 206, TypeScriptParser::RulePropertyMemberDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11452,6 +11956,8 @@ TypeScriptParser::PropertyMemberDeclarationContext* TypeScriptParser::propertyMe
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -11515,7 +12021,11 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
   PropertyMemberBaseContext *_localctx = _tracker.createInstance<PropertyMemberBaseContext>(_ctx, getState());
   enterRule(_localctx, 208, TypeScriptParser::RulePropertyMemberBase);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11530,6 +12040,8 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
+    default:
+      break;
     }
     setState(1213);
     _errHandler->sync(this);
@@ -11541,6 +12053,8 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
+    default:
+      break;
     }
     setState(1216);
     _errHandler->sync(this);
@@ -11552,6 +12066,8 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
+    default:
+      break;
     }
     setState(1219);
     _errHandler->sync(this);
@@ -11563,6 +12079,8 @@ TypeScriptParser::PropertyMemberBaseContext* TypeScriptParser::propertyMemberBas
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -11618,7 +12136,11 @@ TypeScriptParser::IndexMemberDeclarationContext* TypeScriptParser::indexMemberDe
   IndexMemberDeclarationContext *_localctx = _tracker.createInstance<IndexMemberDeclarationContext>(_ctx, getState());
   enterRule(_localctx, 210, TypeScriptParser::RuleIndexMemberDeclaration);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11706,7 +12228,11 @@ TypeScriptParser::GeneratorMethodContext* TypeScriptParser::generatorMethod() {
   enterRule(_localctx, 212, TypeScriptParser::RuleGeneratorMethod);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11832,7 +12358,11 @@ TypeScriptParser::GeneratorFunctionDeclarationContext* TypeScriptParser::generat
   enterRule(_localctx, 214, TypeScriptParser::RuleGeneratorFunctionDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -11948,7 +12478,11 @@ TypeScriptParser::GeneratorBlockContext* TypeScriptParser::generatorBlock() {
   enterRule(_localctx, 216, TypeScriptParser::RuleGeneratorBlock);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12036,7 +12570,11 @@ TypeScriptParser::GeneratorDefinitionContext* TypeScriptParser::generatorDefinit
   GeneratorDefinitionContext *_localctx = _tracker.createInstance<GeneratorDefinitionContext>(_ctx, getState());
   enterRule(_localctx, 218, TypeScriptParser::RuleGeneratorDefinition);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12116,7 +12654,11 @@ TypeScriptParser::IteratorBlockContext* TypeScriptParser::iteratorBlock() {
   enterRule(_localctx, 220, TypeScriptParser::RuleIteratorBlock);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12233,7 +12775,11 @@ TypeScriptParser::IteratorDefinitionContext* TypeScriptParser::iteratorDefinitio
   enterRule(_localctx, 222, TypeScriptParser::RuleIteratorDefinition);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12355,7 +12901,11 @@ TypeScriptParser::FormalParameterListContext* TypeScriptParser::formalParameterL
   enterRule(_localctx, 224, TypeScriptParser::RuleFormalParameterList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12509,7 +13059,11 @@ TypeScriptParser::FormalParameterArgContext* TypeScriptParser::formalParameterAr
   enterRule(_localctx, 226, TypeScriptParser::RuleFormalParameterArg);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12615,7 +13169,11 @@ TypeScriptParser::LastFormalParameterArgContext* TypeScriptParser::lastFormalPar
   LastFormalParameterArgContext *_localctx = _tracker.createInstance<LastFormalParameterArgContext>(_ctx, getState());
   enterRule(_localctx, 228, TypeScriptParser::RuleLastFormalParameterArg);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12674,7 +13232,11 @@ TypeScriptParser::FunctionBodyContext* TypeScriptParser::functionBody() {
   FunctionBodyContext *_localctx = _tracker.createInstance<FunctionBodyContext>(_ctx, getState());
   enterRule(_localctx, 230, TypeScriptParser::RuleFunctionBody);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12689,6 +13251,8 @@ TypeScriptParser::FunctionBodyContext* TypeScriptParser::functionBody() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -12744,7 +13308,11 @@ TypeScriptParser::SourceElementsContext* TypeScriptParser::sourceElements() {
   SourceElementsContext *_localctx = _tracker.createInstance<SourceElementsContext>(_ctx, getState());
   enterRule(_localctx, 232, TypeScriptParser::RuleSourceElements);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12827,7 +13395,11 @@ TypeScriptParser::ArrayLiteralContext* TypeScriptParser::arrayLiteral() {
   enterRule(_localctx, 234, TypeScriptParser::RuleArrayLiteral);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -12979,7 +13551,11 @@ TypeScriptParser::ElementListContext* TypeScriptParser::elementList() {
   enterRule(_localctx, 236, TypeScriptParser::RuleElementList);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -13069,7 +13645,11 @@ TypeScriptParser::ArrayElementContext* TypeScriptParser::arrayElement() {
   enterRule(_localctx, 238, TypeScriptParser::RuleArrayElement);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -13097,6 +13677,8 @@ TypeScriptParser::ArrayElementContext* TypeScriptParser::arrayElement() {
       break;
     }
 
+    default:
+      break;
     }
     setState(1369);
     _errHandler->sync(this);
@@ -13108,6 +13690,8 @@ TypeScriptParser::ArrayElementContext* TypeScriptParser::arrayElement() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -13180,7 +13764,11 @@ TypeScriptParser::ObjectLiteralContext* TypeScriptParser::objectLiteral() {
   enterRule(_localctx, 240, TypeScriptParser::RuleObjectLiteral);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -13516,7 +14104,11 @@ TypeScriptParser::PropertyAssignmentContext* TypeScriptParser::propertyAssignmen
   enterRule(_localctx, 242, TypeScriptParser::RulePropertyAssignment);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -13600,6 +14192,8 @@ TypeScriptParser::PropertyAssignmentContext* TypeScriptParser::propertyAssignmen
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -13676,7 +14270,11 @@ TypeScriptParser::GetAccessorContext* TypeScriptParser::getAccessor() {
   enterRule(_localctx, 244, TypeScriptParser::RuleGetAccessor);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -13784,7 +14382,11 @@ TypeScriptParser::SetAccessorContext* TypeScriptParser::setAccessor() {
   enterRule(_localctx, 246, TypeScriptParser::RuleSetAccessor);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -13886,7 +14488,11 @@ TypeScriptParser::PropertyNameContext* TypeScriptParser::propertyName() {
   PropertyNameContext *_localctx = _tracker.createInstance<PropertyNameContext>(_ctx, getState());
   enterRule(_localctx, 248, TypeScriptParser::RulePropertyName);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -14036,7 +14642,11 @@ TypeScriptParser::ArgumentsContext* TypeScriptParser::arguments() {
   enterRule(_localctx, 250, TypeScriptParser::RuleArguments);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -14195,7 +14805,11 @@ TypeScriptParser::ArgumentListContext* TypeScriptParser::argumentList() {
   ArgumentListContext *_localctx = _tracker.createInstance<ArgumentListContext>(_ctx, getState());
   enterRule(_localctx, 252, TypeScriptParser::RuleArgumentList);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -14276,7 +14890,11 @@ TypeScriptParser::ArgumentContext* TypeScriptParser::argument() {
   enterRule(_localctx, 254, TypeScriptParser::RuleArgument);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -14304,6 +14922,8 @@ TypeScriptParser::ArgumentContext* TypeScriptParser::argument() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -14367,7 +14987,11 @@ TypeScriptParser::ExpressionSequenceContext* TypeScriptParser::expressionSequenc
   ExpressionSequenceContext *_localctx = _tracker.createInstance<ExpressionSequenceContext>(_ctx, getState());
   enterRule(_localctx, 256, TypeScriptParser::RuleExpressionSequence);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -14472,7 +15096,11 @@ TypeScriptParser::FunctionExpressionDeclarationContext* TypeScriptParser::functi
   enterRule(_localctx, 258, TypeScriptParser::RuleFunctionExpressionDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -16029,7 +16657,11 @@ TypeScriptParser::ExpressionContext* TypeScriptParser::expression(int precedence
 
     size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     unrollRecursionContexts(parentContext);
   });
   try {
@@ -16115,6 +16747,8 @@ TypeScriptParser::ExpressionContext* TypeScriptParser::expression(int precedence
         break;
       }
 
+      default:
+        break;
       }
       break;
     }
@@ -16279,6 +16913,8 @@ TypeScriptParser::ExpressionContext* TypeScriptParser::expression(int precedence
         break;
       }
 
+      default:
+        break;
       }
       break;
     }
@@ -16349,10 +16985,14 @@ TypeScriptParser::ExpressionContext* TypeScriptParser::expression(int precedence
         break;
       }
 
+      default:
+        break;
       }
       break;
     }
 
+    default:
+      break;
     }
     _ctx->stop = _input->LT(-1);
     setState(1623);
@@ -16685,6 +17325,8 @@ TypeScriptParser::ExpressionContext* TypeScriptParser::expression(int precedence
             break;
           }
 
+          default:
+            break;
           }
            std::cout<< "Calling MemberDotExpression\n" << (dynamic_cast<MemberDotExpressionContext *>(_localctx)->object != nullptr ? _input->getText(dynamic_cast<MemberDotExpressionContext *>(_localctx)->object->start, dynamic_cast<MemberDotExpressionContext *>(_localctx)->object->stop) : nullptr) <<std::endl; 
           break;
@@ -16759,6 +17401,8 @@ TypeScriptParser::ExpressionContext* TypeScriptParser::expression(int precedence
           break;
         }
 
+        default:
+          break;
         } 
       }
       setState(1625);
@@ -16825,7 +17469,11 @@ TypeScriptParser::AsExpressionContext* TypeScriptParser::asExpression() {
   AsExpressionContext *_localctx = _tracker.createInstance<AsExpressionContext>(_ctx, getState());
   enterRule(_localctx, 262, TypeScriptParser::RuleAsExpression);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -16848,6 +17496,8 @@ TypeScriptParser::AsExpressionContext* TypeScriptParser::asExpression() {
         break;
       }
 
+      default:
+        break;
       }
       break;
     }
@@ -16859,6 +17509,8 @@ TypeScriptParser::AsExpressionContext* TypeScriptParser::asExpression() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -16927,7 +17579,11 @@ TypeScriptParser::ArrowFunctionDeclarationContext* TypeScriptParser::arrowFuncti
   enterRule(_localctx, 264, TypeScriptParser::RuleArrowFunctionDeclaration);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17017,7 +17673,11 @@ TypeScriptParser::ArrowFunctionParametersContext* TypeScriptParser::arrowFunctio
   enterRule(_localctx, 266, TypeScriptParser::RuleArrowFunctionParameters);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17123,7 +17783,11 @@ TypeScriptParser::ArrowFunctionBodyContext* TypeScriptParser::arrowFunctionBody(
   ArrowFunctionBodyContext *_localctx = _tracker.createInstance<ArrowFunctionBodyContext>(_ctx, getState());
   enterRule(_localctx, 268, TypeScriptParser::RuleArrowFunctionBody);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17148,6 +17812,8 @@ TypeScriptParser::ArrowFunctionBodyContext* TypeScriptParser::arrowFunctionBody(
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -17240,7 +17906,11 @@ TypeScriptParser::AssignmentOperatorContext* TypeScriptParser::assignmentOperato
   enterRule(_localctx, 270, TypeScriptParser::RuleAssignmentOperator);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17335,7 +18005,11 @@ TypeScriptParser::LiteralContext* TypeScriptParser::literal() {
   LiteralContext *_localctx = _tracker.createInstance<LiteralContext>(_ctx, getState());
   enterRule(_localctx, 272, TypeScriptParser::RuleLiteral);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17454,7 +18128,11 @@ TypeScriptParser::TemplateStringLiteralContext* TypeScriptParser::templateString
   enterRule(_localctx, 274, TypeScriptParser::RuleTemplateStringLiteral);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17537,7 +18215,11 @@ TypeScriptParser::TemplateStringAtomContext* TypeScriptParser::templateStringAto
   TemplateStringAtomContext *_localctx = _tracker.createInstance<TemplateStringAtomContext>(_ctx, getState());
   enterRule(_localctx, 276, TypeScriptParser::RuleTemplateStringAtom);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17632,7 +18314,11 @@ TypeScriptParser::NumericLiteralContext* TypeScriptParser::numericLiteral() {
   enterRule(_localctx, 278, TypeScriptParser::RuleNumericLiteral);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17705,7 +18391,11 @@ TypeScriptParser::IdentifierNameContext* TypeScriptParser::identifierName() {
   IdentifierNameContext *_localctx = _tracker.createInstance<IdentifierNameContext>(_ctx, getState());
   enterRule(_localctx, 280, TypeScriptParser::RuleIdentifierName);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17839,7 +18529,11 @@ TypeScriptParser::IdentifierOrKeyWordContext* TypeScriptParser::identifierOrKeyW
   enterRule(_localctx, 282, TypeScriptParser::RuleIdentifierOrKeyWord);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -17914,7 +18608,11 @@ TypeScriptParser::ReservedWordContext* TypeScriptParser::reservedWord() {
   ReservedWordContext *_localctx = _tracker.createInstance<ReservedWordContext>(_ctx, getState());
   enterRule(_localctx, 284, TypeScriptParser::RuleReservedWord);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -18241,7 +18939,11 @@ TypeScriptParser::KeywordContext* TypeScriptParser::keyword() {
   enterRule(_localctx, 286, TypeScriptParser::RuleKeyword);
   size_t _la = 0;
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -18359,7 +19061,11 @@ TypeScriptParser::GetterContext* TypeScriptParser::getter() {
   GetterContext *_localctx = _tracker.createInstance<GetterContext>(_ctx, getState());
   enterRule(_localctx, 288, TypeScriptParser::RuleGetter);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -18422,7 +19128,11 @@ TypeScriptParser::SetterContext* TypeScriptParser::setter() {
   SetterContext *_localctx = _tracker.createInstance<SetterContext>(_ctx, getState());
   enterRule(_localctx, 290, TypeScriptParser::RuleSetter);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -18485,7 +19195,11 @@ TypeScriptParser::EosContext* TypeScriptParser::eos() {
   EosContext *_localctx = _tracker.createInstance<EosContext>(_ctx, getState());
   enterRule(_localctx, 292, TypeScriptParser::RuleEos);
 
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
   auto onExit = finally([=] {
+#endif
     exitRule();
   });
   try {
@@ -18522,6 +19236,8 @@ TypeScriptParser::EosContext* TypeScriptParser::eos() {
       break;
     }
 
+    default:
+      break;
     }
    
   }
@@ -18762,21 +19478,22 @@ std::vector<std::string> TypeScriptParser::_ruleNames = {
 
 std::vector<std::string> TypeScriptParser::_literalNames = {
   "", "", "", "", "'['", "']'", "'('", "')'", "'{'", "", "'}'", "';'", "','", 
-  "'='", "'?'", "':'", "'...'", "'.'", "'++'", "'--'", "'+'", "'-'", "'~'", 
-  "'!'", "'*'", "'/'", "'%'", "'>>'", "'<<'", "'>>>'", "'<'", "'>'", "'<='", 
-  "'>='", "'=='", "'!='", "'==='", "'!=='", "'&'", "'^'", "'|'", "'&&'", 
-  "'||'", "'*='", "'/='", "'%='", "'+='", "'-='", "'<<='", "'>>='", "'>>>='", 
-  "'&='", "'^='", "'|='", "'=>'", "'null'", "", "", "", "", "", "", "'break'", 
-  "'do'", "'instanceof'", "'typeof'", "'case'", "'else'", "'new'", "'var'", 
-  "'catch'", "'finally'", "'return'", "'void'", "'continue'", "'for'", "'switch'", 
-  "'while'", "'debugger'", "'function'", "'this'", "'with'", "'default'", 
-  "'if'", "'throw'", "'delete'", "'in'", "'try'", "'as'", "'from'", "'readonly'", 
-  "'async'", "'class'", "'enum'", "'extends'", "'super'", "'const'", "'export'", 
-  "'import'", "'implements'", "'let'", "'private'", "'public'", "'interface'", 
-  "'package'", "'protected'", "'static'", "'yield'", "'any'", "'number'", 
-  "'boolean'", "'string'", "'symbol'", "'type'", "'get'", "'set'", "'constructor'", 
-  "'namespace'", "'require'", "'module'", "'declare'", "'abstract'", "'is'", 
-  "'@'", "", "", "", "", "", "", "", "", "'${'"
+  "'='", "'\u003F'", "':'", "'...'", "'.'", "'++'", "'--'", "'+'", "'-'", 
+  "'~'", "'!'", "'*'", "'/'", "'%'", "'>>'", "'<<'", "'>>>'", "'<'", "'>'", 
+  "'<='", "'>='", "'=='", "'!='", "'==='", "'!=='", "'&'", "'^'", "'|'", 
+  "'&&'", "'||'", "'*='", "'/='", "'%='", "'+='", "'-='", "'<<='", "'>>='", 
+  "'>>>='", "'&='", "'^='", "'|='", "'=>'", "'null'", "", "", "", "", "", 
+  "", "'break'", "'do'", "'instanceof'", "'typeof'", "'case'", "'else'", 
+  "'new'", "'var'", "'catch'", "'finally'", "'return'", "'void'", "'continue'", 
+  "'for'", "'switch'", "'while'", "'debugger'", "'function'", "'this'", 
+  "'with'", "'default'", "'if'", "'throw'", "'delete'", "'in'", "'try'", 
+  "'as'", "'from'", "'readonly'", "'async'", "'class'", "'enum'", "'extends'", 
+  "'super'", "'const'", "'export'", "'import'", "'implements'", "'let'", 
+  "'private'", "'public'", "'interface'", "'package'", "'protected'", "'static'", 
+  "'yield'", "'any'", "'number'", "'boolean'", "'string'", "'symbol'", "'type'", 
+  "'get'", "'set'", "'constructor'", "'namespace'", "'require'", "'module'", 
+  "'declare'", "'abstract'", "'is'", "'@'", "", "", "", "", "", "", "", 
+  "", "'${'"
 };
 
 std::vector<std::string> TypeScriptParser::_symbolicNames = {

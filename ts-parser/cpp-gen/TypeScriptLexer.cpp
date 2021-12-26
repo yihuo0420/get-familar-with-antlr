@@ -2,7 +2,7 @@
 #include "TypeScriptLexerBase.h"
 
 
-// Generated from TypeScriptLexer.g4 by ANTLR 4.8
+// Generated from TypeScriptLexer.g4 by ANTLR 4.9
 
 
 #include "TypeScriptLexer.h"
@@ -164,98 +164,88 @@ atn::ATN TypeScriptLexer::_atn;
 std::vector<uint16_t> TypeScriptLexer::_serializedATN;
 
 std::vector<std::string> TypeScriptLexer::_ruleNames = {
-  u8"MultiLineComment", u8"SingleLineComment", u8"RegularExpressionLiteral", 
-  u8"OpenBracket", u8"CloseBracket", u8"OpenParen", u8"CloseParen", u8"OpenBrace", 
-  u8"TemplateCloseBrace", u8"CloseBrace", u8"SemiColon", u8"Comma", u8"Assign", 
-  u8"QuestionMark", u8"Colon", u8"Ellipsis", u8"Dot", u8"PlusPlus", u8"MinusMinus", 
-  u8"Plus", u8"Minus", u8"BitNot", u8"Not", u8"Multiply", u8"Divide", u8"Modulus", 
-  u8"RightShiftArithmetic", u8"LeftShiftArithmetic", u8"RightShiftLogical", 
-  u8"LessThan", u8"MoreThan", u8"LessThanEquals", u8"GreaterThanEquals", 
-  u8"Equals_", u8"NotEquals", u8"IdentityEquals", u8"IdentityNotEquals", 
-  u8"BitAnd", u8"BitXOr", u8"BitOr", u8"And", u8"Or", u8"MultiplyAssign", 
-  u8"DivideAssign", u8"ModulusAssign", u8"PlusAssign", u8"MinusAssign", 
-  u8"LeftShiftArithmeticAssign", u8"RightShiftArithmeticAssign", u8"RightShiftLogicalAssign", 
-  u8"BitAndAssign", u8"BitXorAssign", u8"BitOrAssign", u8"ARROW", u8"NullLiteral", 
-  u8"BooleanLiteral", u8"DecimalLiteral", u8"HexIntegerLiteral", u8"OctalIntegerLiteral", 
-  u8"OctalIntegerLiteral2", u8"BinaryIntegerLiteral", u8"Break", u8"Do", 
-  u8"Instanceof", u8"Typeof", u8"Case", u8"Else", u8"New", u8"Var", u8"Catch", 
-  u8"Finally", u8"Return", u8"Void", u8"Continue", u8"For", u8"Switch", 
-  u8"While", u8"Debugger", u8"Function_", u8"This", u8"With", u8"Default", 
-  u8"If", u8"Throw", u8"Delete", u8"In", u8"Try", u8"As", u8"From", u8"ReadOnly", 
-  u8"Async", u8"Class", u8"Enum", u8"Extends", u8"Super", u8"Const", u8"Export", 
-  u8"Import", u8"Implements", u8"Let", u8"Private", u8"Public", u8"Interface", 
-  u8"Package", u8"Protected", u8"Static", u8"Yield", u8"Any", u8"Number", 
-  u8"Boolean", u8"String", u8"Symbol", u8"TypeAlias", u8"Get", u8"Set", 
-  u8"Constructor", u8"Namespace", u8"Require", u8"Module", u8"Declare", 
-  u8"Abstract", u8"Is", u8"At", u8"Identifier", u8"StringLiteral", u8"BackTick", 
-  u8"WhiteSpaces", u8"LineTerminator", u8"HtmlComment", u8"CDataComment", 
-  u8"UnexpectedCharacter", u8"BackTickInside", u8"TemplateStringStartExpression", 
-  u8"TemplateStringAtom", u8"DoubleStringCharacter", u8"SingleStringCharacter", 
-  u8"EscapeSequence", u8"CharacterEscapeSequence", u8"HexEscapeSequence", 
-  u8"UnicodeEscapeSequence", u8"ExtendedUnicodeEscapeSequence", u8"SingleEscapeCharacter", 
-  u8"NonEscapeCharacter", u8"EscapeCharacter", u8"LineContinuation", u8"HexDigit", 
-  u8"DecimalIntegerLiteral", u8"ExponentPart", u8"IdentifierPart", u8"IdentifierStart", 
-  u8"RegularExpressionFirstChar", u8"RegularExpressionChar", u8"RegularExpressionClassChar", 
-  u8"RegularExpressionBackslashSequence"
+  "MultiLineComment", "SingleLineComment", "RegularExpressionLiteral", "OpenBracket", 
+  "CloseBracket", "OpenParen", "CloseParen", "OpenBrace", "TemplateCloseBrace", 
+  "CloseBrace", "SemiColon", "Comma", "Assign", "QuestionMark", "Colon", 
+  "Ellipsis", "Dot", "PlusPlus", "MinusMinus", "Plus", "Minus", "BitNot", 
+  "Not", "Multiply", "Divide", "Modulus", "RightShiftArithmetic", "LeftShiftArithmetic", 
+  "RightShiftLogical", "LessThan", "MoreThan", "LessThanEquals", "GreaterThanEquals", 
+  "Equals_", "NotEquals", "IdentityEquals", "IdentityNotEquals", "BitAnd", 
+  "BitXOr", "BitOr", "And", "Or", "MultiplyAssign", "DivideAssign", "ModulusAssign", 
+  "PlusAssign", "MinusAssign", "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign", 
+  "RightShiftLogicalAssign", "BitAndAssign", "BitXorAssign", "BitOrAssign", 
+  "ARROW", "NullLiteral", "BooleanLiteral", "DecimalLiteral", "HexIntegerLiteral", 
+  "OctalIntegerLiteral", "OctalIntegerLiteral2", "BinaryIntegerLiteral", 
+  "Break", "Do", "Instanceof", "Typeof", "Case", "Else", "New", "Var", "Catch", 
+  "Finally", "Return", "Void", "Continue", "For", "Switch", "While", "Debugger", 
+  "Function_", "This", "With", "Default", "If", "Throw", "Delete", "In", 
+  "Try", "As", "From", "ReadOnly", "Async", "Class", "Enum", "Extends", 
+  "Super", "Const", "Export", "Import", "Implements", "Let", "Private", 
+  "Public", "Interface", "Package", "Protected", "Static", "Yield", "Any", 
+  "Number", "Boolean", "String", "Symbol", "TypeAlias", "Get", "Set", "Constructor", 
+  "Namespace", "Require", "Module", "Declare", "Abstract", "Is", "At", "Identifier", 
+  "StringLiteral", "BackTick", "WhiteSpaces", "LineTerminator", "HtmlComment", 
+  "CDataComment", "UnexpectedCharacter", "BackTickInside", "TemplateStringStartExpression", 
+  "TemplateStringAtom", "DoubleStringCharacter", "SingleStringCharacter", 
+  "EscapeSequence", "CharacterEscapeSequence", "HexEscapeSequence", "UnicodeEscapeSequence", 
+  "ExtendedUnicodeEscapeSequence", "SingleEscapeCharacter", "NonEscapeCharacter", 
+  "EscapeCharacter", "LineContinuation", "HexDigit", "DecimalIntegerLiteral", 
+  "ExponentPart", "IdentifierPart", "IdentifierStart", "RegularExpressionFirstChar", 
+  "RegularExpressionChar", "RegularExpressionClassChar", "RegularExpressionBackslashSequence"
 };
 
 std::vector<std::string> TypeScriptLexer::_channelNames = {
-  "DEFAULT_TOKEN_CHANNEL", "HIDDEN", u8"ERROR"
+  "DEFAULT_TOKEN_CHANNEL", "HIDDEN", "ERROR"
 };
 
 std::vector<std::string> TypeScriptLexer::_modeNames = {
-  u8"DEFAULT_MODE", u8"TEMPLATE"
+  "DEFAULT_MODE", "TEMPLATE"
 };
 
 std::vector<std::string> TypeScriptLexer::_literalNames = {
-  "", "", "", "", u8"'['", u8"']'", u8"'('", u8"')'", u8"'{'", "", u8"'}'", 
-  u8"';'", u8"','", u8"'='", u8"'?'", u8"':'", u8"'...'", u8"'.'", u8"'++'", 
-  u8"'--'", u8"'+'", u8"'-'", u8"'~'", u8"'!'", u8"'*'", u8"'/'", u8"'%'", 
-  u8"'>>'", u8"'<<'", u8"'>>>'", u8"'<'", u8"'>'", u8"'<='", u8"'>='", u8"'=='", 
-  u8"'!='", u8"'==='", u8"'!=='", u8"'&'", u8"'^'", u8"'|'", u8"'&&'", u8"'||'", 
-  u8"'*='", u8"'/='", u8"'%='", u8"'+='", u8"'-='", u8"'<<='", u8"'>>='", 
-  u8"'>>>='", u8"'&='", u8"'^='", u8"'|='", u8"'=>'", u8"'null'", "", "", 
-  "", "", "", "", u8"'break'", u8"'do'", u8"'instanceof'", u8"'typeof'", 
-  u8"'case'", u8"'else'", u8"'new'", u8"'var'", u8"'catch'", u8"'finally'", 
-  u8"'return'", u8"'void'", u8"'continue'", u8"'for'", u8"'switch'", u8"'while'", 
-  u8"'debugger'", u8"'function'", u8"'this'", u8"'with'", u8"'default'", 
-  u8"'if'", u8"'throw'", u8"'delete'", u8"'in'", u8"'try'", u8"'as'", u8"'from'", 
-  u8"'readonly'", u8"'async'", u8"'class'", u8"'enum'", u8"'extends'", u8"'super'", 
-  u8"'const'", u8"'export'", u8"'import'", u8"'implements'", u8"'let'", 
-  u8"'private'", u8"'public'", u8"'interface'", u8"'package'", u8"'protected'", 
-  u8"'static'", u8"'yield'", u8"'any'", u8"'number'", u8"'boolean'", u8"'string'", 
-  u8"'symbol'", u8"'type'", u8"'get'", u8"'set'", u8"'constructor'", u8"'namespace'", 
-  u8"'require'", u8"'module'", u8"'declare'", u8"'abstract'", u8"'is'", 
-  u8"'@'", "", "", "", "", "", "", "", "", u8"'${'"
+  "", "", "", "", "'['", "']'", "'('", "')'", "'{'", "", "'}'", "';'", "','", 
+  "'='", "'\u003F'", "':'", "'...'", "'.'", "'++'", "'--'", "'+'", "'-'", 
+  "'~'", "'!'", "'*'", "'/'", "'%'", "'>>'", "'<<'", "'>>>'", "'<'", "'>'", 
+  "'<='", "'>='", "'=='", "'!='", "'==='", "'!=='", "'&'", "'^'", "'|'", 
+  "'&&'", "'||'", "'*='", "'/='", "'%='", "'+='", "'-='", "'<<='", "'>>='", 
+  "'>>>='", "'&='", "'^='", "'|='", "'=>'", "'null'", "", "", "", "", "", 
+  "", "'break'", "'do'", "'instanceof'", "'typeof'", "'case'", "'else'", 
+  "'new'", "'var'", "'catch'", "'finally'", "'return'", "'void'", "'continue'", 
+  "'for'", "'switch'", "'while'", "'debugger'", "'function'", "'this'", 
+  "'with'", "'default'", "'if'", "'throw'", "'delete'", "'in'", "'try'", 
+  "'as'", "'from'", "'readonly'", "'async'", "'class'", "'enum'", "'extends'", 
+  "'super'", "'const'", "'export'", "'import'", "'implements'", "'let'", 
+  "'private'", "'public'", "'interface'", "'package'", "'protected'", "'static'", 
+  "'yield'", "'any'", "'number'", "'boolean'", "'string'", "'symbol'", "'type'", 
+  "'get'", "'set'", "'constructor'", "'namespace'", "'require'", "'module'", 
+  "'declare'", "'abstract'", "'is'", "'@'", "", "", "", "", "", "", "", 
+  "", "'${'"
 };
 
 std::vector<std::string> TypeScriptLexer::_symbolicNames = {
-  "", u8"MultiLineComment", u8"SingleLineComment", u8"RegularExpressionLiteral", 
-  u8"OpenBracket", u8"CloseBracket", u8"OpenParen", u8"CloseParen", u8"OpenBrace", 
-  u8"TemplateCloseBrace", u8"CloseBrace", u8"SemiColon", u8"Comma", u8"Assign", 
-  u8"QuestionMark", u8"Colon", u8"Ellipsis", u8"Dot", u8"PlusPlus", u8"MinusMinus", 
-  u8"Plus", u8"Minus", u8"BitNot", u8"Not", u8"Multiply", u8"Divide", u8"Modulus", 
-  u8"RightShiftArithmetic", u8"LeftShiftArithmetic", u8"RightShiftLogical", 
-  u8"LessThan", u8"MoreThan", u8"LessThanEquals", u8"GreaterThanEquals", 
-  u8"Equals_", u8"NotEquals", u8"IdentityEquals", u8"IdentityNotEquals", 
-  u8"BitAnd", u8"BitXOr", u8"BitOr", u8"And", u8"Or", u8"MultiplyAssign", 
-  u8"DivideAssign", u8"ModulusAssign", u8"PlusAssign", u8"MinusAssign", 
-  u8"LeftShiftArithmeticAssign", u8"RightShiftArithmeticAssign", u8"RightShiftLogicalAssign", 
-  u8"BitAndAssign", u8"BitXorAssign", u8"BitOrAssign", u8"ARROW", u8"NullLiteral", 
-  u8"BooleanLiteral", u8"DecimalLiteral", u8"HexIntegerLiteral", u8"OctalIntegerLiteral", 
-  u8"OctalIntegerLiteral2", u8"BinaryIntegerLiteral", u8"Break", u8"Do", 
-  u8"Instanceof", u8"Typeof", u8"Case", u8"Else", u8"New", u8"Var", u8"Catch", 
-  u8"Finally", u8"Return", u8"Void", u8"Continue", u8"For", u8"Switch", 
-  u8"While", u8"Debugger", u8"Function_", u8"This", u8"With", u8"Default", 
-  u8"If", u8"Throw", u8"Delete", u8"In", u8"Try", u8"As", u8"From", u8"ReadOnly", 
-  u8"Async", u8"Class", u8"Enum", u8"Extends", u8"Super", u8"Const", u8"Export", 
-  u8"Import", u8"Implements", u8"Let", u8"Private", u8"Public", u8"Interface", 
-  u8"Package", u8"Protected", u8"Static", u8"Yield", u8"Any", u8"Number", 
-  u8"Boolean", u8"String", u8"Symbol", u8"TypeAlias", u8"Get", u8"Set", 
-  u8"Constructor", u8"Namespace", u8"Require", u8"Module", u8"Declare", 
-  u8"Abstract", u8"Is", u8"At", u8"Identifier", u8"StringLiteral", u8"BackTick", 
-  u8"WhiteSpaces", u8"LineTerminator", u8"HtmlComment", u8"CDataComment", 
-  u8"UnexpectedCharacter", u8"TemplateStringStartExpression", u8"TemplateStringAtom"
+  "", "MultiLineComment", "SingleLineComment", "RegularExpressionLiteral", 
+  "OpenBracket", "CloseBracket", "OpenParen", "CloseParen", "OpenBrace", 
+  "TemplateCloseBrace", "CloseBrace", "SemiColon", "Comma", "Assign", "QuestionMark", 
+  "Colon", "Ellipsis", "Dot", "PlusPlus", "MinusMinus", "Plus", "Minus", 
+  "BitNot", "Not", "Multiply", "Divide", "Modulus", "RightShiftArithmetic", 
+  "LeftShiftArithmetic", "RightShiftLogical", "LessThan", "MoreThan", "LessThanEquals", 
+  "GreaterThanEquals", "Equals_", "NotEquals", "IdentityEquals", "IdentityNotEquals", 
+  "BitAnd", "BitXOr", "BitOr", "And", "Or", "MultiplyAssign", "DivideAssign", 
+  "ModulusAssign", "PlusAssign", "MinusAssign", "LeftShiftArithmeticAssign", 
+  "RightShiftArithmeticAssign", "RightShiftLogicalAssign", "BitAndAssign", 
+  "BitXorAssign", "BitOrAssign", "ARROW", "NullLiteral", "BooleanLiteral", 
+  "DecimalLiteral", "HexIntegerLiteral", "OctalIntegerLiteral", "OctalIntegerLiteral2", 
+  "BinaryIntegerLiteral", "Break", "Do", "Instanceof", "Typeof", "Case", 
+  "Else", "New", "Var", "Catch", "Finally", "Return", "Void", "Continue", 
+  "For", "Switch", "While", "Debugger", "Function_", "This", "With", "Default", 
+  "If", "Throw", "Delete", "In", "Try", "As", "From", "ReadOnly", "Async", 
+  "Class", "Enum", "Extends", "Super", "Const", "Export", "Import", "Implements", 
+  "Let", "Private", "Public", "Interface", "Package", "Protected", "Static", 
+  "Yield", "Any", "Number", "Boolean", "String", "Symbol", "TypeAlias", 
+  "Get", "Set", "Constructor", "Namespace", "Require", "Module", "Declare", 
+  "Abstract", "Is", "At", "Identifier", "StringLiteral", "BackTick", "WhiteSpaces", 
+  "LineTerminator", "HtmlComment", "CDataComment", "UnexpectedCharacter", 
+  "TemplateStringStartExpression", "TemplateStringAtom"
 };
 
 dfa::Vocabulary TypeScriptLexer::_vocabulary(_literalNames, _symbolicNames);

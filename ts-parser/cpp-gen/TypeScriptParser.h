@@ -1,5 +1,5 @@
 
-// Generated from TypeScriptParser.g4 by ANTLR 4.8
+// Generated from TypeScriptParser.g4 by ANTLR 4.9
 
 #pragma once
 
@@ -101,7 +101,7 @@ public:
     RuleEos = 146
   };
 
-  TypeScriptParser(antlr4::TokenStream *input);
+  explicit TypeScriptParser(antlr4::TokenStream *input);
   ~TypeScriptParser();
 
   virtual std::string getGrammarFileName() const override;
@@ -1466,7 +1466,7 @@ public:
   public:
     std::string type;
     int sourceType;
-    TypeScriptParser::SourceElementsContext *body = nullptr;;
+    TypeScriptParser::SourceElementsContext *body = nullptr;
     ProgramContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *EOF();
@@ -1671,8 +1671,8 @@ public:
 
   class  VariableDeclarationContext : public antlr4::ParserRuleContext {
   public:
-    TypeScriptParser::VarModifierContext *kind = nullptr;;
-    TypeScriptParser::VariableDeclarationListContext *declarations = nullptr;;
+    TypeScriptParser::VarModifierContext *kind = nullptr;
+    TypeScriptParser::VariableDeclarationListContext *declarations = nullptr;
     VariableDeclarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     VarModifierContext *varModifier();
@@ -1765,9 +1765,9 @@ public:
   class  VariableDeclaratorContext : public antlr4::ParserRuleContext {
   public:
     string type;
-    TypeScriptParser::VariableDeclaratePatternContext *id = nullptr;;
-    TypeScriptParser::VariableAnnotationContext *annotation = nullptr;;
-    TypeScriptParser::TypeParametersContext *init = nullptr;;
+    TypeScriptParser::VariableDeclaratePatternContext *id = nullptr;
+    TypeScriptParser::VariableAnnotationContext *annotation = nullptr;
+    TypeScriptParser::TypeParametersContext *init = nullptr;
     VariableDeclaratorContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     VariableDeclaratePatternContext *variableDeclaratePattern();
@@ -1818,9 +1818,9 @@ public:
 
   class  IfStatementContext : public antlr4::ParserRuleContext {
   public:
-    TypeScriptParser::ExpressionSequenceContext *test = nullptr;;
-    TypeScriptParser::StatementContext *consequent = nullptr;;
-    TypeScriptParser::StatementContext *alternate = nullptr;;
+    TypeScriptParser::ExpressionSequenceContext *test = nullptr;
+    TypeScriptParser::StatementContext *consequent = nullptr;
+    TypeScriptParser::StatementContext *alternate = nullptr;
     IfStatementContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *If();
@@ -2261,8 +2261,8 @@ public:
   class  FunctionDeclarationContext : public antlr4::ParserRuleContext {
   public:
     string type;
-    antlr4::Token *id = nullptr;;
-    TypeScriptParser::CallSignatureContext *body = nullptr;;
+    antlr4::Token *id = nullptr;
+    TypeScriptParser::CallSignatureContext *body = nullptr;
     FunctionDeclarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *Function_();
@@ -3015,7 +3015,7 @@ public:
   class  FunctionExpressionDeclarationContext : public antlr4::ParserRuleContext {
   public:
     string type;
-    antlr4::Token *id = nullptr;;
+    antlr4::Token *id = nullptr;
     FunctionExpressionDeclarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *Function_();
