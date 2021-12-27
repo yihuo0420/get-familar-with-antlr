@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "enum.h"
-#include "common_macro .h"
+#include "common_macro.h"
 
 namespace cyclone::parser
 {
