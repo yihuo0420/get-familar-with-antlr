@@ -28,22 +28,13 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  */
+
 parser grammar TypeScriptParser;
 
 options {
 	tokenVocab = TypeScriptLexer;
 	superClass = TypeScriptParserBase;
 }
-
-@parser::preinclude  {
-#include <unordered_map>
-#include <string>
-#include "TypeScriptParserBase.h"
-using std::string;
-}
-@member{ 
-std::unordered_map<std::string , std::string > identifierMap_;
- }
 
 initializer
     : '=' expression
@@ -73,8 +64,10 @@ constraint
     : 'extends' type_
     ;
 
-typeArguments
-    : '<' typeArgumentList? '>'
+//NOTE : Refer to the parser result of https://astexplorer.net  @typescript-eslint/parser for more detailed example
+
+typeArguments locals [ String type = "TSTypeParameterInstantiation" ]
+    : '<' params =  typeArgumentList? '>'
     ;
 
 typeArgumentList
@@ -111,13 +104,14 @@ primaryType
     | typeReference Is primaryType                  #RedefinitionOfType
     ;
 
-predefinedType locals [std::string typeId]
-    : Any    {$typeId = "Any"; }
-    | Number {$typeId = "Number"; }
-    | Boolean {$typeId = "Boolean"; }
-    | String {$typeId = "String"; }
-    | Symbol {$typeId = "Symbol"; }
-    | Void {$typeId = "Void"; }
+//NOTE : try to annotate the node with ANTLR grammar for easier to switch to annother target language
+predefinedType locals [String type]
+    : Any    {$type= "Any"; }
+    | Number {$type= "Number"; }
+    | Boolean {$type= "Boolean"; }
+    | String {$type= "String"; }
+    | Symbol {$type= "Symbol"; }
+    | Void {$type= "Void"; }
     ;
 
 typeReference
@@ -207,7 +201,7 @@ typeAnnotation
     ;
 
 callSignature
-    : typeParameters? '(' parameterList? ')' typeAnnotation?
+    : typeParameters? '(' params = parameterList? ')' retType =  typeAnnotation?
     ;
 
 parameterList
@@ -329,11 +323,11 @@ decoratorMemberExpression
     ;
 
 decoratorCallExpression
-    : decoratorMemberExpression arguments;
+    : decoratorMemberExpression callExpressoinArguments;
 
 // ECMAPart
-program locals [std::string type , int sourceType ]
-    : body = sourceElements? EOF { $type = "Program"; $sourceType = 0;   std::cout<< $type;   } //TODO distinguish sourecetype
+program locals [String type , int sourceType ]
+    : body = sourceElements? EOF { $type = "Program"; $sourceType = 0; { System.out.println("Enterring the program " +  $type); }   } //TODO distinguish sourecetype
     ;
 
 sourceElement
@@ -365,10 +359,10 @@ statement
     | functionDeclaration
     | arrowFunctionDeclaration
     | generatorFunctionDeclaration
+    | expressionStatement
     | variableStatement
     | typeAliasDeclaration //ADDED
     | enumDeclaration      //ADDED
-    | expressionStatement
     | Export statement
     ;
 
@@ -402,7 +396,7 @@ exportStatement
 
 
 //NOTE @Add variableDeclaration for compatibility with estree
-variableDeclaration :
+variableDeclaration locals [ String type = "VariableDeclaration"] :
     kind = varModifier declarations = variableDeclarationList;
 
 
@@ -416,20 +410,24 @@ variableStatement
 variableDeclarationList
     : variableDeclarator (',' variableDeclarator)*
     ;
-//NOTE  @Add variableDeclaratePattern for compatibility with estree
-variableDeclaratePattern :
-    identifierOrKeyWord 
+//NOTE  @Add variableDeclarateIdPattern for compatibility with estree
+variableDeclarateIdPattern :
+    identifierOrKeyWord
     | arrayLiteral
     | objectLiteral;
 
-//NOTE  @Add variableAnnotation for compatibility with estree
-variableAnnotation :  typeAnnotation? expression? ;
+//NOTE @Add variableAnnotation element for compatibility with estree
+//NOTE @Take ":" as common requirement in variableAnnotation
+variableAnnotation : ':' ( type_ | expression) ;
+
+//NOTE @Add variableInitPattern for compatibility with estree
+variableInitPattern : typeParameters? expression;
 
 //NOTE @Rename variableDeclaration to variableDeclarator for compatibility with estree
-variableDeclarator locals[string type  ]  
-    : id = variableDeclaratePattern  annotation =  variableAnnotation ('='   init=  typeParameters? expression)? // ECMAScript 6: Array & Object Matching
+variableDeclarator locals[String type  ]
+    : id = variableDeclarateIdPattern  annotation =  variableAnnotation? ('='   init=  variableInitPattern)? // ECMAScript 6: Array & Object Matching
     {
-        $type = "VariableDeclarator";
+        $type= "VariableDeclarator";
     }
     ;
 
@@ -446,7 +444,7 @@ ifStatement
     ;
 
 
-iterationStatement
+iterationStatement locals [String type ]
     : Do statement While '(' expressionSequence ')' eos                                                         # DoStatement
     | While '(' expressionSequence ')' statement                                                                # WhileStatement
     | For '(' expressionSequence? SemiColon expressionSequence? SemiColon expressionSequence? ')' statement     # ForStatement
@@ -462,15 +460,15 @@ varModifier
     | Const
     ;
 
-continueStatement
+continueStatement locals[String type = "ContinueStatement" ]
     : Continue ({this->notLineTerminator()}? Identifier)? eos
     ;
 
-breakStatement
+breakStatement locals[String type = "BreakStatement"]
     : Break ({this->notLineTerminator()}? Identifier)? eos
     ;
 
-returnStatement
+returnStatement locals[String type = "ReturnStatement"]
     : Return ({this->notLineTerminator()}? expressionSequence)? eos
     ;
 
@@ -526,8 +524,9 @@ debuggerStatement
     : Debugger eos
     ;
 
-functionDeclaration locals[string type]
-    : Function_  id= Identifier  body= callSignature ( ('{' functionBody '}') | SemiColon) {$type = "FunctionDeclaration";  }
+//TODO Shall identifier be optional followwing estree spec?
+functionDeclaration locals[String type]
+    : Function_  id= Identifier  signature =  callSignature ( ('{' body=  functionBody '}') | SemiColon) {$type= "FunctionDeclaration";  }
     ;
 
 //Ovveride ECMA
@@ -559,8 +558,12 @@ classElement
     | statement
     ;
 
-propertyMemberDeclaration
-    : propertyMemberBase propertyName '?'? typeAnnotation? initializer? SemiColon                   # PropertyDeclarationExpression
+//NOTE use isStatic to avoid conflict with keywords
+propertyMemberDeclaration locals[ String type , String key , boolean computed , boolean isStatic   ]
+    : propertyMemberBase propertyName '?'? typeAnnotation? (value = expression)? SemiColon
+    {
+        $type = "PropertyDefinition";
+    }            # PropertyDefinition
     | propertyMemberBase propertyName callSignature ( ('{' functionBody '}') | SemiColon)           # MethodDeclarationExpression
     | propertyMemberBase (getAccessor | setAccessor)                                                # GetterSetterDeclarationExpression
     | abstractDeclaration                                                                           # AbstractMemberDeclaration
@@ -621,31 +624,90 @@ sourceElements
     : sourceElement+
     ;
 
-arrayLiteral
-    : ('[' elementList? ']')
+//NOTE extre ( ) seems useless
+//NOTE type annotation is repeated here
+arrayLiteral locals[String type]
+    : ('[' elements = elementList? ']')
+    {
+        $type = "ArrayExpression";
+    }
     ;
 
 elementList
     : arrayElement (','+ arrayElement)*
     ;
 
+//NOTE @Remove identifier following estree
+//NOTE IdentifierName has been an alternative in expression
 arrayElement                      // ECMAScript 6: Spread Operator
-    : Ellipsis? (expression | Identifier) ','?
+    : Ellipsis? expression ','?
     ;
 
-objectLiteral
+objectLiteral locals[String type]
     : '{' (propertyAssignment (',' propertyAssignment)* ','?)? '}'
+    {
+        $type = "ObjectExpression";
+    }
     ;
 
+//TODO  propertyMemberDeclaration vs propertyAssignment ,which is the Property Node in estree
+//NOTE  kind: "init" | "get" | "set"
 // MODIFIED
-propertyAssignment
-    : propertyName (':' |'=') expression                # PropertyExpressionAssignment
-    | '[' expression ']' ':' expression           # ComputedPropertyExpressionAssignment
-    | getAccessor                                             # PropertyGetter
-    | setAccessor                                             # PropertySetter
-    | generatorMethod                                         # MethodProperty
-    | identifierOrKeyWord                                     # PropertyShorthand
-    | restParameter                                           # RestParameterInObject
+propertyAssignment locals[String type = "Property" , boolean method ,boolean shorthand ,boolean computed , String kind ]
+    : propertyName (':' |'=') expression
+    {
+        $method = false;
+        $shorthand = false;
+        $computed = false;
+        $kind = "init";
+    }                # PropertyExpressionAssignment
+    | '[' expression ']' ':' expression
+    {
+        $method = false;
+        $shorthand = false;
+        $computed = true;
+        $kind = "init";
+    }          # ComputedPropertyExpressionAssignment
+    | getAccessor
+    {
+        $method = true;
+        $shorthand = false;
+        $computed = false;
+        $kind = "get";
+
+    }                                            # PropertyGetter
+    | setAccessor
+    {
+        $method = true;
+        $shorthand = false;
+        $computed = false;
+        $kind = "set";
+
+    }                                          # PropertySetter
+    | generatorMethod
+    {
+        $method = false;
+        $shorthand = false;
+        $computed = true;
+        $kind = "init";
+
+    }                                         # MethodProperty
+    | identifierOrKeyWord
+    {   //TODO Need verify
+        $method = false;
+        $shorthand = true;
+        $computed = false;
+        $kind = "init";
+
+    }                                     # PropertyShorthand
+    | restParameter
+    {   //TODO Need verify
+        $method = false;
+        $shorthand = false;
+        $computed = true;
+        $kind = "init";
+
+    }                                        # RestParameterInObject
     ;
 
 getAccessor
@@ -662,15 +724,17 @@ propertyName
     | numericLiteral
     ;
 
-arguments
+//NOTE @Rename , rename arguments to callExpressoinArguments
+callExpressoinArguments
     : '(' (argumentList ','?)? ')'
     ;
 
 argumentList
-    : argument (',' argument)*
+    : singleArgument (',' singleArgument)*
     ;
 
-argument                      // ECMAScript 6: Spread Operator
+//NOTE @Rename , rename argument to singleArgument
+singleArgument                      // ECMAScript 6: Spread Operator
     : Ellipsis? (expression | Identifier)
     ;
 
@@ -681,61 +745,213 @@ expressionSequence
 *NOTE It is null when a function declaration is a part of the `export default function` statement
 *So the id is optional
 */
-functionExpressionDeclaration locals[string type]    //FunctionDeclaration
-    :  Function_  id= Identifier? '(' formalParameterList? ')' typeAnnotation? '{' functionBody '}' { $type = "FunctionDeclaration"; }
+functionExpressionDeclaration locals[String type]    //FunctionDeclaration
+    :  Function_  id= Identifier? '(' formalParameterList? ')' typeAnnotation? '{' functionBody '}'
+    {
+         $type= "FunctionDeclaration";
+    }
     ;
 
-expression
-    : functionExpressionDeclaration                                          # FunctionExpression
+//NOTE @Add updateOperator for compatibility with estree
+updateOperator returns  [boolean prefix] :'++' | '--' ;
+
+////NOTE @Add unaryOperator for compatibility with estree
+unaryOperator :
+    '-' | '+' | '!' | '~' | 'typeof' | 'void' | 'delete';
+
+expression locals[String type = "expressoin"]
+    : functionExpressionDeclaration
+    {
+        $type = "FunctionExpression";
+    }                                   # FunctionExpression
     | arrowFunctionDeclaration                                               # ArrowFunctionExpression   // ECMAScript 6
     | Class Identifier? classTail                                            # ClassExpression
-    | object= expression '[' property= expressionSequence ']'                     { std::cout<< "Calling MemberIndexExpression\n" << $object.text <<std::endl; }        # MemberIndexExpression
-    | object = expression '.' property= identifierName nestedTypeGeneric?   { std::cout<< "Calling MemberDotExpression\n" << $object.text <<std::endl; }                # MemberDotExpression 
+    //NOTE make object optional in memberpression following estree
+    | object= expression property = memberExpressionPattern //REVIEW  Add proper debug method
+        {
+            $type = "MemberExpression";
+        }
+        #MemberExpression
     // Split to try `new Date()` first, then `new Date`.
-    | New expression typeArguments? arguments                          # NewExpression
-    | New expression typeArguments?                                    # NewExpression
-    | expression arguments                                             # ArgumentsExpression
-    | expression {this->notLineTerminator()}? '++'                      # PostIncrementExpression
-    | expression {this->notLineTerminator()}? '--'                      # PostDecreaseExpression
-    | Delete expression                                                # DeleteExpression
-    | Void expression                                                  # VoidExpression
-    | Typeof expression                                                # TypeofExpression
-    | '++' expression                                                  # PreIncrementExpression
-    | '--' expression                                                  # PreDecreaseExpression
-    | '+' expression                                                   # UnaryPlusExpression
-    | '-' expression                                                   # UnaryMinusExpression
-    | '~' expression                                                   # BitNotExpression
-    | '!' expression                                                   # NotExpression
-    |lhs = expression ('*' | '/' | '%') rhs= expression                    # MultiplicativeExpression
-    |lhs = expression ('+' | '-') rhs= expression                          # AdditiveExpression
-    |lhs = expression ('<<' | '>>' | '>>>')rhs=  expression                # BitShiftExpression
-    |lhs = expression ('<' | '>' | '<=' | '>=') rhs= expression            # RelationalExpression
-    |lhs = expression Instanceof rhs= expression                           # InstanceofExpression
-    | lhs =expression In rhs=  expression                                   # InExpression
-    |lhs = expression ('==' | '!=' | '===' | '!==') rhs= expression        # EqualityExpression
-    |lhs = expression '&'rhs=  expression                                  # BitAndExpression
-    |lhs = expression '^' rhs= expression                                  # BitXOrExpression
-    |lhs = expression '|' rhs= expression                                  # BitOrExpression
-    |lhs = expression '&&'rhs=  expression                                 # LogicalAndExpression
-    |lhs = expression '||' rhs= expression                                 # LogicalOrExpression
-    |condition = expression '?' lhs = expression ':'  rhs= expression             # TernaryExpression
-    |lhs = expression '=' rhs= expression                                  # AssignmentExpression
-    | expression assignmentOperator expression                   # AssignmentOperatorExpression
-    | expression templateStringLiteral                                 # TemplateStringExpression  // ECMAScript 6
-    | iteratorBlock                                                          # IteratorsExpression // ECMAScript 6
-    | generatorBlock                                                         # GeneratorsExpression // ECMAScript 6
-    | generatorFunctionDeclaration                                           # GeneratorsFunctionExpression // ECMAScript 6
-    | yieldStatement                                                         # YieldExpression // ECMAScript 6
-    | This                                                                   # ThisExpression
-    | identifierName expression?                                       # IdentifierExpression
-    | Super                                                                  # SuperExpression
-    | value = literal { std::cout<< $value.text; }                                                               # LiteralExpression
-    | arrayLiteral                                                           # ArrayLiteralExpression
-    | objectLiteral                                                          # ObjectLiteralExpression
-    | '(' expressionSequence ')'                                             # ParenthesizedExpression
-    | typeArguments expressionSequence?                                      # GenericTypes
-    | originalType=  expression As aliasType= asExpression                                       # CastAsExpression
+    //TODO What is the typeArguments used here , does it mean generic type ??
+    | New  callee = expression   typeParameters  typeArguments? arguments = callExpressoinArguments
+    {
+        $type = "NewExpression";
+    }                     # NewExpression
+    | New  callee =  expression typeArguments?
+    {
+        $type = "NewExpression";
+    }                             # NewExpression
+    | callee = expression arguments = callExpressoinArguments
+    {   //TODO Add optional property
+        $type = "CallExpression";
+    }                          # CallExpression
+    |  operator = updateOperator argument = expression
+    {
+        $type = "UpdateExpression";
+        // $updateOperator::prefix = true;
+    }      # UpdateExpression
+    |  argument = expression {this->notLineTerminator()}? operator = updateOperator
+    {
+        $type = "UpdateExpression";
+        // $updateOperator::prefix = false;
+    }           # UpdateExpression
+    | Delete expression
+    {
+        $type = "FunctionExpression";
+    }             # DeleteExpression
+    | Void expression
+    {
+        $type = "FunctionExpression";
+    }              # VoidExpression
+    | Typeof expression
+    {
+        $type = "FunctionExpression";
+    }       # TypeofExpression
+    | '+' expression
+    {
+        $type = "FunctionExpression";
+    }          # UnaryPlusExpression
+    | '-' expression
+    {
+        $type = "FunctionExpression";
+    }      # UnaryMinusExpression
+    | '~' expression
+    {
+        $type = "FunctionExpression";
+    }   # BitNotExpression
+    | '!' expression
+    {
+        $type = "FunctionExpression";
+    }  # NotExpression
+    |lhs = expression ('*' | '/' | '%') rhs= expression
+    {
+        $type = "FunctionExpression";
+    }         # MultiplicativeExpression
+    |lhs = expression ('+' | '-') rhs= expression
+    {
+        $type = "FunctionExpression";
+    }     # AdditiveExpression
+    |lhs = expression ('<<' | '>>' | '>>>')rhs=  expression
+    {
+        $type = "FunctionExpression";
+    }    # BitShiftExpression
+    |lhs = expression ('<' | '>' | '<=' | '>=') rhs= expression
+    {
+        $type = "FunctionExpression";
+    }  # RelationalExpression
+    |lhs = expression Instanceof rhs= expression
+    {
+        $type = "FunctionExpression";
+    }    # InstanceofExpression
+    |lhs =expression In rhs=  expression
+    {
+        $type = "FunctionExpression";
+    } # InExpression
+    |lhs = expression ('==' | '!=' | '===' | '!==') rhs= expression
+    {
+        $type = "FunctionExpression";
+    }   # EqualityExpression
+    |lhs = expression '&'rhs=  expression
+    {
+        $type = "FunctionExpression";
+    } # BitAndExpression
+    |lhs = expression '^' rhs= expression
+    {
+        $type = "FunctionExpression";
+    }   # BitXOrExpression
+    |lhs = expression '|' rhs= expression
+    {
+        $type = "FunctionExpression";
+    } # BitOrExpression
+    |lhs = expression '&&'rhs=  expression
+    {
+        $type = "FunctionExpression";
+    }  # LogicalAndExpression
+    |lhs = expression '||' rhs= expression
+    {
+        $type = "FunctionExpression";
+    }  # LogicalOrExpression
+    |condition = expression '?' lhs = expression ':'  rhs= expression
+    {
+        $type = "FunctionExpression";
+    }  # TernaryExpression
+    |lhs = expression '=' rhs= expression
+    {
+        $type = "FunctionExpression";
+    }  # AssignmentExpression
+    | expression assignmentOperator expression
+    {
+        $type = "FunctionExpression";
+    } # AssignmentOperatorExpression
+    | expression templateStringLiteral
+    {
+        $type = "FunctionExpression";
+    }  # TemplateStringExpression  // ECMAScript 6
+    | iteratorBlock
+    {
+        $type = "FunctionExpression";
+    }   # IteratorsExpression // ECMAScript 6
+    | generatorBlock
+    {
+        $type = "FunctionExpression";
+    } # GeneratorsExpression // ECMAScript 6
+    | generatorFunctionDeclaration
+    {
+        $type = "FunctionExpression";
+    }  # GeneratorsFunctionExpression // ECMAScript 6
+    | yieldStatement
+    {
+        $type = "FunctionExpression";
+    }    # YieldExpression // ECMAScript 6
+    | This
+        {
+            $type = "ThisExpression";
+        }                                                                           # ThisExpression
+    | identifierName
+        {
+            $type = "Identifier";
+        }                                     # IdentifierExpression
+    | Super
+    {
+        $type = "FunctionExpression";
+    } # SuperExpression
+    | value = literal
+    {
+        $type = "Literal";
+    }  # ArrayExpression
+    | arrayLiteral
+    {
+        $type = "ArrayExpression";
+    }
+    {
+        $type = "FunctionExpression";
+    } # ArrayExpression
+    | properties = objectLiteral
+    {
+        $type = "ObjectExpression";
+    }                                                          # ObjectExpression
+    | '(' expressionSequence ')'
+    {
+        $type = "FunctionExpression";
+    } # ParenthesizedExpression
+    | typeArguments expressionSequence?
+    {
+        $type = "FunctionExpression";
+    }  # GenericTypes
+    | originalType=  expression As aliasType= asExpression
+    {
+        $type = "FunctionExpression";
+    }                                     # CastAsExpression
     ;
+
+//TODO Rewrite with semmantic prediaction in Expression
+memberExpressionPattern returns [boolean computed , boolean optional ] :
+    '[' expression (',' expression)* ']' { $computed = false; $optional = false; }
+    | '?'  '.' identifierName nestedTypeGeneric?    { $computed = true; $optional = true;}
+    |  '.' identifierName nestedTypeGeneric?    { $computed = true; $optional = false; }
+    ; //NOTE : Only dot support optional '?' operator
+
 
 asExpression
     : predefinedType ('[' ']')?
@@ -770,13 +986,16 @@ assignmentOperator
     | '|='
     ;
 
-literal
-    : NullLiteral
-    | BooleanLiteral
-    | StringLiteral
-    | templateStringLiteral
-    | RegularExpressionLiteral
-    | numericLiteral
+//TODO change raw to optional
+//NOTE value: string | boolean | number | null;
+//NOTE export type Literal = SimpleLiteral | RegExpLiteral | BigIntLiteral;
+literal locals [ String type  = "Literal", String raw ,int value ]
+    : NullLiteral { $value = 0;}
+    | BooleanLiteral { $value = 1;}
+    | StringLiteral { $value = 2;}
+    | templateStringLiteral { $value = 3;}
+    | RegularExpressionLiteral { $value = 4;}
+    | numericLiteral { $value = 5;}
     ;
 
 templateStringLiteral
