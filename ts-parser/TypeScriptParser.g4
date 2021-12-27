@@ -436,7 +436,7 @@ emptyStatement
     ;
 
 expressionStatement
-    : {this->notOpenBraceAndNotFunction()}? expressionSequence SemiColon?
+    : {this.notOpenBraceAndNotFunction()}? expressionSequence SemiColon?
     ;
 
 ifStatement
@@ -450,8 +450,8 @@ iterationStatement locals [String type ]
     | For '(' expressionSequence? SemiColon expressionSequence? SemiColon expressionSequence? ')' statement     # ForStatement
     | For '(' varModifier variableDeclarationList SemiColon expressionSequence? SemiColon expressionSequence? ')'
           statement                                                                                             # ForVarStatement
-    | For '(' expression (In | Identifier{this->p("of")}?) expressionSequence ')' statement                # ForInStatement
-    | For '(' varModifier variableDeclarator (In | Identifier{this->p("of")}?) expressionSequence ')' statement # ForVarInStatement
+    | For '(' expression (In | Identifier{this.p("of")}?) expressionSequence ')' statement                # ForInStatement
+    | For '(' varModifier variableDeclarator (In | Identifier{this.p("of")}?) expressionSequence ')' statement # ForVarInStatement
     ;
 
 varModifier
@@ -461,19 +461,19 @@ varModifier
     ;
 
 continueStatement locals[String type = "ContinueStatement" ]
-    : Continue ({this->notLineTerminator()}? Identifier)? eos
+    : Continue ({this.notLineTerminator()}? Identifier)? eos
     ;
 
 breakStatement locals[String type = "BreakStatement"]
-    : Break ({this->notLineTerminator()}? Identifier)? eos
+    : Break ({this.notLineTerminator()}? Identifier)? eos
     ;
 
 returnStatement locals[String type = "ReturnStatement"]
-    : Return ({this->notLineTerminator()}? expressionSequence)? eos
+    : Return ({this.notLineTerminator()}? expressionSequence)? eos
     ;
 
 yieldStatement
-    : Yield ({this->notLineTerminator()}? expressionSequence)? eos
+    : Yield ({this.notLineTerminator()}? expressionSequence)? eos
     ;
 
 withStatement
@@ -505,7 +505,7 @@ labelledStatement
     ;
 
 throwStatement
-    : Throw {this->notLineTerminator()}? expressionSequence eos
+    : Throw {this.notLineTerminator()}? expressionSequence eos
     ;
 
 tryStatement
@@ -770,6 +770,9 @@ expression locals[String type = "expressoin"]
     | object= expression property = memberExpressionPattern //REVIEW  Add proper debug method
         {
             $type = "MemberExpression";
+            System.out.println("Calling MemberExpression ,type is " + $type);
+            System.out.println("Calling MemberExpression ,optional is " + $memberExpressionPattern.optional);
+            System.out.println("Calling MemberExpression ,computed is " + $memberExpressionPattern.computed);
         }
         #MemberExpression
     // Split to try `new Date()` first, then `new Date`.
@@ -791,7 +794,7 @@ expression locals[String type = "expressoin"]
         $type = "UpdateExpression";
         // $updateOperator::prefix = true;
     }      # UpdateExpression
-    |  argument = expression {this->notLineTerminator()}? operator = updateOperator
+    |  argument = expression {this.notLineTerminator()}? operator = updateOperator
     {
         $type = "UpdateExpression";
         // $updateOperator::prefix = false;
@@ -1096,6 +1099,6 @@ setter
 eos
     : SemiColon
     | EOF
-    | {this->lineTerminatorAhead()}?
-    | {this->closeBrace()}?
+    | {this.lineTerminatorAhead()}?
+    | {this.closeBrace()}?
     ;
