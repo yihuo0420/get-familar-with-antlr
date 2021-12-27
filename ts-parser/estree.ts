@@ -232,6 +232,7 @@ export type Declaration =
 
 interface BaseDeclaration extends BaseStatement { }
 
+//REVIEW in ANTLR baseFunction is replaced with call signature
 export interface FunctionDeclaration extends BaseFunction, BaseDeclaration {
   type: "FunctionDeclaration";
   /** It is null when a function declaration is a part of the `export default function` statement */
@@ -271,25 +272,30 @@ export interface ChainExpression extends BaseExpression {
   expression: ChainElement;
 }
 
+//REVIEW 
 export interface ThisExpression extends BaseExpression {
   type: "ThisExpression";
 }
 
+//REVIEW  SpreadElement is replaced with  " Ellipsis? expression ','?  " in ANTLR
 export interface ArrayExpression extends BaseExpression {
   type: "ArrayExpression";
   elements: Array<Expression | SpreadElement | null>;
 }
 
+//REVIEW
 export interface ObjectExpression extends BaseExpression {
   type: "ObjectExpression";
   properties: Array<Property | SpreadElement>;
 }
 
+//TODO what does this node mean ??
 export interface PrivateIdentifier extends BaseNode {
     type: "PrivateIdentifier";
     name: string;
 }
 
+//TODO what does shorthand mean ??
 export interface Property extends BaseNode {
   type: "Property";
   key: Expression | PrivateIdentifier;
@@ -300,6 +306,7 @@ export interface Property extends BaseNode {
   computed: boolean;
 }
 
+//REVIEW Does property contain method ??
 export interface PropertyDefinition extends BaseNode {
     type: "PropertyDefinition";
     key: Expression | PrivateIdentifier;
@@ -308,6 +315,7 @@ export interface PropertyDefinition extends BaseNode {
     static: boolean;
 }
 
+//REVIEW In which case does id be null ?
 export interface FunctionExpression extends BaseFunction, BaseExpression {
   id?: Identifier | null | undefined;
   type: "FunctionExpression";
@@ -340,6 +348,7 @@ export interface AssignmentExpression extends BaseExpression {
   right: Expression;
 }
 
+//REVIEW
 export interface UpdateExpression extends BaseExpression {
   type: "UpdateExpression";
   operator: UpdateOperator;
@@ -361,21 +370,25 @@ export interface ConditionalExpression extends BaseExpression {
   consequent: Expression;
 }
 
+//REVIEW
 interface BaseCallExpression extends BaseExpression {
   callee: Expression | Super;
   arguments: Array<Expression | SpreadElement>;
 }
 export type CallExpression = SimpleCallExpression | NewExpression;
 
+//REVIEW
 export interface SimpleCallExpression extends BaseCallExpression {
   type: "CallExpression";
   optional: boolean;
 }
 
+//REVIEW
 export interface NewExpression extends BaseCallExpression {
   type: "NewExpression";
 }
 
+//REVIEW
 export interface MemberExpression extends BaseExpression, BasePattern {
   type: "MemberExpression";
   object: Expression | Super;
@@ -384,6 +397,7 @@ export interface MemberExpression extends BaseExpression, BasePattern {
   optional: boolean;
 }
 
+//TODO Shall group corresponding  rules in ANTLR into Pattern ? 
 export type Pattern =
     Identifier | ObjectPattern | ArrayPattern | RestElement |
     AssignmentPattern | MemberExpression;
@@ -402,19 +416,23 @@ export interface CatchClause extends BaseNode {
   body: BlockStatement;
 }
 
+//REVIEW
 export interface Identifier extends BaseNode, BaseExpression, BasePattern {
   type: "Identifier";
   name: string;
 }
 
+//REVIEW
 export type Literal = SimpleLiteral | RegExpLiteral | BigIntLiteral;
 
+//REVIEW
 export interface SimpleLiteral extends BaseNode, BaseExpression {
   type: "Literal";
   value: string | boolean | number | null;
   raw?: string | undefined;
 }
 
+//REVIEW
 export interface RegExpLiteral extends BaseNode, BaseExpression {
   type: "Literal";
   value?: RegExp | null | undefined;
@@ -425,6 +443,7 @@ export interface RegExpLiteral extends BaseNode, BaseExpression {
   raw?: string | undefined;
 }
 
+//TODO shall distinguish bigInt in ANTLR  ??
 export interface BigIntLiteral extends BaseNode, BaseExpression {
   type: "Literal";
   value?: bigint | null | undefined;
