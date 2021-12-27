@@ -1,6 +1,6 @@
 /* parser/listener/visitor header section */
 
-// Generated from TParser.g4 by ANTLR 4.8
+// Generated from TParser.g4 by ANTLR 4.9
 
 #pragma once
 
@@ -38,7 +38,23 @@ public:
 
     virtual antlrcpp::Any visitStat(TParser::StatContext *context) = 0;
 
-    virtual antlrcpp::Any visitExpr(TParser::ExprContext *context) = 0;
+    virtual antlrcpp::Any visitCC(TParser::CCContext *context) = 0;
+
+    virtual antlrcpp::Any visitBBB(TParser::BBBContext *context) = 0;
+
+    virtual antlrcpp::Any visitFGF(TParser::FGFContext *context) = 0;
+
+    virtual antlrcpp::Any visitEWF(TParser::EWFContext *context) = 0;
+
+    virtual antlrcpp::Any visitGGG(TParser::GGGContext *context) = 0;
+
+    virtual antlrcpp::Any visitEEF(TParser::EEFContext *context) = 0;
+
+    virtual antlrcpp::Any visitFDF(TParser::FDFContext *context) = 0;
+
+    virtual antlrcpp::Any visitGGGGGGG(TParser::GGGGGGGContext *context) = 0;
+
+    virtual antlrcpp::Any visitEDDD(TParser::EDDDContext *context) = 0;
 
     virtual antlrcpp::Any visitReturn(TParser::ReturnContext *context) = 0;
 

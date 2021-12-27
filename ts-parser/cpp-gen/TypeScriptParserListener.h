@@ -262,11 +262,14 @@ public:
   virtual void enterVariableDeclarationList(TypeScriptParser::VariableDeclarationListContext *ctx) = 0;
   virtual void exitVariableDeclarationList(TypeScriptParser::VariableDeclarationListContext *ctx) = 0;
 
-  virtual void enterVariableDeclaratePattern(TypeScriptParser::VariableDeclaratePatternContext *ctx) = 0;
-  virtual void exitVariableDeclaratePattern(TypeScriptParser::VariableDeclaratePatternContext *ctx) = 0;
+  virtual void enterVariableDeclarateIdPattern(TypeScriptParser::VariableDeclarateIdPatternContext *ctx) = 0;
+  virtual void exitVariableDeclarateIdPattern(TypeScriptParser::VariableDeclarateIdPatternContext *ctx) = 0;
 
   virtual void enterVariableAnnotation(TypeScriptParser::VariableAnnotationContext *ctx) = 0;
   virtual void exitVariableAnnotation(TypeScriptParser::VariableAnnotationContext *ctx) = 0;
+
+  virtual void enterVariableInitPattern(TypeScriptParser::VariableInitPatternContext *ctx) = 0;
+  virtual void exitVariableInitPattern(TypeScriptParser::VariableInitPatternContext *ctx) = 0;
 
   virtual void enterVariableDeclarator(TypeScriptParser::VariableDeclaratorContext *ctx) = 0;
   virtual void exitVariableDeclarator(TypeScriptParser::VariableDeclaratorContext *ctx) = 0;
@@ -370,8 +373,8 @@ public:
   virtual void enterClassElement(TypeScriptParser::ClassElementContext *ctx) = 0;
   virtual void exitClassElement(TypeScriptParser::ClassElementContext *ctx) = 0;
 
-  virtual void enterPropertyDeclarationExpression(TypeScriptParser::PropertyDeclarationExpressionContext *ctx) = 0;
-  virtual void exitPropertyDeclarationExpression(TypeScriptParser::PropertyDeclarationExpressionContext *ctx) = 0;
+  virtual void enterPropertyDefinition(TypeScriptParser::PropertyDefinitionContext *ctx) = 0;
+  virtual void exitPropertyDefinition(TypeScriptParser::PropertyDefinitionContext *ctx) = 0;
 
   virtual void enterMethodDeclarationExpression(TypeScriptParser::MethodDeclarationExpressionContext *ctx) = 0;
   virtual void exitMethodDeclarationExpression(TypeScriptParser::MethodDeclarationExpressionContext *ctx) = 0;
@@ -463,20 +466,26 @@ public:
   virtual void enterPropertyName(TypeScriptParser::PropertyNameContext *ctx) = 0;
   virtual void exitPropertyName(TypeScriptParser::PropertyNameContext *ctx) = 0;
 
-  virtual void enterArguments(TypeScriptParser::ArgumentsContext *ctx) = 0;
-  virtual void exitArguments(TypeScriptParser::ArgumentsContext *ctx) = 0;
+  virtual void enterCallExpressoinArguments(TypeScriptParser::CallExpressoinArgumentsContext *ctx) = 0;
+  virtual void exitCallExpressoinArguments(TypeScriptParser::CallExpressoinArgumentsContext *ctx) = 0;
 
   virtual void enterArgumentList(TypeScriptParser::ArgumentListContext *ctx) = 0;
   virtual void exitArgumentList(TypeScriptParser::ArgumentListContext *ctx) = 0;
 
-  virtual void enterArgument(TypeScriptParser::ArgumentContext *ctx) = 0;
-  virtual void exitArgument(TypeScriptParser::ArgumentContext *ctx) = 0;
+  virtual void enterSingleArgument(TypeScriptParser::SingleArgumentContext *ctx) = 0;
+  virtual void exitSingleArgument(TypeScriptParser::SingleArgumentContext *ctx) = 0;
 
   virtual void enterExpressionSequence(TypeScriptParser::ExpressionSequenceContext *ctx) = 0;
   virtual void exitExpressionSequence(TypeScriptParser::ExpressionSequenceContext *ctx) = 0;
 
   virtual void enterFunctionExpressionDeclaration(TypeScriptParser::FunctionExpressionDeclarationContext *ctx) = 0;
   virtual void exitFunctionExpressionDeclaration(TypeScriptParser::FunctionExpressionDeclarationContext *ctx) = 0;
+
+  virtual void enterUpdateOperator(TypeScriptParser::UpdateOperatorContext *ctx) = 0;
+  virtual void exitUpdateOperator(TypeScriptParser::UpdateOperatorContext *ctx) = 0;
+
+  virtual void enterUnaryOperator(TypeScriptParser::UnaryOperatorContext *ctx) = 0;
+  virtual void exitUnaryOperator(TypeScriptParser::UnaryOperatorContext *ctx) = 0;
 
   virtual void enterTemplateStringExpression(TypeScriptParser::TemplateStringExpressionContext *ctx) = 0;
   virtual void exitTemplateStringExpression(TypeScriptParser::TemplateStringExpressionContext *ctx) = 0;
@@ -490,12 +499,6 @@ public:
   virtual void enterGeneratorsExpression(TypeScriptParser::GeneratorsExpressionContext *ctx) = 0;
   virtual void exitGeneratorsExpression(TypeScriptParser::GeneratorsExpressionContext *ctx) = 0;
 
-  virtual void enterPreIncrementExpression(TypeScriptParser::PreIncrementExpressionContext *ctx) = 0;
-  virtual void exitPreIncrementExpression(TypeScriptParser::PreIncrementExpressionContext *ctx) = 0;
-
-  virtual void enterObjectLiteralExpression(TypeScriptParser::ObjectLiteralExpressionContext *ctx) = 0;
-  virtual void exitObjectLiteralExpression(TypeScriptParser::ObjectLiteralExpressionContext *ctx) = 0;
-
   virtual void enterInExpression(TypeScriptParser::InExpressionContext *ctx) = 0;
   virtual void exitInExpression(TypeScriptParser::InExpressionContext *ctx) = 0;
 
@@ -508,12 +511,6 @@ public:
   virtual void enterNotExpression(TypeScriptParser::NotExpressionContext *ctx) = 0;
   virtual void exitNotExpression(TypeScriptParser::NotExpressionContext *ctx) = 0;
 
-  virtual void enterPreDecreaseExpression(TypeScriptParser::PreDecreaseExpressionContext *ctx) = 0;
-  virtual void exitPreDecreaseExpression(TypeScriptParser::PreDecreaseExpressionContext *ctx) = 0;
-
-  virtual void enterArgumentsExpression(TypeScriptParser::ArgumentsExpressionContext *ctx) = 0;
-  virtual void exitArgumentsExpression(TypeScriptParser::ArgumentsExpressionContext *ctx) = 0;
-
   virtual void enterThisExpression(TypeScriptParser::ThisExpressionContext *ctx) = 0;
   virtual void exitThisExpression(TypeScriptParser::ThisExpressionContext *ctx) = 0;
 
@@ -525,9 +522,6 @@ public:
 
   virtual void enterAssignmentExpression(TypeScriptParser::AssignmentExpressionContext *ctx) = 0;
   virtual void exitAssignmentExpression(TypeScriptParser::AssignmentExpressionContext *ctx) = 0;
-
-  virtual void enterPostDecreaseExpression(TypeScriptParser::PostDecreaseExpressionContext *ctx) = 0;
-  virtual void exitPostDecreaseExpression(TypeScriptParser::PostDecreaseExpressionContext *ctx) = 0;
 
   virtual void enterTypeofExpression(TypeScriptParser::TypeofExpressionContext *ctx) = 0;
   virtual void exitTypeofExpression(TypeScriptParser::TypeofExpressionContext *ctx) = 0;
@@ -559,11 +553,17 @@ public:
   virtual void enterCastAsExpression(TypeScriptParser::CastAsExpressionContext *ctx) = 0;
   virtual void exitCastAsExpression(TypeScriptParser::CastAsExpressionContext *ctx) = 0;
 
+  virtual void enterUpdateExpression(TypeScriptParser::UpdateExpressionContext *ctx) = 0;
+  virtual void exitUpdateExpression(TypeScriptParser::UpdateExpressionContext *ctx) = 0;
+
   virtual void enterSuperExpression(TypeScriptParser::SuperExpressionContext *ctx) = 0;
   virtual void exitSuperExpression(TypeScriptParser::SuperExpressionContext *ctx) = 0;
 
   virtual void enterMultiplicativeExpression(TypeScriptParser::MultiplicativeExpressionContext *ctx) = 0;
   virtual void exitMultiplicativeExpression(TypeScriptParser::MultiplicativeExpressionContext *ctx) = 0;
+
+  virtual void enterCallExpression(TypeScriptParser::CallExpressionContext *ctx) = 0;
+  virtual void exitCallExpression(TypeScriptParser::CallExpressionContext *ctx) = 0;
 
   virtual void enterBitShiftExpression(TypeScriptParser::BitShiftExpressionContext *ctx) = 0;
   virtual void exitBitShiftExpression(TypeScriptParser::BitShiftExpressionContext *ctx) = 0;
@@ -577,9 +577,6 @@ public:
   virtual void enterRelationalExpression(TypeScriptParser::RelationalExpressionContext *ctx) = 0;
   virtual void exitRelationalExpression(TypeScriptParser::RelationalExpressionContext *ctx) = 0;
 
-  virtual void enterPostIncrementExpression(TypeScriptParser::PostIncrementExpressionContext *ctx) = 0;
-  virtual void exitPostIncrementExpression(TypeScriptParser::PostIncrementExpressionContext *ctx) = 0;
-
   virtual void enterYieldExpression(TypeScriptParser::YieldExpressionContext *ctx) = 0;
   virtual void exitYieldExpression(TypeScriptParser::YieldExpressionContext *ctx) = 0;
 
@@ -589,23 +586,14 @@ public:
   virtual void enterNewExpression(TypeScriptParser::NewExpressionContext *ctx) = 0;
   virtual void exitNewExpression(TypeScriptParser::NewExpressionContext *ctx) = 0;
 
-  virtual void enterLiteralExpression(TypeScriptParser::LiteralExpressionContext *ctx) = 0;
-  virtual void exitLiteralExpression(TypeScriptParser::LiteralExpressionContext *ctx) = 0;
-
-  virtual void enterArrayLiteralExpression(TypeScriptParser::ArrayLiteralExpressionContext *ctx) = 0;
-  virtual void exitArrayLiteralExpression(TypeScriptParser::ArrayLiteralExpressionContext *ctx) = 0;
-
-  virtual void enterMemberDotExpression(TypeScriptParser::MemberDotExpressionContext *ctx) = 0;
-  virtual void exitMemberDotExpression(TypeScriptParser::MemberDotExpressionContext *ctx) = 0;
-
   virtual void enterClassExpression(TypeScriptParser::ClassExpressionContext *ctx) = 0;
   virtual void exitClassExpression(TypeScriptParser::ClassExpressionContext *ctx) = 0;
 
-  virtual void enterMemberIndexExpression(TypeScriptParser::MemberIndexExpressionContext *ctx) = 0;
-  virtual void exitMemberIndexExpression(TypeScriptParser::MemberIndexExpressionContext *ctx) = 0;
-
   virtual void enterIdentifierExpression(TypeScriptParser::IdentifierExpressionContext *ctx) = 0;
   virtual void exitIdentifierExpression(TypeScriptParser::IdentifierExpressionContext *ctx) = 0;
+
+  virtual void enterMemberExpression(TypeScriptParser::MemberExpressionContext *ctx) = 0;
+  virtual void exitMemberExpression(TypeScriptParser::MemberExpressionContext *ctx) = 0;
 
   virtual void enterBitAndExpression(TypeScriptParser::BitAndExpressionContext *ctx) = 0;
   virtual void exitBitAndExpression(TypeScriptParser::BitAndExpressionContext *ctx) = 0;
@@ -616,8 +604,17 @@ public:
   virtual void enterAssignmentOperatorExpression(TypeScriptParser::AssignmentOperatorExpressionContext *ctx) = 0;
   virtual void exitAssignmentOperatorExpression(TypeScriptParser::AssignmentOperatorExpressionContext *ctx) = 0;
 
+  virtual void enterArrayExpression(TypeScriptParser::ArrayExpressionContext *ctx) = 0;
+  virtual void exitArrayExpression(TypeScriptParser::ArrayExpressionContext *ctx) = 0;
+
   virtual void enterVoidExpression(TypeScriptParser::VoidExpressionContext *ctx) = 0;
   virtual void exitVoidExpression(TypeScriptParser::VoidExpressionContext *ctx) = 0;
+
+  virtual void enterObjectExpression(TypeScriptParser::ObjectExpressionContext *ctx) = 0;
+  virtual void exitObjectExpression(TypeScriptParser::ObjectExpressionContext *ctx) = 0;
+
+  virtual void enterMemberExpressionPattern(TypeScriptParser::MemberExpressionPatternContext *ctx) = 0;
+  virtual void exitMemberExpressionPattern(TypeScriptParser::MemberExpressionPatternContext *ctx) = 0;
 
   virtual void enterAsExpression(TypeScriptParser::AsExpressionContext *ctx) = 0;
   virtual void exitAsExpression(TypeScriptParser::AsExpressionContext *ctx) = 0;

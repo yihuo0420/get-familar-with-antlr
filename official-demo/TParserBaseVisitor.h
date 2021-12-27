@@ -1,6 +1,6 @@
 /* parser/listener/visitor header section */
 
-// Generated from TParser.g4 by ANTLR 4.8
+// Generated from TParser.g4 by ANTLR 4.9
 
 #pragma once
 
@@ -49,7 +49,39 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitExpr(TParser::ExprContext *ctx) override {
+  virtual antlrcpp::Any visitCC(TParser::CCContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitBBB(TParser::BBBContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitFGF(TParser::FGFContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitEWF(TParser::EWFContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitGGG(TParser::GGGContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitEEF(TParser::EEFContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitFDF(TParser::FDFContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitGGGGGGG(TParser::GGGGGGGContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitEDDD(TParser::EDDDContext *ctx) override {
     return visitChildren(ctx);
   }
 

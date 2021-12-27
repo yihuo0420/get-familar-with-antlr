@@ -1,6 +1,6 @@
 /* parser/listener/visitor header section */
 
-// Generated from TParser.g4 by ANTLR 4.8
+// Generated from TParser.g4 by ANTLR 4.9
 
 #pragma once
 
@@ -41,8 +41,32 @@ public:
   virtual void enterStat(TParser::StatContext *ctx) = 0;
   virtual void exitStat(TParser::StatContext *ctx) = 0;
 
-  virtual void enterExpr(TParser::ExprContext *ctx) = 0;
-  virtual void exitExpr(TParser::ExprContext *ctx) = 0;
+  virtual void enterCC(TParser::CCContext *ctx) = 0;
+  virtual void exitCC(TParser::CCContext *ctx) = 0;
+
+  virtual void enterBBB(TParser::BBBContext *ctx) = 0;
+  virtual void exitBBB(TParser::BBBContext *ctx) = 0;
+
+  virtual void enterFGF(TParser::FGFContext *ctx) = 0;
+  virtual void exitFGF(TParser::FGFContext *ctx) = 0;
+
+  virtual void enterEWF(TParser::EWFContext *ctx) = 0;
+  virtual void exitEWF(TParser::EWFContext *ctx) = 0;
+
+  virtual void enterGGG(TParser::GGGContext *ctx) = 0;
+  virtual void exitGGG(TParser::GGGContext *ctx) = 0;
+
+  virtual void enterEEF(TParser::EEFContext *ctx) = 0;
+  virtual void exitEEF(TParser::EEFContext *ctx) = 0;
+
+  virtual void enterFDF(TParser::FDFContext *ctx) = 0;
+  virtual void exitFDF(TParser::FDFContext *ctx) = 0;
+
+  virtual void enterGGGGGGG(TParser::GGGGGGGContext *ctx) = 0;
+  virtual void exitGGGGGGG(TParser::GGGGGGGContext *ctx) = 0;
+
+  virtual void enterEDDD(TParser::EDDDContext *ctx) = 0;
+  virtual void exitEDDD(TParser::EDDDContext *ctx) = 0;
 
   virtual void enterReturn(TParser::ReturnContext *ctx) = 0;
   virtual void exitReturn(TParser::ReturnContext *ctx) = 0;

@@ -789,15 +789,13 @@ expression locals[String type = "expressoin"]
     {   //TODO Add optional property
         $type = "CallExpression";
     }                          # CallExpression
-    |  operator = updateOperator argument = expression
+    |  operator_ = updateOperator argument = expression
     {
         $type = "UpdateExpression";
-        // $updateOperator::prefix = true;
     }      # UpdateExpression
-    |  argument = expression {this.notLineTerminator()}? operator = updateOperator
+    |  argument = expression {this.notLineTerminator()}? operator_ = updateOperator
     {
         $type = "UpdateExpression";
-        // $updateOperator::prefix = false;
     }           # UpdateExpression
     | Delete expression
     {
@@ -953,7 +951,7 @@ memberExpressionPattern returns [boolean computed , boolean optional ] :
     '[' expression (',' expression)* ']' { $computed = false; $optional = false; }
     | '?'  '.' identifierName nestedTypeGeneric?    { $computed = true; $optional = true;}
     |  '.' identifierName nestedTypeGeneric?    { $computed = true; $optional = false; }
-    ; //NOTE : Only dot support optional '?' operator
+    ; //NOTE : Only dot support optional '?' operator_
 
 
 asExpression

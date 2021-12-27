@@ -1,6 +1,6 @@
 /* parser/listener/visitor header section */
 
-// Generated from TParser.g4 by ANTLR 4.8
+// Generated from TParser.g4 by ANTLR 4.9
 
 #pragma once
 
@@ -43,8 +43,32 @@ public:
   virtual void enterStat(TParser::StatContext * /*ctx*/) override { }
   virtual void exitStat(TParser::StatContext * /*ctx*/) override { }
 
-  virtual void enterExpr(TParser::ExprContext * /*ctx*/) override { }
-  virtual void exitExpr(TParser::ExprContext * /*ctx*/) override { }
+  virtual void enterCC(TParser::CCContext * /*ctx*/) override { }
+  virtual void exitCC(TParser::CCContext * /*ctx*/) override { }
+
+  virtual void enterBBB(TParser::BBBContext * /*ctx*/) override { }
+  virtual void exitBBB(TParser::BBBContext * /*ctx*/) override { }
+
+  virtual void enterFGF(TParser::FGFContext * /*ctx*/) override { }
+  virtual void exitFGF(TParser::FGFContext * /*ctx*/) override { }
+
+  virtual void enterEWF(TParser::EWFContext * /*ctx*/) override { }
+  virtual void exitEWF(TParser::EWFContext * /*ctx*/) override { }
+
+  virtual void enterGGG(TParser::GGGContext * /*ctx*/) override { }
+  virtual void exitGGG(TParser::GGGContext * /*ctx*/) override { }
+
+  virtual void enterEEF(TParser::EEFContext * /*ctx*/) override { }
+  virtual void exitEEF(TParser::EEFContext * /*ctx*/) override { }
+
+  virtual void enterFDF(TParser::FDFContext * /*ctx*/) override { }
+  virtual void exitFDF(TParser::FDFContext * /*ctx*/) override { }
+
+  virtual void enterGGGGGGG(TParser::GGGGGGGContext * /*ctx*/) override { }
+  virtual void exitGGGGGGG(TParser::GGGGGGGContext * /*ctx*/) override { }
+
+  virtual void enterEDDD(TParser::EDDDContext * /*ctx*/) override { }
+  virtual void exitEDDD(TParser::EDDDContext * /*ctx*/) override { }
 
   virtual void enterReturn(TParser::ReturnContext * /*ctx*/) override { }
   virtual void exitReturn(TParser::ReturnContext * /*ctx*/) override { }

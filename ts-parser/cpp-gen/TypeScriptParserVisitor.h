@@ -184,9 +184,11 @@ public:
 
     virtual antlrcpp::Any visitVariableDeclarationList(TypeScriptParser::VariableDeclarationListContext *context) = 0;
 
-    virtual antlrcpp::Any visitVariableDeclaratePattern(TypeScriptParser::VariableDeclaratePatternContext *context) = 0;
+    virtual antlrcpp::Any visitVariableDeclarateIdPattern(TypeScriptParser::VariableDeclarateIdPatternContext *context) = 0;
 
     virtual antlrcpp::Any visitVariableAnnotation(TypeScriptParser::VariableAnnotationContext *context) = 0;
+
+    virtual antlrcpp::Any visitVariableInitPattern(TypeScriptParser::VariableInitPatternContext *context) = 0;
 
     virtual antlrcpp::Any visitVariableDeclarator(TypeScriptParser::VariableDeclaratorContext *context) = 0;
 
@@ -256,7 +258,7 @@ public:
 
     virtual antlrcpp::Any visitClassElement(TypeScriptParser::ClassElementContext *context) = 0;
 
-    virtual antlrcpp::Any visitPropertyDeclarationExpression(TypeScriptParser::PropertyDeclarationExpressionContext *context) = 0;
+    virtual antlrcpp::Any visitPropertyDefinition(TypeScriptParser::PropertyDefinitionContext *context) = 0;
 
     virtual antlrcpp::Any visitMethodDeclarationExpression(TypeScriptParser::MethodDeclarationExpressionContext *context) = 0;
 
@@ -318,15 +320,19 @@ public:
 
     virtual antlrcpp::Any visitPropertyName(TypeScriptParser::PropertyNameContext *context) = 0;
 
-    virtual antlrcpp::Any visitArguments(TypeScriptParser::ArgumentsContext *context) = 0;
+    virtual antlrcpp::Any visitCallExpressoinArguments(TypeScriptParser::CallExpressoinArgumentsContext *context) = 0;
 
     virtual antlrcpp::Any visitArgumentList(TypeScriptParser::ArgumentListContext *context) = 0;
 
-    virtual antlrcpp::Any visitArgument(TypeScriptParser::ArgumentContext *context) = 0;
+    virtual antlrcpp::Any visitSingleArgument(TypeScriptParser::SingleArgumentContext *context) = 0;
 
     virtual antlrcpp::Any visitExpressionSequence(TypeScriptParser::ExpressionSequenceContext *context) = 0;
 
     virtual antlrcpp::Any visitFunctionExpressionDeclaration(TypeScriptParser::FunctionExpressionDeclarationContext *context) = 0;
+
+    virtual antlrcpp::Any visitUpdateOperator(TypeScriptParser::UpdateOperatorContext *context) = 0;
+
+    virtual antlrcpp::Any visitUnaryOperator(TypeScriptParser::UnaryOperatorContext *context) = 0;
 
     virtual antlrcpp::Any visitTemplateStringExpression(TypeScriptParser::TemplateStringExpressionContext *context) = 0;
 
@@ -336,10 +342,6 @@ public:
 
     virtual antlrcpp::Any visitGeneratorsExpression(TypeScriptParser::GeneratorsExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitPreIncrementExpression(TypeScriptParser::PreIncrementExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitObjectLiteralExpression(TypeScriptParser::ObjectLiteralExpressionContext *context) = 0;
-
     virtual antlrcpp::Any visitInExpression(TypeScriptParser::InExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitLogicalOrExpression(TypeScriptParser::LogicalOrExpressionContext *context) = 0;
@@ -348,10 +350,6 @@ public:
 
     virtual antlrcpp::Any visitNotExpression(TypeScriptParser::NotExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitPreDecreaseExpression(TypeScriptParser::PreDecreaseExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitArgumentsExpression(TypeScriptParser::ArgumentsExpressionContext *context) = 0;
-
     virtual antlrcpp::Any visitThisExpression(TypeScriptParser::ThisExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitFunctionExpression(TypeScriptParser::FunctionExpressionContext *context) = 0;
@@ -359,8 +357,6 @@ public:
     virtual antlrcpp::Any visitUnaryMinusExpression(TypeScriptParser::UnaryMinusExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitAssignmentExpression(TypeScriptParser::AssignmentExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitPostDecreaseExpression(TypeScriptParser::PostDecreaseExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitTypeofExpression(TypeScriptParser::TypeofExpressionContext *context) = 0;
 
@@ -382,9 +378,13 @@ public:
 
     virtual antlrcpp::Any visitCastAsExpression(TypeScriptParser::CastAsExpressionContext *context) = 0;
 
+    virtual antlrcpp::Any visitUpdateExpression(TypeScriptParser::UpdateExpressionContext *context) = 0;
+
     virtual antlrcpp::Any visitSuperExpression(TypeScriptParser::SuperExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitMultiplicativeExpression(TypeScriptParser::MultiplicativeExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitCallExpression(TypeScriptParser::CallExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitBitShiftExpression(TypeScriptParser::BitShiftExpressionContext *context) = 0;
 
@@ -394,25 +394,17 @@ public:
 
     virtual antlrcpp::Any visitRelationalExpression(TypeScriptParser::RelationalExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitPostIncrementExpression(TypeScriptParser::PostIncrementExpressionContext *context) = 0;
-
     virtual antlrcpp::Any visitYieldExpression(TypeScriptParser::YieldExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitBitNotExpression(TypeScriptParser::BitNotExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitNewExpression(TypeScriptParser::NewExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitLiteralExpression(TypeScriptParser::LiteralExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitArrayLiteralExpression(TypeScriptParser::ArrayLiteralExpressionContext *context) = 0;
-
-    virtual antlrcpp::Any visitMemberDotExpression(TypeScriptParser::MemberDotExpressionContext *context) = 0;
-
     virtual antlrcpp::Any visitClassExpression(TypeScriptParser::ClassExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitMemberIndexExpression(TypeScriptParser::MemberIndexExpressionContext *context) = 0;
-
     virtual antlrcpp::Any visitIdentifierExpression(TypeScriptParser::IdentifierExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitMemberExpression(TypeScriptParser::MemberExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitBitAndExpression(TypeScriptParser::BitAndExpressionContext *context) = 0;
 
@@ -420,7 +412,13 @@ public:
 
     virtual antlrcpp::Any visitAssignmentOperatorExpression(TypeScriptParser::AssignmentOperatorExpressionContext *context) = 0;
 
+    virtual antlrcpp::Any visitArrayExpression(TypeScriptParser::ArrayExpressionContext *context) = 0;
+
     virtual antlrcpp::Any visitVoidExpression(TypeScriptParser::VoidExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitObjectExpression(TypeScriptParser::ObjectExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitMemberExpressionPattern(TypeScriptParser::MemberExpressionPatternContext *context) = 0;
 
     virtual antlrcpp::Any visitAsExpression(TypeScriptParser::AsExpressionContext *context) = 0;
 

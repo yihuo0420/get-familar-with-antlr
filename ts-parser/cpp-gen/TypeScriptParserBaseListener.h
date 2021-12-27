@@ -264,11 +264,14 @@ public:
   virtual void enterVariableDeclarationList(TypeScriptParser::VariableDeclarationListContext * /*ctx*/) override { }
   virtual void exitVariableDeclarationList(TypeScriptParser::VariableDeclarationListContext * /*ctx*/) override { }
 
-  virtual void enterVariableDeclaratePattern(TypeScriptParser::VariableDeclaratePatternContext * /*ctx*/) override { }
-  virtual void exitVariableDeclaratePattern(TypeScriptParser::VariableDeclaratePatternContext * /*ctx*/) override { }
+  virtual void enterVariableDeclarateIdPattern(TypeScriptParser::VariableDeclarateIdPatternContext * /*ctx*/) override { }
+  virtual void exitVariableDeclarateIdPattern(TypeScriptParser::VariableDeclarateIdPatternContext * /*ctx*/) override { }
 
   virtual void enterVariableAnnotation(TypeScriptParser::VariableAnnotationContext * /*ctx*/) override { }
   virtual void exitVariableAnnotation(TypeScriptParser::VariableAnnotationContext * /*ctx*/) override { }
+
+  virtual void enterVariableInitPattern(TypeScriptParser::VariableInitPatternContext * /*ctx*/) override { }
+  virtual void exitVariableInitPattern(TypeScriptParser::VariableInitPatternContext * /*ctx*/) override { }
 
   virtual void enterVariableDeclarator(TypeScriptParser::VariableDeclaratorContext * /*ctx*/) override { }
   virtual void exitVariableDeclarator(TypeScriptParser::VariableDeclaratorContext * /*ctx*/) override { }
@@ -372,8 +375,8 @@ public:
   virtual void enterClassElement(TypeScriptParser::ClassElementContext * /*ctx*/) override { }
   virtual void exitClassElement(TypeScriptParser::ClassElementContext * /*ctx*/) override { }
 
-  virtual void enterPropertyDeclarationExpression(TypeScriptParser::PropertyDeclarationExpressionContext * /*ctx*/) override { }
-  virtual void exitPropertyDeclarationExpression(TypeScriptParser::PropertyDeclarationExpressionContext * /*ctx*/) override { }
+  virtual void enterPropertyDefinition(TypeScriptParser::PropertyDefinitionContext * /*ctx*/) override { }
+  virtual void exitPropertyDefinition(TypeScriptParser::PropertyDefinitionContext * /*ctx*/) override { }
 
   virtual void enterMethodDeclarationExpression(TypeScriptParser::MethodDeclarationExpressionContext * /*ctx*/) override { }
   virtual void exitMethodDeclarationExpression(TypeScriptParser::MethodDeclarationExpressionContext * /*ctx*/) override { }
@@ -465,20 +468,26 @@ public:
   virtual void enterPropertyName(TypeScriptParser::PropertyNameContext * /*ctx*/) override { }
   virtual void exitPropertyName(TypeScriptParser::PropertyNameContext * /*ctx*/) override { }
 
-  virtual void enterArguments(TypeScriptParser::ArgumentsContext * /*ctx*/) override { }
-  virtual void exitArguments(TypeScriptParser::ArgumentsContext * /*ctx*/) override { }
+  virtual void enterCallExpressoinArguments(TypeScriptParser::CallExpressoinArgumentsContext * /*ctx*/) override { }
+  virtual void exitCallExpressoinArguments(TypeScriptParser::CallExpressoinArgumentsContext * /*ctx*/) override { }
 
   virtual void enterArgumentList(TypeScriptParser::ArgumentListContext * /*ctx*/) override { }
   virtual void exitArgumentList(TypeScriptParser::ArgumentListContext * /*ctx*/) override { }
 
-  virtual void enterArgument(TypeScriptParser::ArgumentContext * /*ctx*/) override { }
-  virtual void exitArgument(TypeScriptParser::ArgumentContext * /*ctx*/) override { }
+  virtual void enterSingleArgument(TypeScriptParser::SingleArgumentContext * /*ctx*/) override { }
+  virtual void exitSingleArgument(TypeScriptParser::SingleArgumentContext * /*ctx*/) override { }
 
   virtual void enterExpressionSequence(TypeScriptParser::ExpressionSequenceContext * /*ctx*/) override { }
   virtual void exitExpressionSequence(TypeScriptParser::ExpressionSequenceContext * /*ctx*/) override { }
 
   virtual void enterFunctionExpressionDeclaration(TypeScriptParser::FunctionExpressionDeclarationContext * /*ctx*/) override { }
   virtual void exitFunctionExpressionDeclaration(TypeScriptParser::FunctionExpressionDeclarationContext * /*ctx*/) override { }
+
+  virtual void enterUpdateOperator(TypeScriptParser::UpdateOperatorContext * /*ctx*/) override { }
+  virtual void exitUpdateOperator(TypeScriptParser::UpdateOperatorContext * /*ctx*/) override { }
+
+  virtual void enterUnaryOperator(TypeScriptParser::UnaryOperatorContext * /*ctx*/) override { }
+  virtual void exitUnaryOperator(TypeScriptParser::UnaryOperatorContext * /*ctx*/) override { }
 
   virtual void enterTemplateStringExpression(TypeScriptParser::TemplateStringExpressionContext * /*ctx*/) override { }
   virtual void exitTemplateStringExpression(TypeScriptParser::TemplateStringExpressionContext * /*ctx*/) override { }
@@ -492,12 +501,6 @@ public:
   virtual void enterGeneratorsExpression(TypeScriptParser::GeneratorsExpressionContext * /*ctx*/) override { }
   virtual void exitGeneratorsExpression(TypeScriptParser::GeneratorsExpressionContext * /*ctx*/) override { }
 
-  virtual void enterPreIncrementExpression(TypeScriptParser::PreIncrementExpressionContext * /*ctx*/) override { }
-  virtual void exitPreIncrementExpression(TypeScriptParser::PreIncrementExpressionContext * /*ctx*/) override { }
-
-  virtual void enterObjectLiteralExpression(TypeScriptParser::ObjectLiteralExpressionContext * /*ctx*/) override { }
-  virtual void exitObjectLiteralExpression(TypeScriptParser::ObjectLiteralExpressionContext * /*ctx*/) override { }
-
   virtual void enterInExpression(TypeScriptParser::InExpressionContext * /*ctx*/) override { }
   virtual void exitInExpression(TypeScriptParser::InExpressionContext * /*ctx*/) override { }
 
@@ -510,12 +513,6 @@ public:
   virtual void enterNotExpression(TypeScriptParser::NotExpressionContext * /*ctx*/) override { }
   virtual void exitNotExpression(TypeScriptParser::NotExpressionContext * /*ctx*/) override { }
 
-  virtual void enterPreDecreaseExpression(TypeScriptParser::PreDecreaseExpressionContext * /*ctx*/) override { }
-  virtual void exitPreDecreaseExpression(TypeScriptParser::PreDecreaseExpressionContext * /*ctx*/) override { }
-
-  virtual void enterArgumentsExpression(TypeScriptParser::ArgumentsExpressionContext * /*ctx*/) override { }
-  virtual void exitArgumentsExpression(TypeScriptParser::ArgumentsExpressionContext * /*ctx*/) override { }
-
   virtual void enterThisExpression(TypeScriptParser::ThisExpressionContext * /*ctx*/) override { }
   virtual void exitThisExpression(TypeScriptParser::ThisExpressionContext * /*ctx*/) override { }
 
@@ -527,9 +524,6 @@ public:
 
   virtual void enterAssignmentExpression(TypeScriptParser::AssignmentExpressionContext * /*ctx*/) override { }
   virtual void exitAssignmentExpression(TypeScriptParser::AssignmentExpressionContext * /*ctx*/) override { }
-
-  virtual void enterPostDecreaseExpression(TypeScriptParser::PostDecreaseExpressionContext * /*ctx*/) override { }
-  virtual void exitPostDecreaseExpression(TypeScriptParser::PostDecreaseExpressionContext * /*ctx*/) override { }
 
   virtual void enterTypeofExpression(TypeScriptParser::TypeofExpressionContext * /*ctx*/) override { }
   virtual void exitTypeofExpression(TypeScriptParser::TypeofExpressionContext * /*ctx*/) override { }
@@ -561,11 +555,17 @@ public:
   virtual void enterCastAsExpression(TypeScriptParser::CastAsExpressionContext * /*ctx*/) override { }
   virtual void exitCastAsExpression(TypeScriptParser::CastAsExpressionContext * /*ctx*/) override { }
 
+  virtual void enterUpdateExpression(TypeScriptParser::UpdateExpressionContext * /*ctx*/) override { }
+  virtual void exitUpdateExpression(TypeScriptParser::UpdateExpressionContext * /*ctx*/) override { }
+
   virtual void enterSuperExpression(TypeScriptParser::SuperExpressionContext * /*ctx*/) override { }
   virtual void exitSuperExpression(TypeScriptParser::SuperExpressionContext * /*ctx*/) override { }
 
   virtual void enterMultiplicativeExpression(TypeScriptParser::MultiplicativeExpressionContext * /*ctx*/) override { }
   virtual void exitMultiplicativeExpression(TypeScriptParser::MultiplicativeExpressionContext * /*ctx*/) override { }
+
+  virtual void enterCallExpression(TypeScriptParser::CallExpressionContext * /*ctx*/) override { }
+  virtual void exitCallExpression(TypeScriptParser::CallExpressionContext * /*ctx*/) override { }
 
   virtual void enterBitShiftExpression(TypeScriptParser::BitShiftExpressionContext * /*ctx*/) override { }
   virtual void exitBitShiftExpression(TypeScriptParser::BitShiftExpressionContext * /*ctx*/) override { }
@@ -579,9 +579,6 @@ public:
   virtual void enterRelationalExpression(TypeScriptParser::RelationalExpressionContext * /*ctx*/) override { }
   virtual void exitRelationalExpression(TypeScriptParser::RelationalExpressionContext * /*ctx*/) override { }
 
-  virtual void enterPostIncrementExpression(TypeScriptParser::PostIncrementExpressionContext * /*ctx*/) override { }
-  virtual void exitPostIncrementExpression(TypeScriptParser::PostIncrementExpressionContext * /*ctx*/) override { }
-
   virtual void enterYieldExpression(TypeScriptParser::YieldExpressionContext * /*ctx*/) override { }
   virtual void exitYieldExpression(TypeScriptParser::YieldExpressionContext * /*ctx*/) override { }
 
@@ -591,23 +588,14 @@ public:
   virtual void enterNewExpression(TypeScriptParser::NewExpressionContext * /*ctx*/) override { }
   virtual void exitNewExpression(TypeScriptParser::NewExpressionContext * /*ctx*/) override { }
 
-  virtual void enterLiteralExpression(TypeScriptParser::LiteralExpressionContext * /*ctx*/) override { }
-  virtual void exitLiteralExpression(TypeScriptParser::LiteralExpressionContext * /*ctx*/) override { }
-
-  virtual void enterArrayLiteralExpression(TypeScriptParser::ArrayLiteralExpressionContext * /*ctx*/) override { }
-  virtual void exitArrayLiteralExpression(TypeScriptParser::ArrayLiteralExpressionContext * /*ctx*/) override { }
-
-  virtual void enterMemberDotExpression(TypeScriptParser::MemberDotExpressionContext * /*ctx*/) override { }
-  virtual void exitMemberDotExpression(TypeScriptParser::MemberDotExpressionContext * /*ctx*/) override { }
-
   virtual void enterClassExpression(TypeScriptParser::ClassExpressionContext * /*ctx*/) override { }
   virtual void exitClassExpression(TypeScriptParser::ClassExpressionContext * /*ctx*/) override { }
 
-  virtual void enterMemberIndexExpression(TypeScriptParser::MemberIndexExpressionContext * /*ctx*/) override { }
-  virtual void exitMemberIndexExpression(TypeScriptParser::MemberIndexExpressionContext * /*ctx*/) override { }
-
   virtual void enterIdentifierExpression(TypeScriptParser::IdentifierExpressionContext * /*ctx*/) override { }
   virtual void exitIdentifierExpression(TypeScriptParser::IdentifierExpressionContext * /*ctx*/) override { }
+
+  virtual void enterMemberExpression(TypeScriptParser::MemberExpressionContext * /*ctx*/) override { }
+  virtual void exitMemberExpression(TypeScriptParser::MemberExpressionContext * /*ctx*/) override { }
 
   virtual void enterBitAndExpression(TypeScriptParser::BitAndExpressionContext * /*ctx*/) override { }
   virtual void exitBitAndExpression(TypeScriptParser::BitAndExpressionContext * /*ctx*/) override { }
@@ -618,8 +606,17 @@ public:
   virtual void enterAssignmentOperatorExpression(TypeScriptParser::AssignmentOperatorExpressionContext * /*ctx*/) override { }
   virtual void exitAssignmentOperatorExpression(TypeScriptParser::AssignmentOperatorExpressionContext * /*ctx*/) override { }
 
+  virtual void enterArrayExpression(TypeScriptParser::ArrayExpressionContext * /*ctx*/) override { }
+  virtual void exitArrayExpression(TypeScriptParser::ArrayExpressionContext * /*ctx*/) override { }
+
   virtual void enterVoidExpression(TypeScriptParser::VoidExpressionContext * /*ctx*/) override { }
   virtual void exitVoidExpression(TypeScriptParser::VoidExpressionContext * /*ctx*/) override { }
+
+  virtual void enterObjectExpression(TypeScriptParser::ObjectExpressionContext * /*ctx*/) override { }
+  virtual void exitObjectExpression(TypeScriptParser::ObjectExpressionContext * /*ctx*/) override { }
+
+  virtual void enterMemberExpressionPattern(TypeScriptParser::MemberExpressionPatternContext * /*ctx*/) override { }
+  virtual void exitMemberExpressionPattern(TypeScriptParser::MemberExpressionPatternContext * /*ctx*/) override { }
 
   virtual void enterAsExpression(TypeScriptParser::AsExpressionContext * /*ctx*/) override { }
   virtual void exitAsExpression(TypeScriptParser::AsExpressionContext * /*ctx*/) override { }

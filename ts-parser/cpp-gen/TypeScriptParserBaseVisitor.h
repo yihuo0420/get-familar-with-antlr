@@ -345,11 +345,15 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitVariableDeclaratePattern(TypeScriptParser::VariableDeclaratePatternContext *ctx) override {
+  virtual antlrcpp::Any visitVariableDeclarateIdPattern(TypeScriptParser::VariableDeclarateIdPatternContext *ctx) override {
     return visitChildren(ctx);
   }
 
   virtual antlrcpp::Any visitVariableAnnotation(TypeScriptParser::VariableAnnotationContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitVariableInitPattern(TypeScriptParser::VariableInitPatternContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -489,7 +493,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitPropertyDeclarationExpression(TypeScriptParser::PropertyDeclarationExpressionContext *ctx) override {
+  virtual antlrcpp::Any visitPropertyDefinition(TypeScriptParser::PropertyDefinitionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -613,7 +617,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitArguments(TypeScriptParser::ArgumentsContext *ctx) override {
+  virtual antlrcpp::Any visitCallExpressoinArguments(TypeScriptParser::CallExpressoinArgumentsContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -621,7 +625,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitArgument(TypeScriptParser::ArgumentContext *ctx) override {
+  virtual antlrcpp::Any visitSingleArgument(TypeScriptParser::SingleArgumentContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -630,6 +634,14 @@ public:
   }
 
   virtual antlrcpp::Any visitFunctionExpressionDeclaration(TypeScriptParser::FunctionExpressionDeclarationContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitUpdateOperator(TypeScriptParser::UpdateOperatorContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitUnaryOperator(TypeScriptParser::UnaryOperatorContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -649,14 +661,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitPreIncrementExpression(TypeScriptParser::PreIncrementExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitObjectLiteralExpression(TypeScriptParser::ObjectLiteralExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual antlrcpp::Any visitInExpression(TypeScriptParser::InExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -673,14 +677,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitPreDecreaseExpression(TypeScriptParser::PreDecreaseExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitArgumentsExpression(TypeScriptParser::ArgumentsExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual antlrcpp::Any visitThisExpression(TypeScriptParser::ThisExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -694,10 +690,6 @@ public:
   }
 
   virtual antlrcpp::Any visitAssignmentExpression(TypeScriptParser::AssignmentExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitPostDecreaseExpression(TypeScriptParser::PostDecreaseExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -741,11 +733,19 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitUpdateExpression(TypeScriptParser::UpdateExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitSuperExpression(TypeScriptParser::SuperExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
   virtual antlrcpp::Any visitMultiplicativeExpression(TypeScriptParser::MultiplicativeExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitCallExpression(TypeScriptParser::CallExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -765,10 +765,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitPostIncrementExpression(TypeScriptParser::PostIncrementExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual antlrcpp::Any visitYieldExpression(TypeScriptParser::YieldExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -781,27 +777,15 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitLiteralExpression(TypeScriptParser::LiteralExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitArrayLiteralExpression(TypeScriptParser::ArrayLiteralExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitMemberDotExpression(TypeScriptParser::MemberDotExpressionContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual antlrcpp::Any visitClassExpression(TypeScriptParser::ClassExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitMemberIndexExpression(TypeScriptParser::MemberIndexExpressionContext *ctx) override {
+  virtual antlrcpp::Any visitIdentifierExpression(TypeScriptParser::IdentifierExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitIdentifierExpression(TypeScriptParser::IdentifierExpressionContext *ctx) override {
+  virtual antlrcpp::Any visitMemberExpression(TypeScriptParser::MemberExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -817,7 +801,19 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitArrayExpression(TypeScriptParser::ArrayExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitVoidExpression(TypeScriptParser::VoidExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitObjectExpression(TypeScriptParser::ObjectExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitMemberExpressionPattern(TypeScriptParser::MemberExpressionPatternContext *ctx) override {
     return visitChildren(ctx);
   }
 

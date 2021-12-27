@@ -72,10 +72,10 @@ main: stat+ EOF;
 divide : ID (and_ GreaterThan)? {doesItBlend()}?;
 and_ @init{ doInit(); } @after { doAfter(); } : And ;
 
-conquer:
+conquer locals [int count] :
 	divide+
-	| {doesItBlend()}? and_ { myAction(); }
-	| ID (LessThan* divide)?? { $ID.text; }
+	| {doesItBlend()}? and_ { myAction();  $count = 0; }
+	| ID (LessThan* divide)?? { $ID.text; $count = 1;}
 ;
 
 // Unused rule to demonstrate some of the special features.
